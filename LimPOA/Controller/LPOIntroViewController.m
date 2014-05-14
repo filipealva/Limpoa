@@ -24,7 +24,7 @@
 {
     [super viewDidLoad];
 	// Create the data model
-    _pageTitles = @[@"Over 200 Tips and Tricks", @"Discover Hidden Features", @"Bookmark Favorite Tip", @"Free Regular Update"];
+    _pageTitles = @[@"Over 200 Tips and Tricks", @"Discover Hidden Features", @"Bookmark Favorite Tip", @"Começar!"];
     _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
     
     // Create page view controller
@@ -49,7 +49,7 @@
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     
     // Change the size of page view controller
-    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
+    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
@@ -63,21 +63,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)startWalkthrough:(id)sender {
-    [self makePageViewController];
-}
-
 - (void)makePageViewController
 {
     pages = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < self.pageTitles.count; i++) {
         // Create a new view controller and pass suitable data.
-        LPOPageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
-        pageContentViewController.titleText = self.pageTitles[i];
-        pageContentViewController.pageIndex = i;
         
-        [pages addObject:pageContentViewController];
+        if (i == self.pageTitles.count -1) {
+             LPOStartViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"StartPageViewController"];
+            pageContentViewController.start = ^{
+                [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+            };
+            pageContentViewController.titleText = self.pageTitles[i];
+            pageContentViewController.imageFile = (i % 2 == 0) ? @"iphone-5-aired-leather-dark" : @"Green-Background-iphone-5-wallpaper-ilikewallpaper_com";
+            pageContentViewController.pageIndex = i;
+            
+            [pages addObject:pageContentViewController];
+        } else {
+            LPOPageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
+            pageContentViewController.titleText = self.pageTitles[i];
+            pageContentViewController.imageFile = (i % 2 == 0) ? @"iphone-5-aired-leather-dark" : @"Green-Background-iphone-5-wallpaper-ilikewallpaper_com";
+            pageContentViewController.titleLabel.textColor = [UIColor blackColor];
+            pageContentViewController.pageIndex = i;
+            
+            [pages addObject:pageContentViewController];
+
+        }
     }
 }
 
@@ -116,15 +128,15 @@
     return [pages objectAtIndex:index];
 }
 
-//- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
-//{
-//    return [self.pageTitles count];
-//}
-//
-//- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
-//{
-//    return 0;
-//}
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
+{
+    return [self.pageTitles count];
+}
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
+{
+    return 0;
+}
 
 #pragma mark - UIPageViewControllerDelegate
 
@@ -148,16 +160,16 @@
     CGFloat offset = scrollView.contentOffset.x - scrollView.frame.size.width;
     
     LPOPageContentViewController *currentViewController = (LPOPageContentViewController *)[pages objectAtIndex:indexxx];
-    currentViewController.titleLabel.center = CGPointMake(scrollView.frame.size.width / 2 - offset *.5, currentViewController.titleLabel.center.y);
+    currentViewController.titleLabel.center = CGPointMake(scrollView.frame.size.width / 2 - offset * .5, currentViewController.titleLabel.center.y);
     
     if (indexxx > 0) {
         LPOPageContentViewController *previusViewController = (LPOPageContentViewController *)[pages objectAtIndex:indexxx-1];
-        previusViewController.titleLabel.center = CGPointMake(- offset *.5, previusViewController.titleLabel.center.y);
+        previusViewController.titleLabel.center = CGPointMake(- offset * .5, previusViewController.titleLabel.center.y);
     }
     
     if (indexxx < pages.count - 1) {
         LPOPageContentViewController *nextViewController = (LPOPageContentViewController *)[pages objectAtIndex:indexxx+1];
-        nextViewController.titleLabel.center = CGPointMake(scrollView.frame.size.width - offset *.5, nextViewController.titleLabel.center.y);
+        nextViewController.titleLabel.center = CGPointMake(scrollView.frame.size.width - offset * .5, nextViewController.titleLabel.center.y);
     }
 }
 

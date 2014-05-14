@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LPOPageContentViewController.h"
+#import "LPOStartViewController.h"
 
 @interface LPOIntroViewController : UIViewController
 

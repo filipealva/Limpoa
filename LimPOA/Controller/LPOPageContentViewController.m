@@ -18,6 +18,7 @@
 {
     [super viewDidLoad];
     
+    self.backgroundImage.image = [UIImage imageNamed:self.imageFile];
     self.titleLabel.text = self.titleText;
 }
 

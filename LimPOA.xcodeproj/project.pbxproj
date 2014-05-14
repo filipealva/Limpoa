@@ -37,6 +37,7 @@
 		037156AC1922F2420030BEA2 /* LPODumpsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156AB1922F2420030BEA2 /* LPODumpsTableViewController.m */; };
 		037156AF1922F7E10030BEA2 /* UIColor+ColorWithHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156AE1922F7E10030BEA2 /* UIColor+ColorWithHex.m */; };
 		037156B31922FB120030BEA2 /* LPOCustomTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156B21922FB120030BEA2 /* LPOCustomTabViewController.m */; };
+		037156B61923D7780030BEA2 /* LPOStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156B51923D7780030BEA2 /* LPOStartViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,8 @@
 		037156AE1922F7E10030BEA2 /* UIColor+ColorWithHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorWithHex.m"; sourceTree = "<group>"; };
 		037156B11922FB120030BEA2 /* LPOCustomTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOCustomTabViewController.h; path = Controller/LPOCustomTabViewController.h; sourceTree = "<group>"; };
 		037156B21922FB120030BEA2 /* LPOCustomTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOCustomTabViewController.m; path = Controller/LPOCustomTabViewController.m; sourceTree = "<group>"; };
+		037156B41923D7780030BEA2 /* LPOStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPOStartViewController.h; sourceTree = "<group>"; };
+		037156B51923D7780030BEA2 /* LPOStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPOStartViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				031091101923B08700EACF4D /* LPOIntroViewController.m */,
 				031091121923B09900EACF4D /* LPOPageContentViewController.h */,
 				031091131923B09900EACF4D /* LPOPageContentViewController.m */,
+				037156B41923D7780030BEA2 /* LPOStartViewController.h */,
+				037156B51923D7780030BEA2 /* LPOStartViewController.m */,
 			);
 			name = Intro;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				031091111923B08700EACF4D /* LPOIntroViewController.m in Sources */,
 				037156791922E9F50030BEA2 /* LPOAppDelegate.m in Sources */,
 				0310910419238CE900EACF4D /* EcoPoint.m in Sources */,
+				037156B61923D7780030BEA2 /* LPOStartViewController.m in Sources */,
 				0371567C1922E9F50030BEA2 /* LimPOA.xcdatamodeld in Sources */,
 				037156751922E9F50030BEA2 /* main.m in Sources */,
 				037156AF1922F7E10030BEA2 /* UIColor+ColorWithHex.m in Sources */,
