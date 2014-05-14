@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LPOAppDelegate.h"
+#import "Dump.h"
 
 @interface LPODumpsTableViewController : UITableViewController
 

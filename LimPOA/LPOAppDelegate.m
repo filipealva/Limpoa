@@ -8,6 +8,7 @@
 
 #import "LPOAppDelegate.h"
 #import "UIColor+ColorWithHex.h"
+#import <CoreLocation/CoreLocation.h>
 
 @implementation LPOAppDelegate
 
@@ -20,6 +21,13 @@
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     
     [self setAppearanceToAllElements];
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"firstRun"]) {
+        [self loadDumps];
+        NSLog(@"Primeira vez!");
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstRun"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
     
     return YES;
 }
@@ -95,31 +103,47 @@
     
     NSError *error;
     
-    NSString *filePath = @"/Users/filipealvarenga/Documents/tempProjects/LimPOA/LimPOA/lixeiras.txt";
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Dump" ofType:@"txt"];
     NSString *dataFile = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding  error:&error];
     
     
     NSArray *dataFileLines = [dataFile componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     
     for (int i = 0; i <= dataFileLines.count - 1; i++) {
-       //Create NSManagedInstance of a Dump.
+        Dump *dump = (Dump *)[NSEntityDescription insertNewObjectForEntityForName:@"Dump" inManagedObjectContext:self.managedObjectContext];
         
         NSArray *fields = [dataFileLines[i] componentsSeparatedByCharactersInSet:commaSet];
-        NSString *endereco;
+        NSString *address;
         NSString *latitudeMaker;
         NSString *longitudeMaker;
         
         NSNumber *latitude;
         NSNumber *longitude;
         
-        endereco = [NSString stringWithFormat:@"%@ %@, %@", fields[0], fields[1], fields[2]];
-        latitudeMaker = [NSString stringWithFormat:@"%@.%@", fields[3],fields[4]];
-        longitudeMaker = [NSString stringWithFormat:@"%@.%@", fields[5],fields[6]];
+        if (fields.count == 4) {
+            address = [NSString stringWithFormat:@"%@, %@", fields[0], fields[1]];
+            latitudeMaker = [NSString stringWithFormat:@"%@", fields[2]];
+            longitudeMaker = [NSString stringWithFormat:@"%@",fields[3]];
+            
+            
+            latitude = [NSNumber numberWithDouble:[latitudeMaker doubleValue]];
+            longitude = [NSNumber numberWithDouble:[longitudeMaker doubleValue]];
+        } else {
+            address = [NSString stringWithFormat:@"%@", fields[0]];
+            latitudeMaker = [NSString stringWithFormat:@"%@", fields[1]];
+            longitudeMaker = [NSString stringWithFormat:@"%@",fields[2]];
+            
+            latitude = [NSNumber numberWithDouble:[latitudeMaker doubleValue]];
+            longitude = [NSNumber numberWithDouble:[longitudeMaker doubleValue]];
+        }
         
-        latitude = [NSNumber numberWithDouble:[latitudeMaker doubleValue]];
-        longitude = [NSNumber numberWithDouble:[longitudeMaker doubleValue]];
+        dump.address = address;
+        dump.latitude = latitude;
+        dump.longitude = longitude;
         
-        //Save context
+        NSLog(@"%@", dump);
+        
+        [self saveContext];
     }
 }
 
