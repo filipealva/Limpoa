@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "LPOAppDelegate.h"
 #import "Dump.h"
+#import "LPOIntroViewController.h"
 
 @interface LPODumpsTableViewController : UITableViewController
 

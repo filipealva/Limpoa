@@ -91,7 +91,7 @@
         <!--Intro View Controller-->
         <scene sceneID="gFA-Qi-fpF">
             <objects>
-                <viewController id="f8g-DC-stW" customClass="LPOIntroViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroViewController" id="f8g-DC-stW" customClass="LPOIntroViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BgC-CX-cqs"/>
                         <viewControllerLayoutGuide type="bottom" id="KXc-Mt-DBr"/>

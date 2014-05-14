@@ -20,6 +20,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    LPOIntroViewController *intro = [self.storyboard instantiateViewControllerWithIdentifier:@"IntroViewController"];
+    
+    [self.navigationController presentViewController:intro animated:NO completion:nil];
 }
 
 #pragma mark - Lazy Instantiation
