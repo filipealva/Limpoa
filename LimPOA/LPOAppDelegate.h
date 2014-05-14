@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Dump.h"
 
 @interface LPOAppDelegate : UIResponder <UIApplicationDelegate>
 

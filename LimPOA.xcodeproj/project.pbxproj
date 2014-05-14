@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0310910419238CE900EACF4D /* EcoPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0310910319238CE900EACF4D /* EcoPoint.m */; };
+		0310910719238CEA00EACF4D /* CookingOil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0310910619238CEA00EACF4D /* CookingOil.m */; };
+		0310910A19238CEA00EACF4D /* Dump.m in Sources */ = {isa = PBXBuildFile; fileRef = 0310910919238CEA00EACF4D /* Dump.m */; };
+		0310910D19238CEA00EACF4D /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 0310910C19238CEA00EACF4D /* Container.m */; };
+		031091111923B08700EACF4D /* LPOIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031091101923B08700EACF4D /* LPOIntroViewController.m */; };
+		031091141923B09900EACF4D /* LPOPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031091131923B09900EACF4D /* LPOPageContentViewController.m */; };
 		037156671922E9F50030BEA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037156661922E9F50030BEA2 /* Foundation.framework */; };
 		037156691922E9F50030BEA2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037156681922E9F50030BEA2 /* CoreGraphics.framework */; };
 		0371566B1922E9F50030BEA2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0371566A1922E9F50030BEA2 /* UIKit.framework */; };
@@ -44,6 +50,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0310910219238CE900EACF4D /* EcoPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EcoPoint.h; path = Model/EcoPoint.h; sourceTree = "<group>"; };
+		0310910319238CE900EACF4D /* EcoPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EcoPoint.m; path = Model/EcoPoint.m; sourceTree = "<group>"; };
+		0310910519238CEA00EACF4D /* CookingOil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CookingOil.h; path = Model/CookingOil.h; sourceTree = "<group>"; };
+		0310910619238CEA00EACF4D /* CookingOil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CookingOil.m; path = Model/CookingOil.m; sourceTree = "<group>"; };
+		0310910819238CEA00EACF4D /* Dump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dump.h; path = Model/Dump.h; sourceTree = "<group>"; };
+		0310910919238CEA00EACF4D /* Dump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dump.m; path = Model/Dump.m; sourceTree = "<group>"; };
+		0310910B19238CEA00EACF4D /* Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Container.h; path = Model/Container.h; sourceTree = "<group>"; };
+		0310910C19238CEA00EACF4D /* Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Container.m; path = Model/Container.m; sourceTree = "<group>"; };
+		0310910F1923B08700EACF4D /* LPOIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOIntroViewController.h; path = Controller/LPOIntroViewController.h; sourceTree = "<group>"; };
+		031091101923B08700EACF4D /* LPOIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOIntroViewController.m; path = Controller/LPOIntroViewController.m; sourceTree = "<group>"; };
+		031091121923B09900EACF4D /* LPOPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOPageContentViewController.h; path = Controller/LPOPageContentViewController.h; sourceTree = "<group>"; };
+		031091131923B09900EACF4D /* LPOPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOPageContentViewController.m; path = Controller/LPOPageContentViewController.m; sourceTree = "<group>"; };
 		037156631922E9F50030BEA2 /* LimPOA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LimPOA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		037156661922E9F50030BEA2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		037156681922E9F50030BEA2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -103,6 +121,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0310910E1923B06900EACF4D /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				0310910F1923B08700EACF4D /* LPOIntroViewController.h */,
+				031091101923B08700EACF4D /* LPOIntroViewController.m */,
+				031091121923B09900EACF4D /* LPOPageContentViewController.h */,
+				031091131923B09900EACF4D /* LPOPageContentViewController.m */,
+			);
+			name = Intro;
+			sourceTree = "<group>";
+		};
 		0371565A1922E9F50030BEA2 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +224,7 @@
 		0371569C1922EB200030BEA2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0310910E1923B06900EACF4D /* Intro */,
 				037156AA1922F2420030BEA2 /* LPODumpsTableViewController.h */,
 				037156AB1922F2420030BEA2 /* LPODumpsTableViewController.m */,
 				037156B11922FB120030BEA2 /* LPOCustomTabViewController.h */,
@@ -206,6 +236,14 @@
 		0371569D1922EB280030BEA2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0310910B19238CEA00EACF4D /* Container.h */,
+				0310910C19238CEA00EACF4D /* Container.m */,
+				0310910819238CEA00EACF4D /* Dump.h */,
+				0310910919238CEA00EACF4D /* Dump.m */,
+				0310910519238CEA00EACF4D /* CookingOil.h */,
+				0310910619238CEA00EACF4D /* CookingOil.m */,
+				0310910219238CE900EACF4D /* EcoPoint.h */,
+				0310910319238CE900EACF4D /* EcoPoint.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -320,12 +358,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				031091111923B08700EACF4D /* LPOIntroViewController.m in Sources */,
 				037156791922E9F50030BEA2 /* LPOAppDelegate.m in Sources */,
+				0310910419238CE900EACF4D /* EcoPoint.m in Sources */,
 				0371567C1922E9F50030BEA2 /* LimPOA.xcdatamodeld in Sources */,
 				037156751922E9F50030BEA2 /* main.m in Sources */,
 				037156AF1922F7E10030BEA2 /* UIColor+ColorWithHex.m in Sources */,
+				0310910D19238CEA00EACF4D /* Container.m in Sources */,
+				0310910A19238CEA00EACF4D /* Dump.m in Sources */,
+				0310910719238CEA00EACF4D /* CookingOil.m in Sources */,
 				037156AC1922F2420030BEA2 /* LPODumpsTableViewController.m in Sources */,
 				037156B31922FB120030BEA2 /* LPOCustomTabViewController.m in Sources */,
+				031091141923B09900EACF4D /* LPOPageContentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +566,7 @@
 				037156971922E9F50030BEA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		037156981922E9F50030BEA2 /* Build configuration list for PBXNativeTarget "LimPOATests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +575,7 @@
 				0371569A1922E9F50030BEA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
