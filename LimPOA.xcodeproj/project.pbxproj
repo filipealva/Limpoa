@@ -22,6 +22,15 @@
 		037156881922E9F50030BEA2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0371566C1922E9F50030BEA2 /* CoreData.framework */; };
 		037156901922E9F50030BEA2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0371568E1922E9F50030BEA2 /* InfoPlist.strings */; };
 		037156921922E9F50030BEA2 /* LimPOATests.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156911922E9F50030BEA2 /* LimPOATests.m */; };
+		0371569F1922EB630030BEA2 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0371569E1922EB630030BEA2 /* iPhone.storyboard */; };
+		037156A11922F04F0030BEA2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037156A01922F04F0030BEA2 /* MapKit.framework */; };
+		037156A61922F1290030BEA2 /* Container.txt in Resources */ = {isa = PBXBuildFile; fileRef = 037156A21922F1290030BEA2 /* Container.txt */; };
+		037156A71922F1290030BEA2 /* CookingOil.txt in Resources */ = {isa = PBXBuildFile; fileRef = 037156A31922F1290030BEA2 /* CookingOil.txt */; };
+		037156A81922F1290030BEA2 /* EcoPoint.txt in Resources */ = {isa = PBXBuildFile; fileRef = 037156A41922F1290030BEA2 /* EcoPoint.txt */; };
+		037156A91922F1290030BEA2 /* Dump.txt in Resources */ = {isa = PBXBuildFile; fileRef = 037156A51922F1290030BEA2 /* Dump.txt */; };
+		037156AC1922F2420030BEA2 /* LPODumpsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156AB1922F2420030BEA2 /* LPODumpsTableViewController.m */; };
+		037156AF1922F7E10030BEA2 /* UIColor+ColorWithHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156AE1922F7E10030BEA2 /* UIColor+ColorWithHex.m */; };
+		037156B31922FB120030BEA2 /* LPOCustomTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156B21922FB120030BEA2 /* LPOCustomTabViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +62,18 @@
 		0371568D1922E9F50030BEA2 /* LimPOATests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LimPOATests-Info.plist"; sourceTree = "<group>"; };
 		0371568F1922E9F50030BEA2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		037156911922E9F50030BEA2 /* LimPOATests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LimPOATests.m; sourceTree = "<group>"; };
+		0371569E1922EB630030BEA2 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = iPhone.storyboard; path = View/iPhone.storyboard; sourceTree = "<group>"; };
+		037156A01922F04F0030BEA2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		037156A21922F1290030BEA2 /* Container.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Container.txt; sourceTree = "<group>"; };
+		037156A31922F1290030BEA2 /* CookingOil.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CookingOil.txt; sourceTree = "<group>"; };
+		037156A41922F1290030BEA2 /* EcoPoint.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EcoPoint.txt; sourceTree = "<group>"; };
+		037156A51922F1290030BEA2 /* Dump.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Dump.txt; sourceTree = "<group>"; };
+		037156AA1922F2420030BEA2 /* LPODumpsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPODumpsTableViewController.h; path = Controller/LPODumpsTableViewController.h; sourceTree = "<group>"; };
+		037156AB1922F2420030BEA2 /* LPODumpsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPODumpsTableViewController.m; path = Controller/LPODumpsTableViewController.m; sourceTree = "<group>"; };
+		037156AD1922F7E10030BEA2 /* UIColor+ColorWithHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorWithHex.h"; sourceTree = "<group>"; };
+		037156AE1922F7E10030BEA2 /* UIColor+ColorWithHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorWithHex.m"; sourceTree = "<group>"; };
+		037156B11922FB120030BEA2 /* LPOCustomTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOCustomTabViewController.h; path = Controller/LPOCustomTabViewController.h; sourceTree = "<group>"; };
+		037156B21922FB120030BEA2 /* LPOCustomTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOCustomTabViewController.m; path = Controller/LPOCustomTabViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				037156A11922F04F0030BEA2 /* MapKit.framework in Frameworks */,
 				037156691922E9F50030BEA2 /* CoreGraphics.framework in Frameworks */,
 				0371566D1922E9F50030BEA2 /* CoreData.framework in Frameworks */,
 				0371566B1922E9F50030BEA2 /* UIKit.framework in Frameworks */,
@@ -103,6 +125,7 @@
 		037156651922E9F50030BEA2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				037156A01922F04F0030BEA2 /* MapKit.framework */,
 				037156661922E9F50030BEA2 /* Foundation.framework */,
 				037156681922E9F50030BEA2 /* CoreGraphics.framework */,
 				0371566A1922E9F50030BEA2 /* UIKit.framework */,
@@ -115,6 +138,10 @@
 		0371566E1922E9F50030BEA2 /* LimPOA */ = {
 			isa = PBXGroup;
 			children = (
+				0371569D1922EB280030BEA2 /* Model */,
+				0371569C1922EB200030BEA2 /* Controller */,
+				0371569B1922EB0C0030BEA2 /* View */,
+				037156B01922F7E70030BEA2 /* Categories */,
 				037156771922E9F50030BEA2 /* LPOAppDelegate.h */,
 				037156781922E9F50030BEA2 /* LPOAppDelegate.m */,
 				0371567D1922E9F50030BEA2 /* Images.xcassets */,
@@ -127,6 +154,10 @@
 		0371566F1922E9F50030BEA2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				037156A21922F1290030BEA2 /* Container.txt */,
+				037156A31922F1290030BEA2 /* CookingOil.txt */,
+				037156A41922F1290030BEA2 /* EcoPoint.txt */,
+				037156A51922F1290030BEA2 /* Dump.txt */,
 				037156701922E9F50030BEA2 /* LimPOA-Info.plist */,
 				037156711922E9F50030BEA2 /* InfoPlist.strings */,
 				037156741922E9F50030BEA2 /* main.m */,
@@ -151,6 +182,41 @@
 				0371568E1922E9F50030BEA2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0371569B1922EB0C0030BEA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0371569E1922EB630030BEA2 /* iPhone.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0371569C1922EB200030BEA2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				037156AA1922F2420030BEA2 /* LPODumpsTableViewController.h */,
+				037156AB1922F2420030BEA2 /* LPODumpsTableViewController.m */,
+				037156B11922FB120030BEA2 /* LPOCustomTabViewController.h */,
+				037156B21922FB120030BEA2 /* LPOCustomTabViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0371569D1922EB280030BEA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		037156B01922F7E70030BEA2 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				037156AD1922F7E10030BEA2 /* UIColor+ColorWithHex.h */,
+				037156AE1922F7E10030BEA2 /* UIColor+ColorWithHex.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +296,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				037156731922E9F50030BEA2 /* InfoPlist.strings in Resources */,
+				037156A81922F1290030BEA2 /* EcoPoint.txt in Resources */,
+				0371569F1922EB630030BEA2 /* iPhone.storyboard in Resources */,
+				037156A71922F1290030BEA2 /* CookingOil.txt in Resources */,
+				037156A91922F1290030BEA2 /* Dump.txt in Resources */,
+				037156A61922F1290030BEA2 /* Container.txt in Resources */,
 				0371567E1922E9F50030BEA2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +323,9 @@
 				037156791922E9F50030BEA2 /* LPOAppDelegate.m in Sources */,
 				0371567C1922E9F50030BEA2 /* LimPOA.xcdatamodeld in Sources */,
 				037156751922E9F50030BEA2 /* main.m in Sources */,
+				037156AF1922F7E10030BEA2 /* UIColor+ColorWithHex.m in Sources */,
+				037156AC1922F2420030BEA2 /* LPODumpsTableViewController.m in Sources */,
+				037156B31922FB120030BEA2 /* LPOCustomTabViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

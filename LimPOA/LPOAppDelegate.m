@@ -7,6 +7,7 @@
 //
 
 #import "LPOAppDelegate.h"
+#import "UIColor+ColorWithHex.h"
 
 @implementation LPOAppDelegate
 
@@ -16,10 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    [self setAppearanceToAllElements];
+    
     return YES;
 }
 
@@ -64,6 +65,64 @@
         } 
     }
 }
+
+#pragma mark - Style/Appearance methods
+
+- (void)setAppearanceToAllElements
+{
+	UIColor *baseColor = [UIColor colorWithHexString:@"00B31B" andAlpha:1.0];
+    
+	// Changes appearance of NavigationController
+	[[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
+    [[UINavigationBar appearance] setBarTintColor:baseColor];
+	[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    
+    [[UITabBar appearance] setBarTintColor:baseColor];
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    
+	// Changes appearance of TextFields/TextViews
+	[[UITextField appearance] setTintColor:baseColor];
+	[[UITextView appearance] setTintColor:baseColor];
+}
+
+#pragma mark - Load Data
+
+- (void)loadDumps
+{
+    NSCharacterSet *commaSet;
+    commaSet = [NSCharacterSet characterSetWithCharactersInString:@","];
+    
+    NSError *error;
+    
+    NSString *filePath = @"/Users/filipealvarenga/Documents/tempProjects/LimPOA/LimPOA/lixeiras.txt";
+    NSString *dataFile = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding  error:&error];
+    
+    
+    NSArray *dataFileLines = [dataFile componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    
+    for (int i = 0; i <= dataFileLines.count - 1; i++) {
+       //Create NSManagedInstance of a Dump.
+        
+        NSArray *fields = [dataFileLines[i] componentsSeparatedByCharactersInSet:commaSet];
+        NSString *endereco;
+        NSString *latitudeMaker;
+        NSString *longitudeMaker;
+        
+        NSNumber *latitude;
+        NSNumber *longitude;
+        
+        endereco = [NSString stringWithFormat:@"%@ %@, %@", fields[0], fields[1], fields[2]];
+        latitudeMaker = [NSString stringWithFormat:@"%@.%@", fields[3],fields[4]];
+        longitudeMaker = [NSString stringWithFormat:@"%@.%@", fields[5],fields[6]];
+        
+        latitude = [NSNumber numberWithDouble:[latitudeMaker doubleValue]];
+        longitude = [NSNumber numberWithDouble:[longitudeMaker doubleValue]];
+        
+        //Save context
+    }
+}
+
 
 #pragma mark - Core Data stack
 
