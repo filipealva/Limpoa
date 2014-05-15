@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LPOAppDelegate.h"
+#import "CookingOil.h"
 
 @interface LPOCookingOilsTableViewController : UITableViewController
 

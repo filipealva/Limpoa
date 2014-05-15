@@ -10,110 +10,89 @@
 
 @interface LPOCookingOilsTableViewController ()
 
+@property (nonatomic, strong) NSMutableArray *cookingOilPoints;
+@property (nonatomic, strong) NSManagedObjectContext *context;
+
 @end
 
 @implementation LPOCookingOilsTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - Lazy Instantiation
+
+- (NSManagedObjectContext *)context
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (!_context) {
+        _context = [(LPOAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    }
+    
+    return _context;
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSMutableArray *)cookingOilPoints
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    if (!_cookingOilPoints) {
+        _cookingOilPoints = [[NSMutableArray alloc] initWithArray:[self selectAllCookingOilPoints]];
+    }
+    
+    return _cookingOilPoints;
 }
+
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.cookingOilPoints.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CookingOilCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    CookingOil *cookingOil = (CookingOil *)[self.cookingOilPoints objectAtIndex:indexPath.row];
+    
+    NSLog(@"%@", cookingOil);
+    
+    UILabel *cookingOilName = (UILabel *)[cell viewWithTag:100];
+    UILabel *cookingOilAddress = (UILabel *)[cell viewWithTag:200];
+    UILabel *distanceToCoookingOilPoint = (UILabel *)[cell viewWithTag:300];
+    
+    cookingOilName.text = cookingOil.name;
+    cookingOilAddress.text = cookingOil.address;
+    distanceToCoookingOilPoint.text = @"0.2km";
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - CoreData
+
+- (NSMutableArray *)selectAllCookingOilPoints
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    NSError *error;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"CookingOil" inManagedObjectContext:self.context];
+	[fetchRequest setEntity:entity];
+    
+    NSMutableArray *cookingOilPointsArray = [[NSMutableArray alloc] init];
+    
+	NSArray *fetchedObjects = [self.context executeFetchRequest:fetchRequest error:&error];
+    
+    for (CookingOil *cookingOil in fetchedObjects) {
+        [cookingOilPointsArray addObject:cookingOil];
+    }
+    
+    if (!error) {
+        NSLog(@"OK!");
+    } else {
+        NSLog(@"ERRO!");
+    }
+    
+    return cookingOilPointsArray;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
