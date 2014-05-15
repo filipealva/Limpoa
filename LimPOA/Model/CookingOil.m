@@ -2,7 +2,7 @@
 //  CookingOil.m
 //  LimPOA
 //
-//  Created by Filipe Alvarenga on 14/05/14.
+//  Created by Filipe Alvarenga on 5/14/14.
 //  Copyright (c) 2014 Filipe Alvarenga. All rights reserved.
 //
 
@@ -11,11 +11,12 @@
 
 @implementation CookingOil
 
-@dynamic name;
 @dynamic address;
-@dynamic telephone;
-@dynamic openHours;
+@dynamic distance;
 @dynamic latitude;
 @dynamic longitude;
+@dynamic name;
+@dynamic openHours;
+@dynamic telephone;
 
 @end
