@@ -10,6 +10,7 @@
 		031091111923B08700EACF4D /* LPOIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031091101923B08700EACF4D /* LPOIntroViewController.m */; };
 		031091141923B09900EACF4D /* LPOPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031091131923B09900EACF4D /* LPOPageContentViewController.m */; };
 		03429F8D1924FC4000999B27 /* EcoPoint.txt in Resources */ = {isa = PBXBuildFile; fileRef = 03429F8C1924FC4000999B27 /* EcoPoint.txt */; };
+		03429F90192503F300999B27 /* LPOCookingOilsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03429F8F192503F300999B27 /* LPOCookingOilsTableViewController.m */; };
 		037156671922E9F50030BEA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037156661922E9F50030BEA2 /* Foundation.framework */; };
 		037156691922E9F50030BEA2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037156681922E9F50030BEA2 /* CoreGraphics.framework */; };
 		0371566B1922E9F50030BEA2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0371566A1922E9F50030BEA2 /* UIKit.framework */; };
@@ -57,6 +58,8 @@
 		031091121923B09900EACF4D /* LPOPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOPageContentViewController.h; path = Controller/LPOPageContentViewController.h; sourceTree = "<group>"; };
 		031091131923B09900EACF4D /* LPOPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOPageContentViewController.m; path = Controller/LPOPageContentViewController.m; sourceTree = "<group>"; };
 		03429F8C1924FC4000999B27 /* EcoPoint.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EcoPoint.txt; sourceTree = "<group>"; };
+		03429F8E192503F300999B27 /* LPOCookingOilsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOCookingOilsTableViewController.h; path = Controller/LPOCookingOilsTableViewController.h; sourceTree = "<group>"; };
+		03429F8F192503F300999B27 /* LPOCookingOilsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOCookingOilsTableViewController.m; path = Controller/LPOCookingOilsTableViewController.m; sourceTree = "<group>"; };
 		037156631922E9F50030BEA2 /* LimPOA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LimPOA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		037156661922E9F50030BEA2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		037156681922E9F50030BEA2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -239,6 +242,8 @@
 				037156B21922FB120030BEA2 /* LPOCustomTabViewController.m */,
 				037156CF192440FE0030BEA2 /* LPOContainersTableViewController.h */,
 				037156D0192440FE0030BEA2 /* LPOContainersTableViewController.m */,
+				03429F8E192503F300999B27 /* LPOCookingOilsTableViewController.h */,
+				03429F8F192503F300999B27 /* LPOCookingOilsTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 				037156C819243ED20030BEA2 /* CookingOil.m in Sources */,
 				037156751922E9F50030BEA2 /* main.m in Sources */,
 				037156CB19243ED20030BEA2 /* EcoPoint.m in Sources */,
+				03429F90192503F300999B27 /* LPOCookingOilsTableViewController.m in Sources */,
 				037156C519243ED20030BEA2 /* Container.m in Sources */,
 				037156AF1922F7E10030BEA2 /* UIColor+ColorWithHex.m in Sources */,
 				037156AC1922F2420030BEA2 /* LPODumpsTableViewController.m in Sources */,
@@ -501,6 +507,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LimPOA/LimPOA-Prefix.pch";
 				INFOPLIST_FILE = "LimPOA/LimPOA-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -514,6 +521,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LimPOA/LimPOA-Prefix.pch";
 				INFOPLIST_FILE = "LimPOA/LimPOA-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
