@@ -21,9 +21,13 @@
 {
     [super viewDidLoad];
     
-    LPOIntroViewController *intro = [self.storyboard instantiateViewControllerWithIdentifier:@"IntroViewController"];
     
-    [self.navigationController presentViewController:intro animated:NO completion:nil];
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"firstRun"]) {
+        LPOIntroViewController *intro = [self.storyboard instantiateViewControllerWithIdentifier:@"IntroViewController"];
+        [self.navigationController presentViewController:intro animated:NO completion:nil];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstRun"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 }
 
 #pragma mark - Lazy Instantiation

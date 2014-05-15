@@ -10,62 +10,56 @@
 
 @interface LPOIntroViewController () <UIPageViewControllerDataSource,UIPageViewControllerDelegate,UIScrollViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIPageControl *pageIndicator;
+@property (nonatomic) NSInteger currentPage;
+@property (nonatomic, strong) NSMutableArray *contentPages;
+@property (nonatomic, strong) NSManagedObjectContext *context;
+
 @end
 
 @implementation LPOIntroViewController
-{
-    CGFloat percentage;
-    NSMutableArray *pages;
-    NSInteger indexx;
-    NSInteger indexxx;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Create the data model
-    _pageTitles = @[@"Over 200 Tips and Tricks", @"Discover Hidden Features", @"Bookmark Favorite Tip", @"Começar!"];
+    
+    _pageTitles = @[@"Matenha a cidade limpa", @"Não encontrou uma lixeira próxima?", @"Convide seus amigos", @"Começar!"];
     _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
     
-    // Create page view controller
+    [self.pageIndicator setNumberOfPages:self.pageTitles.count];
+ 
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     self.pageViewController.dataSource = self;
-    
     
     for (UIView *view in self.pageViewController.view.subviews) {
         if ([view isKindOfClass:[UIScrollView class]]) {
             [(UIScrollView *)view setDelegate:self];
-            //            UIScrollView *scrollView = (UIScrollView *)view;
-            //            UIPanGestureRecognizer* panGestureRecognizer = scrollView.panGestureRecognizer;
-            //            [panGestureRecognizer addTarget:self action:@selector(move:)];
         }
     }
     
     [self makePageViewController];
     
-    LPOPageContentViewController *startingViewController = [pages objectAtIndex:0];
-    //    startingViewController.pageIndex = 0;
+    LPOPageContentViewController *startingViewController = [self.contentPages objectAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     
-    // Change the size of page view controller
     self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
     
+    [self.view bringSubviewToFront:self.pageIndicator];
 }
 
-- (void)didReceiveMemoryWarning
+-(void)viewDidAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self loadDumpsData];
 }
 
 - (void)makePageViewController
 {
-    pages = [[NSMutableArray alloc] init];
+    self.contentPages = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < self.pageTitles.count; i++) {
         // Create a new view controller and pass suitable data.
@@ -79,7 +73,7 @@
             pageContentViewController.imageFile = (i % 2 == 0) ? @"iphone-5-aired-leather-dark" : @"Green-Background-iphone-5-wallpaper-ilikewallpaper_com";
             pageContentViewController.pageIndex = i;
             
-            [pages addObject:pageContentViewController];
+            [self.contentPages addObject:pageContentViewController];
         } else {
             LPOPageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
             pageContentViewController.titleText = self.pageTitles[i];
@@ -87,10 +81,21 @@
             pageContentViewController.titleLabel.textColor = [UIColor blackColor];
             pageContentViewController.pageIndex = i;
             
-            [pages addObject:pageContentViewController];
+            [self.contentPages addObject:pageContentViewController];
 
         }
     }
+}
+
+#pragma Lazy Instantiation
+
+- (NSManagedObjectContext *)context
+{
+    if (!_context) {
+        _context = [(LPOAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    }
+    
+    return _context;
 }
 
 #pragma mark - Page View Controller Data Source
@@ -103,10 +108,8 @@
         return nil;
     }
     
-    
-    NSLog(@"before");
     index--;
-    return [pages objectAtIndex:index];
+    return [self.contentPages objectAtIndex:index];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
@@ -122,55 +125,107 @@
         return nil;
     }
     
-    
-    NSLog(@"after");
-    indexx = index;
-    return [pages objectAtIndex:index];
+    return [self.contentPages objectAtIndex:index];
 }
 
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
-{
-    return [self.pageTitles count];
-}
+#pragma mark - UIPageViewControllerDelegate
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
 {
     return 0;
 }
 
-#pragma mark - UIPageViewControllerDelegate
-
-//-(void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers
-//{
-//    PageContentViewController *nextViewController = (PageContentViewController *)pendingViewControllers[1];
-//    [nextViewController.titleLabel setFrame:CGRectMake((nextViewController.titleLabel.frame.origin.x * percentage), nextViewController.titleLabel.frame.origin.y, nextViewController.titleLabel.frame.size.width, nextViewController.titleLabel.frame.size.height)];
-//}
-
 #pragma mark - UIScrolViewDelegate
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     UIViewController *currentView = [self.pageViewController.viewControllers objectAtIndex:0];
-    indexxx = [pages indexOfObject:currentView];
+    self.currentPage = [self.contentPages indexOfObject:currentView];
 }
-
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat offset = scrollView.contentOffset.x - scrollView.frame.size.width;
+
+    if (offset > 0) {
+        if (offset > 160) {
+            [self.pageIndicator setCurrentPage:self.currentPage + 1];
+        } else if (offset < 160) {
+            [self.pageIndicator setCurrentPage:self.currentPage];
+        }
+    }
+
+    if (offset < 0) {
+        if (- offset > 160) {
+            [self.pageIndicator setCurrentPage:self.currentPage - 1];
+        } else if (- offset < 160) {
+            [self.pageIndicator setCurrentPage:self.currentPage];
+        }
+    }
     
-    LPOPageContentViewController *currentViewController = (LPOPageContentViewController *)[pages objectAtIndex:indexxx];
+    LPOPageContentViewController *currentViewController = (LPOPageContentViewController *)[self.contentPages objectAtIndex:self.currentPage];
     currentViewController.titleLabel.center = CGPointMake(scrollView.frame.size.width / 2 - offset * .5, currentViewController.titleLabel.center.y);
     
-    if (indexxx > 0) {
-        LPOPageContentViewController *previusViewController = (LPOPageContentViewController *)[pages objectAtIndex:indexxx-1];
+    if (self.currentPage > 0) {
+        LPOPageContentViewController *previusViewController = (LPOPageContentViewController *)[self.contentPages objectAtIndex:self.currentPage - 1];
         previusViewController.titleLabel.center = CGPointMake(- offset * .5, previusViewController.titleLabel.center.y);
     }
     
-    if (indexxx < pages.count - 1) {
-        LPOPageContentViewController *nextViewController = (LPOPageContentViewController *)[pages objectAtIndex:indexxx+1];
+    if (self.currentPage < self.contentPages.count - 1) {
+        LPOPageContentViewController *nextViewController = (LPOPageContentViewController *)[self.contentPages objectAtIndex:self.currentPage + 1];
         nextViewController.titleLabel.center = CGPointMake(scrollView.frame.size.width - offset * .5, nextViewController.titleLabel.center.y);
     }
 }
+
+#pragma mark - Load data
+
+- (void)loadDumpsData
+{
+    NSCharacterSet *commaSet;
+    commaSet = [NSCharacterSet characterSetWithCharactersInString:@","];
+    
+    NSError *error;
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Dump" ofType:@"txt"];
+    NSString *dataFile = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding  error:&error];
+    
+    
+    NSArray *dataFileLines = [dataFile componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    
+    for (int i = 0; i <= dataFileLines.count - 1; i++) {
+        Dump *dump = (Dump *)[NSEntityDescription insertNewObjectForEntityForName:@"Dump" inManagedObjectContext:self.context];
+        
+        NSArray *fields = [dataFileLines[i] componentsSeparatedByCharactersInSet:commaSet];
+        NSString *address;
+        NSString *latitudeMaker;
+        NSString *longitudeMaker;
+        
+        NSNumber *latitude;
+        NSNumber *longitude;
+        
+        if (fields.count == 4) {
+            address = [NSString stringWithFormat:@"%@, %@", fields[0], fields[1]];
+            latitudeMaker = [NSString stringWithFormat:@"%@", fields[2]];
+            longitudeMaker = [NSString stringWithFormat:@"%@",fields[3]];
+            
+            latitude = [NSNumber numberWithDouble:[latitudeMaker doubleValue]];
+            longitude = [NSNumber numberWithDouble:[longitudeMaker doubleValue]];
+        } else {
+            address = [NSString stringWithFormat:@"%@", fields[0]];
+            latitudeMaker = [NSString stringWithFormat:@"%@", fields[1]];
+            longitudeMaker = [NSString stringWithFormat:@"%@",fields[2]];
+            
+            latitude = [NSNumber numberWithDouble:[latitudeMaker doubleValue]];
+            longitude = [NSNumber numberWithDouble:[longitudeMaker doubleValue]];
+        }
+        
+        dump.address = address;
+        dump.latitude = latitude;
+        dump.longitude = longitude;
+        
+        [self.context save:&error];
+    }
+}
+
 
 @end
