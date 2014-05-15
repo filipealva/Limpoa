@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "LPOPageContentViewController.h"
 #import "LPOStartViewController.h"
-#import "Dump.h"
 #import "LPOAppDelegate.h"
+#import "Dump.h"
+#import "Container.h"
+#import "CookingOil.h"
+#import "EcoPoint.h"
 
 @interface LPOIntroViewController : UIViewController
 
