@@ -23,6 +23,11 @@
 {
     [super viewDidLoad];
     
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                             (unsigned long)NULL), ^(void) {
+        [self loadAllData];
+    });
+    
     _pageTitles = @[@"Matenha a cidade limpa", @"Não encontrou uma lixeira próxima?", @"Convide seus amigos", @"Começar!"];
     _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
     
@@ -54,8 +59,7 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    [self loadDumpsData];
-    [self loadContainersData];
+    
 }
 
 - (void)makePageViewController
@@ -180,6 +184,14 @@
 
 #pragma mark - Load data
 
+- (void)loadAllData
+{
+    [self loadDumpsData];
+    [self loadContainersData];
+    [self loadCookingOilsData];
+    [self loadEcoPointsData];
+}
+
 - (void)loadDumpsData
 {
     NSCharacterSet *commaSet;
@@ -272,6 +284,124 @@
         container.latitude = latitude;
         container.longitude = longitude;
         
+        [self.context save:&error];
+    }
+}
+
+- (void)loadCookingOilsData
+{
+    NSCharacterSet *commaSet;
+    commaSet = [NSCharacterSet characterSetWithCharactersInString:@","];
+    
+    NSError *error;
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"CookingOil" ofType:@"txt"];
+    NSString *dataFile = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding  error:&error];
+    
+    
+    NSArray *dataFileLines = [dataFile componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    
+    for (int i = 0; i <= dataFileLines.count - 1; i++) {
+        CookingOil *cookingOil = (CookingOil *)[NSEntityDescription insertNewObjectForEntityForName:@"CookingOil" inManagedObjectContext:self.context];
+        
+        NSArray *fields = [dataFileLines[i] componentsSeparatedByCharactersInSet:commaSet];
+        NSLog(@"%d", (int)fields.count);
+        
+        NSString *name = nil;
+        NSString *openHours = nil;
+        NSString *address = nil;
+        NSString *telephone = nil;
+        NSString *latitudeMaker;
+        NSString *longitudeMaker;
+        NSNumber *latitude;
+        NSNumber *longitude;
+        
+        
+        name = [NSString stringWithFormat:@"%@", fields[0]];
+            
+        if (![fields[2] isEqualToString:@" "]) {
+            address = [NSString stringWithFormat:@"%@, %@", fields[1], fields[2]];
+        } else {
+            address = [NSString stringWithFormat:@"%@", fields[1]];
+        }
+            
+        if (![fields[3] isEqualToString:@" "]) {
+            telephone = [NSString stringWithFormat:@"%@", fields[3]];
+        }
+            
+        if (![fields[4] isEqualToString:@" "]) {
+            openHours = [NSString stringWithFormat:@"%@", fields[4]];
+        }
+            
+        latitudeMaker = [NSString stringWithFormat:@"%@", fields[5]];
+        longitudeMaker = [NSString stringWithFormat:@"%@",fields[6]];
+            
+        latitude = [NSNumber numberWithDouble:[latitudeMaker doubleValue]];
+        longitude = [NSNumber numberWithDouble:[longitudeMaker doubleValue]];
+        
+        
+        cookingOil.name = name;
+        cookingOil.openHours = openHours;
+        cookingOil.address = address;
+        cookingOil.telephone = telephone;
+        cookingOil.latitude = latitude;
+        cookingOil.longitude = longitude;
+        
+        [self.context save:&error];
+    }
+}
+
+- (void)loadEcoPointsData
+{
+    NSCharacterSet *commaSet;
+    commaSet = [NSCharacterSet characterSetWithCharactersInString:@","];
+    
+    NSError *error;
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"EcoPoint" ofType:@"txt"];
+    NSString *dataFile = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding  error:&error];
+    
+    if (error) {
+        NSLog(@"%@", error);
+    }
+    
+    NSArray *dataFileLines = [dataFile componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    
+    for (int i = 0; i <= dataFileLines.count - 1; i++) {
+        EcoPoint *ecoPoint = (EcoPoint *)[NSEntityDescription insertNewObjectForEntityForName:@"EcoPoint" inManagedObjectContext:self.context];
+        
+        NSArray *fields = [dataFileLines[i] componentsSeparatedByCharactersInSet:commaSet];
+        
+        NSString *neighborhood = nil;
+        NSString *address = nil;
+        NSString *telephone = nil;
+        NSString *latitudeMaker;
+        NSString *longitudeMaker;
+        NSNumber *latitude;
+        NSNumber *longitude;
+        
+        
+        neighborhood = [NSString stringWithFormat:@"%@", fields[2]];
+        address = [NSString stringWithFormat:@"%@, %@", fields[0], fields[1]];
+        
+        if (![fields[3] isEqualToString:@" "]) {
+            telephone = [NSString stringWithFormat:@"%@", fields[3]];
+        }
+        
+        
+        latitudeMaker = [NSString stringWithFormat:@"%@", fields[4]];
+        longitudeMaker = [NSString stringWithFormat:@"%@",fields[5]];
+        
+        latitude = [NSNumber numberWithDouble:[latitudeMaker doubleValue]];
+        longitude = [NSNumber numberWithDouble:[longitudeMaker doubleValue]];
+        
+        
+        ecoPoint.neighborhood = neighborhood;
+        ecoPoint.address = address;
+        ecoPoint.telephone = telephone;
+        ecoPoint.latitude = latitude;
+        ecoPoint.longitude = longitude;
+
         [self.context save:&error];
     }
 }
