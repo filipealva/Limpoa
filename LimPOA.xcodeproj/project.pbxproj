@@ -38,6 +38,7 @@
 		037156C819243ED20030BEA2 /* CookingOil.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156C719243ED20030BEA2 /* CookingOil.m */; };
 		037156CB19243ED20030BEA2 /* EcoPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156CA19243ED20030BEA2 /* EcoPoint.m */; };
 		037156CE19243ED20030BEA2 /* Dump.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156CD19243ED20030BEA2 /* Dump.m */; };
+		037156D1192440FE0030BEA2 /* LPOContainersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156D0192440FE0030BEA2 /* LPOContainersTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,8 @@
 		037156CA19243ED20030BEA2 /* EcoPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EcoPoint.m; path = Model/EcoPoint.m; sourceTree = "<group>"; };
 		037156CC19243ED20030BEA2 /* Dump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dump.h; path = Model/Dump.h; sourceTree = "<group>"; };
 		037156CD19243ED20030BEA2 /* Dump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dump.m; path = Model/Dump.m; sourceTree = "<group>"; };
+		037156CF192440FE0030BEA2 /* LPOContainersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOContainersTableViewController.h; path = Controller/LPOContainersTableViewController.h; sourceTree = "<group>"; };
+		037156D0192440FE0030BEA2 /* LPOContainersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOContainersTableViewController.m; path = Controller/LPOContainersTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +237,8 @@
 				037156AB1922F2420030BEA2 /* LPODumpsTableViewController.m */,
 				037156B11922FB120030BEA2 /* LPOCustomTabViewController.h */,
 				037156B21922FB120030BEA2 /* LPOCustomTabViewController.m */,
+				037156CF192440FE0030BEA2 /* LPOContainersTableViewController.h */,
+				037156D0192440FE0030BEA2 /* LPOContainersTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				037156CE19243ED20030BEA2 /* Dump.m in Sources */,
+				037156D1192440FE0030BEA2 /* LPOContainersTableViewController.m in Sources */,
 				031091111923B08700EACF4D /* LPOIntroViewController.m in Sources */,
 				037156791922E9F50030BEA2 /* LPOAppDelegate.m in Sources */,
 				037156B61923D7780030BEA2 /* LPOStartViewController.m in Sources */,

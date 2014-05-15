@@ -55,6 +55,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [self loadDumpsData];
+    [self loadContainersData];
 }
 
 - (void)makePageViewController
@@ -227,5 +228,52 @@
     }
 }
 
+- (void)loadContainersData
+{
+    NSCharacterSet *commaSet;
+    commaSet = [NSCharacterSet characterSetWithCharactersInString:@","];
+    
+    NSError *error;
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Container" ofType:@"txt"];
+    NSString *dataFile = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding  error:&error];
+    
+    
+    NSArray *dataFileLines = [dataFile componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    
+    for (int i = 0; i <= dataFileLines.count - 1; i++) {
+        Container *container = (Container *)[NSEntityDescription insertNewObjectForEntityForName:@"Container" inManagedObjectContext:self.context];
+        
+        NSArray *fields = [dataFileLines[i] componentsSeparatedByCharactersInSet:commaSet];
+        NSString *address;
+        NSString *latitudeMaker;
+        NSString *longitudeMaker;
+        
+        NSNumber *latitude;
+        NSNumber *longitude;
+        
+        if (fields.count == 4) {
+            address = [NSString stringWithFormat:@"%@, %@", fields[0], fields[1]];
+            latitudeMaker = [NSString stringWithFormat:@"%@", fields[2]];
+            longitudeMaker = [NSString stringWithFormat:@"%@",fields[3]];
+            
+            latitude = [NSNumber numberWithDouble:[latitudeMaker doubleValue]];
+            longitude = [NSNumber numberWithDouble:[longitudeMaker doubleValue]];
+        } else {
+            address = [NSString stringWithFormat:@"%@", fields[0]];
+            latitudeMaker = [NSString stringWithFormat:@"%@", fields[1]];
+            longitudeMaker = [NSString stringWithFormat:@"%@",fields[2]];
+            
+            latitude = [NSNumber numberWithDouble:[latitudeMaker doubleValue]];
+            longitude = [NSNumber numberWithDouble:[longitudeMaker doubleValue]];
+        }
+        
+        container.address = address;
+        container.latitude = latitude;
+        container.longitude = longitude;
+        
+        [self.context save:&error];
+    }
+}
 
 @end
