@@ -349,7 +349,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="273" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vsq-sK-FXN">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Buzz-Trash-icon" translatesAutoresizingMaskIntoConstraints="NO" id="vsq-sK-FXN">
                                                     <rect key="frame" x="20" y="25" width="47" height="47"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
