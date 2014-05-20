@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LPOAppDelegate.h"
+#import "LPODumpManager.h"
 #import "Dump.h"
 #import "LPOIntroViewController.h"
 #import "LPOLocationManager.h"
