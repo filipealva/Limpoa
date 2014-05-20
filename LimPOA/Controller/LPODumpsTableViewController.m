@@ -31,6 +31,8 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstRun"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
+    
+    [self orderByDistance];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -80,9 +82,9 @@
     
     Dump *dump = (Dump *)[self.dumps objectAtIndex:indexPath.row];
     
-    NSLog(@"%@", dump);
-    NSLog(@"%@", [[LPOLocationManager sharedManager] lastLocation]);
-    
+//    NSLog(@"%@", dump);
+//    NSLog(@"%@", [[LPOLocationManager sharedManager] lastLocation]);
+//    
     UILabel *dumpAddress = (UILabel *)[cell viewWithTag:100];
     UILabel *distanceToDump = (UILabel *)[cell viewWithTag:200];
     
@@ -126,6 +128,23 @@
 		[self setLocationManager:[LPOLocationManager sharedManager]];
 		[self.locationManager addDelegate:self];
 	}
+}
+
+- (void)orderByDistance
+{
+    CLLocation *current = [[CLLocation alloc] initWithLatitude:self.currentLocation.latitude longitude:self.currentLocation.longitude];
+    
+    for (int i = 0; i < self.dumps.count; i++) {
+        CLLocation *dumpLocation = [[CLLocation alloc]
+                                    initWithLatitude:[[(Dump *)[self.dumps objectAtIndex:i] latitude] doubleValue]
+                                    longitude:[[(Dump *)[self.dumps objectAtIndex:i] longitude] doubleValue]];
+        [(Dump *)[self.dumps objectAtIndex:i] setDistance:[NSNumber numberWithDouble:[current distanceFromLocation:dumpLocation]]];
+        NSLog(@"%8f", [current distanceFromLocation:dumpLocation]);
+    }
+    
+    NSSortDescriptor *distanceDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
+    NSArray *sortDescriptors = @[distanceDescriptor];
+    //self.dumps sortedArrayUsingDescriptors:sortDescriptors]);
 }
 
 #pragma mark - LPOLocationManagerDelegate
