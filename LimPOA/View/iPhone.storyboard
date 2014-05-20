@@ -31,7 +31,7 @@
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="x7f-Ai-cXW" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ABP-Ut-7p0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="741" y="-2410"/>
+            <point key="canvasLocation" x="978" y="-2322"/>
         </scene>
         <!--Page Content View Controller-->
         <scene sceneID="0JR-cc-yB7">
@@ -66,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thK-pz-vyq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="-1698"/>
+            <point key="canvasLocation" x="370" y="-1610"/>
         </scene>
         <!--Start View Controller-->
         <scene sceneID="RCC-Ih-8LB">
@@ -107,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozr-Ve-WM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="741" y="-1698"/>
+            <point key="canvasLocation" x="978" y="-1610"/>
         </scene>
         <!--Intro View Controller-->
         <scene sceneID="gFA-Qi-fpF">
@@ -134,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Apk-ZU-fxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="125" y="-2394"/>
+            <point key="canvasLocation" x="362" y="-2306"/>
         </scene>
         <!--Table View Controller - Lixeira-->
         <scene sceneID="hCe-e2-3d0">
@@ -257,7 +257,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Lixeiras" id="Sto-RQ-kzK">
-                        <barButtonItem key="rightBarButtonItem" title="Mapa" id="iZ0-8i-Une"/>
+                        <barButtonItem key="rightBarButtonItem" image="Map" id="iZ0-8i-Une"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60X-aB-qWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -325,7 +325,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Container" id="0MT-iw-RtP">
-                        <barButtonItem key="rightBarButtonItem" title="Mapa" id="KCu-04-SZs"/>
+                        <barButtonItem key="rightBarButtonItem" image="Map" id="KCu-04-SZs"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rfu-Ao-1CG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -471,7 +471,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Oléo de cozinha" id="k3x-Jm-BcW">
-                        <barButtonItem key="rightBarButtonItem" title="Mapa" id="dFK-71-DOT"/>
+                        <barButtonItem key="rightBarButtonItem" image="Map" id="dFK-71-DOT"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeZ-NG-w7I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -526,7 +526,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Destino Certo" id="CNP-nf-cia">
-                        <barButtonItem key="rightBarButtonItem" title="Mapa" id="w0f-5b-WXU"/>
+                        <barButtonItem key="rightBarButtonItem" image="Map" id="w0f-5b-WXU"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yND-43-Bvw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -735,6 +735,7 @@
     </scenes>
     <resources>
         <image name="Buzz-Trash-icon" width="32" height="32"/>
+        <image name="Map" width="28" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

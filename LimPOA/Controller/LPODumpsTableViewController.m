@@ -7,6 +7,7 @@
 //
 
 #import "LPODumpsTableViewController.h"
+#import "LPOLocationManager.h"
 
 @interface LPODumpsTableViewController ()
 
@@ -21,6 +22,7 @@
 {
     [super viewDidLoad];
     
+    NSLog(@"%@", [[LPOLocationManager sharedManager] lastLocation]);
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"firstRun"]) {
         LPOIntroViewController *intro = [self.storyboard instantiateViewControllerWithIdentifier:@"IntroViewController"];
@@ -64,6 +66,7 @@
     Dump *dump = (Dump *)[self.dumps objectAtIndex:indexPath.row];
     
     NSLog(@"%@", dump);
+    NSLog(@"%@", [[LPOLocationManager sharedManager] lastLocation]);
     
     UILabel *dumpAddress = (UILabel *)[cell viewWithTag:100];
     UILabel *distanceToDump = (UILabel *)[cell viewWithTag:200];
