@@ -7,12 +7,13 @@
 //
 
 #import "LPODumpsTableViewController.h"
-#import "LPOLocationManager.h"
 
 @interface LPODumpsTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *dumps;
 @property (nonatomic, strong) NSManagedObjectContext *context;
+@property (nonatomic, assign) CLLocationCoordinate2D currentLocation;
+@property (nonatomic, strong) LPOLocationManager *locationManager;
 
 @end
 
@@ -22,14 +23,18 @@
 {
     [super viewDidLoad];
     
-    NSLog(@"%@", [[LPOLocationManager sharedManager] lastLocation]);
-    
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"firstRun"]) {
         LPOIntroViewController *intro = [self.storyboard instantiateViewControllerWithIdentifier:@"IntroViewController"];
         [self.navigationController presentViewController:intro animated:NO completion:nil];
+        [self startLocationManager];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstRun"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"%8f %8f", self.currentLocation.latitude, self.currentLocation.longitude);
 }
 
 #pragma mark - Lazy Instantiation
@@ -101,6 +106,27 @@
     }
     
     return dumpsArray;
+}
+
+#pragma mark - Actions
+
+- (void)startLocationManager
+{
+	if (!self.locationManager) {
+		[self setLocationManager:[LPOLocationManager sharedManager]];
+		[self.locationManager addDelegate:self];
+	}
+}
+
+#pragma mark - CRDLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocation:(CLLocation *)location
+{
+    CLLocation *current = [[CLLocation alloc] initWithLatitude:self.currentLocation.latitude longitude:self.currentLocation.longitude];
+    
+    if ([current distanceFromLocation:location] > 100) {
+        self.currentLocation = location.coordinate;
+    }
 }
 
 @end
