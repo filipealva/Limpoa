@@ -34,7 +34,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    NSLog(@"%8f %8f", self.currentLocation.latitude, self.currentLocation.longitude);
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
 }
 
 #pragma mark - Lazy Instantiation
