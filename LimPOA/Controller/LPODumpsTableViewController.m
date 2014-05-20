@@ -23,10 +23,11 @@
 {
     [super viewDidLoad];
     
+    [self startLocationManager];
+    
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"firstRun"]) {
         LPOIntroViewController *intro = [self.storyboard instantiateViewControllerWithIdentifier:@"IntroViewController"];
         [self.navigationController presentViewController:intro animated:NO completion:nil];
-        [self startLocationManager];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstRun"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
@@ -55,6 +56,15 @@
     }
     
     return _dumps;
+}
+
+- (CLLocationCoordinate2D) currentLocation
+{
+    if (_currentLocation.latitude == 0 && _currentLocation.longitude == 0) {
+        _currentLocation = [[self.locationManager lastLocation] coordinate];
+    }
+    
+    return _currentLocation;
 }
 
 #pragma mark - UITableViewDataSource
@@ -118,7 +128,7 @@
 	}
 }
 
-#pragma mark - CRDLocationManagerDelegate
+#pragma mark - LPOLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocation:(CLLocation *)location
 {
