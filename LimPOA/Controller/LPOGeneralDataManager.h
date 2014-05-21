@@ -19,4 +19,6 @@
 
 @interface LPOGeneralDataManager : NSObject
 
+- (NSMutableArray *)selectAllDataOrderedByDistanceFrom:(CLLocationCoordinate2D)currentLocation;
+
 @end
