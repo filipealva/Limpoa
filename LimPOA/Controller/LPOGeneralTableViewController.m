@@ -44,18 +44,51 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EcoPointCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GeneralCell" forIndexPath:indexPath];
     
-    EcoPoint *ecoPoint = (EcoPoint *)[self.allData objectAtIndex:indexPath.row];
+    UILabel *name = (UILabel *)[cell viewWithTag:100];
+    UILabel *address = (UILabel *)[cell viewWithTag:200];
+    UILabel *distanceTo = (UILabel *)[cell viewWithTag:300];
+    UIImageView *typeImage = (UIImageView *)[cell viewWithTag:400];
     
-    UILabel *ecoPointName = (UILabel *)[cell viewWithTag:100];
-    UILabel *ecoPointAddress = (UILabel *)[cell viewWithTag:200];
-    UILabel *distanceToEcoPoint = (UILabel *)[cell viewWithTag:300];
-    
-    ecoPointName.text = [@"EcoPonto " stringByAppendingString:ecoPoint.neighborhood];
-    ecoPointAddress.text = ecoPoint.address;
-    distanceToEcoPoint.text = [NSString stringWithFormat:@"%.2fkm", [ecoPoint.distance doubleValue]];
-    
+    if ([[self.allData objectAtIndex:indexPath.row] isKindOfClass:[Dump class]]) {
+        Dump *dump = (Dump *)[self.allData objectAtIndex:indexPath.row];
+        
+        name.text = @"Lixeira";
+        address.text = dump.address;
+        distanceTo.text = [NSString stringWithFormat:@"%.2fkm", [dump.distance doubleValue]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            typeImage.image = [UIImage imageNamed:@"Buzz-Trash-icon"];
+        });
+    } else if ([[self.allData objectAtIndex:indexPath.row] isKindOfClass:[Container class]]) {
+        Container *container = (Container *)[self.allData objectAtIndex:indexPath.row];
+        
+        name.text = @"Container";
+        address.text = container.address;
+        distanceTo.text = [NSString stringWithFormat:@"%.2fkm", [container.distance doubleValue]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            typeImage.image = [UIImage imageNamed:@"Buzz-Trash-icon"];
+        });
+    } else if ([[self.allData objectAtIndex:indexPath.row] isKindOfClass:[CookingOil class]]) {
+        CookingOil *cookingOil = (CookingOil *)[self.allData objectAtIndex:indexPath.row];
+        
+        name.text = cookingOil.name;
+        address.text = cookingOil.address;
+        distanceTo.text = [NSString stringWithFormat:@"%.2fkm", [cookingOil.distance doubleValue]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            typeImage.image = [UIImage imageNamed:@"Buzz-Trash-icon"];
+        });
+    } else if ([[self.allData objectAtIndex:indexPath.row] isKindOfClass:[EcoPoint class]]) {
+        EcoPoint *ecoPoint = (EcoPoint *)[self.allData objectAtIndex:indexPath.row];
+        
+        name.text = [@"EcoPonto " stringByAppendingString:ecoPoint.neighborhood];
+        address.text = ecoPoint.address;
+        distanceTo.text = [NSString stringWithFormat:@"%.2fkm", [ecoPoint.distance doubleValue]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            typeImage.image = [UIImage imageNamed:@"Buzz-Trash-icon"];
+        });
+    }
+
     return cell;
 }
 

@@ -13,6 +13,7 @@
 #import "CookingOil.h"
 #import "Dump.h"
 #import "Container.h"
+#import "BaseEntity.h"
 
 @interface LPOGeneralTableViewController : UITableViewController <LPOLocationManagerDelegate>
 
