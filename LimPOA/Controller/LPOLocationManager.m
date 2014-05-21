@@ -36,7 +36,7 @@
 {
     if (self = [super init]) {
         [self.manager setDelegate:self];
-		[self.manager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+		[self.manager setDesiredAccuracy:kCLLocationAccuracyBest];
 		[self.manager setDistanceFilter:10];
 		[self.manager startUpdatingLocation];
     }

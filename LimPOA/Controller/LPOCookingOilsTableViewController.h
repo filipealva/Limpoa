@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "LPOAppDelegate.h"
 #import "CookingOil.h"
+#import "LPOLocationManager.h"
+#import "LPOCookingOilManager.h"
 
-@interface LPOCookingOilsTableViewController : UITableViewController
+@interface LPOCookingOilsTableViewController : UITableViewController <LPOLocationManagerDelegate>
 
 @end
