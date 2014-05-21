@@ -1,8 +1,8 @@
 //
-//  Dump.h
+//  BaseEntity.h
 //  LimPOA
 //
-//  Created by Filipe Alvarenga on 5/14/14.
+//  Created by Filipe Alvarenga on 5/21/14.
 //  Copyright (c) 2014 Filipe Alvarenga. All rights reserved.
 //
 
@@ -10,11 +10,11 @@
 #import <CoreData/CoreData.h>
 
 
-@interface Dump : NSManagedObject
+@interface BaseEntity : NSManagedObject
 
 @property (nonatomic, retain) NSString * address;
-@property (nonatomic, retain) NSNumber * distance;
 @property (nonatomic, retain) NSNumber * latitude;
 @property (nonatomic, retain) NSNumber * longitude;
+@property (nonatomic, retain) NSNumber * distance;
 
 @end
