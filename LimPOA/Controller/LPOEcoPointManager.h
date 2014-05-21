@@ -1,5 +1,5 @@
 //
-//  LPOCookingOilManager.h
+//  LPOEcoPointManager.h
 //  LimPOA
 //
 //  Created by Filipe Alvarenga on 5/21/14.
@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import "LPOAppDelegate.h"
-#import "CookingOil.h"
+#import "EcoPoint.h"
 
-@interface LPOCookingOilManager : NSObject
+@interface LPOEcoPointManager : NSObject
 
 - (NSMutableArray *)selectAllCookingOilsOrderedByDistanceFromLocation:(CLLocationCoordinate2D)currentLocation;
 

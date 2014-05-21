@@ -45,6 +45,7 @@
 		037156D41925429C0030BEA2 /* LPOEcoPointsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156D31925429C0030BEA2 /* LPOEcoPointsTableViewController.m */; };
 		037156F2192BE6310030BEA2 /* LPODumpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156F1192BE6310030BEA2 /* LPODumpManager.m */; };
 		037156F5192D2A0E0030BEA2 /* LPOCookingOilManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156F4192D2A0E0030BEA2 /* LPOCookingOilManager.m */; };
+		037156F8192D2E280030BEA2 /* LPOEcoPointManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156F7192D2E280030BEA2 /* LPOEcoPointManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,8 @@
 		037156F1192BE6310030BEA2 /* LPODumpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPODumpManager.m; path = Controller/LPODumpManager.m; sourceTree = "<group>"; };
 		037156F3192D2A0E0030BEA2 /* LPOCookingOilManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOCookingOilManager.h; path = Controller/LPOCookingOilManager.h; sourceTree = "<group>"; };
 		037156F4192D2A0E0030BEA2 /* LPOCookingOilManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOCookingOilManager.m; path = Controller/LPOCookingOilManager.m; sourceTree = "<group>"; };
+		037156F6192D2E280030BEA2 /* LPOEcoPointManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOEcoPointManager.h; path = Controller/LPOEcoPointManager.h; sourceTree = "<group>"; };
+		037156F7192D2E280030BEA2 /* LPOEcoPointManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOEcoPointManager.m; path = Controller/LPOEcoPointManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 				03429F96192CC9DD00999B27 /* LPOContainerManager.m */,
 				037156F3192D2A0E0030BEA2 /* LPOCookingOilManager.h */,
 				037156F4192D2A0E0030BEA2 /* LPOCookingOilManager.m */,
+				037156F6192D2E280030BEA2 /* LPOEcoPointManager.h */,
+				037156F7192D2E280030BEA2 /* LPOEcoPointManager.m */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -407,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				037156CE19243ED20030BEA2 /* Dump.m in Sources */,
+				037156F8192D2E280030BEA2 /* LPOEcoPointManager.m in Sources */,
 				037156D1192440FE0030BEA2 /* LPOContainersTableViewController.m in Sources */,
 				031091111923B08700EACF4D /* LPOIntroViewController.m in Sources */,
 				037156791922E9F50030BEA2 /* LPOAppDelegate.m in Sources */,
