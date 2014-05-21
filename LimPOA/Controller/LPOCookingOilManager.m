@@ -29,6 +29,35 @@
 
 #pragma mark - CoreData
 
+- (NSMutableArray *)selectAllCookingOilsWithLocation:(CLLocationCoordinate2D)currentLocation
+{
+    NSError *error;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"CookingOil" inManagedObjectContext:self.context];
+	[fetchRequest setEntity:entity];
+    
+    NSMutableArray *cookingOils = [[NSMutableArray alloc] init];
+    CLLocation *current = [[CLLocation alloc] initWithLatitude:currentLocation.latitude longitude:currentLocation.longitude];
+    
+	NSArray *fetchedObjects = [self.context executeFetchRequest:fetchRequest error:&error];
+    
+    for (CookingOil *cookingOil in fetchedObjects) {
+        CLLocation *cookingOilLocation = [[CLLocation alloc]
+                                         initWithLatitude:[cookingOil.latitude doubleValue] longitude:[cookingOil.longitude doubleValue]];
+        cookingOil.distance = [NSNumber numberWithDouble:[current distanceFromLocation:cookingOilLocation] / 1000];
+        
+        [cookingOils addObject:cookingOil];
+    }
+    
+    if (!error) {
+        NSLog(@"OK!");
+    } else {
+        NSLog(@"ERRO!");
+    }
+    
+    return cookingOils;
+}
+
 - (NSMutableArray *)selectAllCookingOilsOrderedByDistanceFromLocation:(CLLocationCoordinate2D)currentLocation
 {
     NSError *error;
@@ -50,12 +79,12 @@
         NSLog(@"ERRO!");
     }
     
-    return [self orderContainers:cookingOilArray byDistanceFromLocation:currentLocation];
+    return [self orderCookingOils:cookingOilArray byDistanceFromLocation:currentLocation];
 }
 
 #pragma mark - Ordering Helpers
 
-- (NSMutableArray *)orderContainers:(NSMutableArray *)cookingOils byDistanceFromLocation:(CLLocationCoordinate2D)currentLocation
+- (NSMutableArray *)orderCookingOils:(NSMutableArray *)cookingOils byDistanceFromLocation:(CLLocationCoordinate2D)currentLocation
 {
     CLLocation *current = [[CLLocation alloc] initWithLatitude:currentLocation.latitude longitude:currentLocation.longitude];
     

@@ -13,6 +13,7 @@
 
 @interface LPOContainerManager : NSObject
 
+- (NSMutableArray *)selectAllContainersWithLocation:(CLLocationCoordinate2D)currentLocation;
 - (NSMutableArray *)selectAllContainersOrderedByDistanceFromLocation:(CLLocationCoordinate2D)currentLocation;
 
 @end

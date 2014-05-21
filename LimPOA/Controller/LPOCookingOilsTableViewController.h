@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LPOAppDelegate.h"
 #import "CookingOil.h"
 #import "LPOLocationManager.h"
 #import "LPOCookingOilManager.h"

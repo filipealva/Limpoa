@@ -1,38 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Container" representedClassName="Container" syncable="YES">
+    <entity name="BaseEntity" representedClassName="BaseEntity" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
-    <entity name="CookingOil" representedClassName="CookingOil" syncable="YES">
-        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    <entity name="Container" representedClassName="Container" parentEntity="BaseEntity" syncable="YES"/>
+    <entity name="CookingOil" representedClassName="CookingOil" parentEntity="BaseEntity" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="openHours" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="telephone" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Dump" representedClassName="Dump" syncable="YES">
-        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-    </entity>
-    <entity name="EcoPoint" representedClassName="EcoPoint" syncable="YES">
-        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    <entity name="Dump" representedClassName="Dump" parentEntity="BaseEntity" syncable="YES"/>
+    <entity name="EcoPoint" representedClassName="EcoPoint" parentEntity="BaseEntity" syncable="YES">
         <attribute name="neighborhood" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="telephone" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Container" positionX="0" positionY="72" width="128" height="105"/>
-        <element name="CookingOil" positionX="27" positionY="108" width="128" height="150"/>
-        <element name="Dump" positionX="-36" positionY="9" width="128" height="105"/>
-        <element name="EcoPoint" positionX="54" positionY="117" width="128" height="135"/>
+        <element name="Container" positionX="-209" positionY="297" width="128" height="43"/>
+        <element name="CookingOil" positionX="-18" positionY="228" width="128" height="88"/>
+        <element name="Dump" positionX="-189" positionY="126" width="128" height="43"/>
+        <element name="EcoPoint" positionX="189" positionY="162" width="128" height="73"/>
+        <element name="BaseEntity" positionX="-9" positionY="243" width="128" height="103"/>
     </elements>
 </model>

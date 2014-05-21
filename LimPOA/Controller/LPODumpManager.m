@@ -29,6 +29,35 @@
 
 #pragma mark - CoreData
 
+- (NSMutableArray *)selectAllDumpsWithLocation:(CLLocationCoordinate2D)currentLocation
+{
+    NSError *error;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Dump" inManagedObjectContext:self.context];
+	[fetchRequest setEntity:entity];
+    
+    NSMutableArray *dumpsArray = [[NSMutableArray alloc] init];
+    CLLocation *current = [[CLLocation alloc] initWithLatitude:currentLocation.latitude longitude:currentLocation.longitude];
+    
+	NSArray *fetchedObjects = [self.context executeFetchRequest:fetchRequest error:&error];
+    
+    for (Dump *dump in fetchedObjects) {
+        CLLocation *dumpLocation = [[CLLocation alloc]
+                                    initWithLatitude:[dump.latitude doubleValue] longitude:[dump.longitude doubleValue]];
+        dump.distance = [NSNumber numberWithDouble:[current distanceFromLocation:dumpLocation] / 1000];
+        
+        [dumpsArray addObject:dump];
+    }
+    
+    if (!error) {
+        NSLog(@"OK!");
+    } else {
+        NSLog(@"ERRO!");
+    }
+    
+    return dumpsArray;
+}
+
 - (NSMutableArray *)selectAllDumpsOrderedByDistanceFromLocation:(CLLocationCoordinate2D)currentLocation
 {
     NSError *error;

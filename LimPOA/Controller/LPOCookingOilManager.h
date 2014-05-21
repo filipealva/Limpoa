@@ -13,6 +13,7 @@
 
 @interface LPOCookingOilManager : NSObject
 
+- (NSMutableArray *)selectAllCookingOilsWithLocation:(CLLocationCoordinate2D)currentLocation;
 - (NSMutableArray *)selectAllCookingOilsOrderedByDistanceFromLocation:(CLLocationCoordinate2D)currentLocation;
 
 @end

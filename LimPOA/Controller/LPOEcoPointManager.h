@@ -13,6 +13,7 @@
 
 @interface LPOEcoPointManager : NSObject
 
-- (NSMutableArray *)selectAllCookingOilsOrderedByDistanceFromLocation:(CLLocationCoordinate2D)currentLocation;
+- (NSMutableArray *)selectAllEcoPointsWithLocation:(CLLocationCoordinate2D)currentLocation;
+- (NSMutableArray *)selectAllEcoPointsOrderedByDistanceFromLocation:(CLLocationCoordinate2D)currentLocation;
 
 @end

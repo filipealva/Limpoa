@@ -17,13 +17,14 @@
                     <connections>
                         <segue destination="xOJ-fw-Vhk" kind="relationship" relationship="viewControllers" id="OfV-UY-JLp"/>
                         <segue destination="8Lo-P9-bpY" kind="relationship" relationship="viewControllers" id="hPf-gt-eet"/>
+                        <segue destination="5ft-5X-Gmk" kind="relationship" relationship="viewControllers" id="MXV-aC-Adm"/>
                         <segue destination="0c8-Do-lhz" kind="relationship" relationship="viewControllers" id="zYP-m6-2JH"/>
                         <segue destination="16z-4r-EOf" kind="relationship" relationship="viewControllers" id="o5Y-RR-wPA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQi-qO-j28" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1216" y="657"/>
+            <point key="canvasLocation" x="-1336" y="1242"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="X3g-i5-9lI">
@@ -31,7 +32,7 @@
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="x7f-Ai-cXW" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ABP-Ut-7p0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="978" y="-2322"/>
+            <point key="canvasLocation" x="978" y="-2082"/>
         </scene>
         <!--Page Content View Controller-->
         <scene sceneID="0JR-cc-yB7">
@@ -66,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thK-pz-vyq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="370" y="-1610"/>
+            <point key="canvasLocation" x="370" y="-1370"/>
         </scene>
         <!--Start View Controller-->
         <scene sceneID="RCC-Ih-8LB">
@@ -107,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozr-Ve-WM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="978" y="-1610"/>
+            <point key="canvasLocation" x="978" y="-1370"/>
         </scene>
         <!--Intro View Controller-->
         <scene sceneID="gFA-Qi-fpF">
@@ -134,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Apk-ZU-fxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="362" y="-2306"/>
+            <point key="canvasLocation" x="362" y="-2066"/>
         </scene>
         <!--Table View Controller - Lixeira-->
         <scene sceneID="hCe-e2-3d0">
@@ -713,6 +714,69 @@
             </objects>
             <point key="canvasLocation" x="32" y="1242"/>
         </scene>
+        <!--General Table View Controller - Pontos de Coleta-->
+        <scene sceneID="CKO-33-cwy">
+            <objects>
+                <tableViewController id="g6U-uo-cdP" customClass="LPOGeneralTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="Mze-wB-8lA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GeneralCell" rowHeight="100" id="Zgp-Vd-3xx">
+                                <rect key="frame" x="0.0" y="86" width="320" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zgp-Vd-3xx" id="bF5-s5-M2Z">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="99"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="400" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mkR-cc-v57">
+                                            <rect key="frame" x="20" y="12" width="47" height="47"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lixeira" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAN-Eq-d9M">
+                                            <rect key="frame" x="75" y="25" width="212" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="200" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Av. Assis Brasil, 1240" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hy-bw-ybu">
+                                            <rect key="frame" x="20" y="67" width="179" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="13"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="13.33km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNI-3Y-u3u">
+                                            <rect key="frame" x="220" y="67" width="67" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="13"/>
+                                            <color key="textColor" red="0.03529411927" green="0.72156864399999998" blue="0.53333336109999996" alpha="1" colorSpace="deviceRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="g6U-uo-cdP" id="2pc-ff-u1x"/>
+                            <outlet property="delegate" destination="g6U-uo-cdP" id="56d-X2-k8R"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Pontos de Coleta" id="m8w-u0-fCc">
+                        <barButtonItem key="rightBarButtonItem" image="Map" id="z94-fS-biX"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Gdf-iT-P2L" kind="push" identifier="showEcoPointDetail" id="i4m-rg-kgc"/>
+                        <segue destination="eZG-QG-ab0" kind="push" identifier="showCookingOilDetail" id="4bq-vO-KAa"/>
+                        <segue destination="7JL-9G-h3V" kind="push" identifier="showContainerDetail" id="HUf-QB-4lS"/>
+                        <segue destination="1RG-AV-KnT" kind="push" identifier="showDumpDetail" id="yQh-Cy-gdX"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kZW-Ol-SL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="670" y="2897"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="NRC-dK-5xL">
             <objects>
@@ -732,6 +796,25 @@
             </objects>
             <point key="canvasLocation" x="32" y="2076"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Whx-Bq-XAW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5ft-5X-Gmk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="Buzz-Trash-icon" id="Yl9-d2-y16"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pmn-go-rkW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="g6U-uo-cdP" kind="relationship" relationship="rootViewController" id="5qH-Od-JCJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zeN-d6-dF8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32" y="2897"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Buzz-Trash-icon" width="32" height="32"/>
@@ -742,4 +825,10 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="HUf-QB-4lS"/>
+        <segue reference="4bq-vO-KAa"/>
+        <segue reference="i4m-rg-kgc"/>
+        <segue reference="yQh-Cy-gdX"/>
+    </inferredMetricsTieBreakers>
 </document>

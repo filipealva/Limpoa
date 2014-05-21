@@ -13,6 +13,7 @@
 
 @interface LPODumpManager : NSObject
 
+- (NSMutableArray *)selectAllDumpsWithLocation:(CLLocationCoordinate2D)currentLocation;
 - (NSMutableArray *)selectAllDumpsOrderedByDistanceFromLocation:(CLLocationCoordinate2D)currentLocation;
 
 @end
