@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "LPOAppDelegate.h"
 #import "EcoPoint.h"
+#import "LPOLocationManager.h"
+#import "LPOEcoPointManager.h"
 
-@interface LPOEcoPointsTableViewController : UITableViewController
+@interface LPOEcoPointsTableViewController : UITableViewController <LPOLocationManagerDelegate>
 
 @end

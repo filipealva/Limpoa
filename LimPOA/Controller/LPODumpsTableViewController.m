@@ -11,7 +11,8 @@
 @interface LPODumpsTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *dumps;
-@property (nonatomic, strong) NSManagedObjectContext *context;
+@property (nonatomic, assign) CLLocationCoordinate2D currentLocation;
+@property (nonatomic, strong) LPOLocationManager *locationManager;
 
 @end
 
@@ -21,6 +22,7 @@
 {
     [super viewDidLoad];
     
+    [self startLocationManager];
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"firstRun"]) {
         LPOIntroViewController *intro = [self.storyboard instantiateViewControllerWithIdentifier:@"IntroViewController"];
@@ -30,24 +32,29 @@
     }
 }
 
-#pragma mark - Lazy Instantiation
-
-- (NSManagedObjectContext *)context
+-(void)viewWillAppear:(BOOL)animated
 {
-    if (!_context) {
-        _context = [(LPOAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-    }
-    
-    return _context;
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
 }
+
+#pragma mark - Lazy Instantiation
 
 - (NSMutableArray *)dumps
 {
     if (!_dumps) {
-        _dumps = [[NSMutableArray alloc] initWithArray:[self updateDumpList]];
+        _dumps = [[NSMutableArray alloc] initWithArray:[[LPODumpManager new] selectAllDumpsOrderedByDistanceFromLocation:self.currentLocation]];
     }
     
     return _dumps;
+}
+
+- (CLLocationCoordinate2D) currentLocation
+{
+    if (_currentLocation.latitude == 0 && _currentLocation.longitude == 0) {
+        _currentLocation = [[self.locationManager lastLocation] coordinate];
+    }
+    
+    return _currentLocation;
 }
 
 #pragma mark - UITableViewDataSource
@@ -62,42 +69,35 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DumpCell" forIndexPath:indexPath];
     
     Dump *dump = (Dump *)[self.dumps objectAtIndex:indexPath.row];
-    
-    NSLog(@"%@", dump);
-    
+
     UILabel *dumpAddress = (UILabel *)[cell viewWithTag:100];
     UILabel *distanceToDump = (UILabel *)[cell viewWithTag:200];
     
     dumpAddress.text = dump.address;
-    distanceToDump.text = @"0.2km";
+    distanceToDump.text = [NSString stringWithFormat:@"%.2fkm", [dump.distance floatValue]];
     
     return cell;
 }
 
-#pragma mark - CoreData
+#pragma mark - Actions
 
-- (NSMutableArray *)updateDumpList
+- (void)startLocationManager
 {
-    NSError *error;
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Dump" inManagedObjectContext:self.context];
-	[fetchRequest setEntity:entity];
+	if (!self.locationManager) {
+		[self setLocationManager:[LPOLocationManager sharedManager]];
+		[self.locationManager addDelegate:self];
+	}
+}
+
+#pragma mark - LPOLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocation:(CLLocation *)location
+{
+    CLLocation *current = [[CLLocation alloc] initWithLatitude:self.currentLocation.latitude longitude:self.currentLocation.longitude];
     
-    NSMutableArray *dumpsArray = [[NSMutableArray alloc] init];
-    
-	NSArray *fetchedObjects = [self.context executeFetchRequest:fetchRequest error:&error];
-    
-    for (Dump *dump in fetchedObjects) {
-        [dumpsArray addObject:dump];
+    if ([current distanceFromLocation:location] > 100) {
+        self.currentLocation = location.coordinate;
     }
-    
-    if (!error) {
-        NSLog(@"OK!");
-    } else {
-        NSLog(@"ERRO!");
-    }
-    
-    return dumpsArray;
 }
 
 @end

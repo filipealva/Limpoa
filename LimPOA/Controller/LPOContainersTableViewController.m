@@ -11,7 +11,8 @@
 @interface LPOContainersTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *containers;
-@property (nonatomic, strong) NSManagedObjectContext *context;
+@property (nonatomic, assign) CLLocationCoordinate2D currentLocation;
+@property (nonatomic, strong) LPOLocationManager *locationManager;
 
 @end
 
@@ -20,26 +21,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self startLocationManager];
 }
 
 #pragma mark - Lazy Instantiation
 
-- (NSManagedObjectContext *)context
-{
-    if (!_context) {
-        _context = [(LPOAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-    }
-    
-    return _context;
-}
-
 - (NSMutableArray *)containers
 {
     if (!_containers) {
-        _containers = [[NSMutableArray alloc] initWithArray:[self updateDumpList]];
+        _containers = [[NSMutableArray alloc] initWithArray:[[LPOContainerManager new] selectAllContainersOrderedByDistanceFromLocation:self.currentLocation]];
     }
     
     return _containers;
+}
+
+- (CLLocationCoordinate2D) currentLocation
+{
+    if (_currentLocation.latitude == 0 && _currentLocation.longitude == 0) {
+        _currentLocation = [[self.locationManager lastLocation] coordinate];
+    }
+    
+    return _currentLocation;
 }
 
 #pragma mark - UITableViewDataSource
@@ -55,41 +57,34 @@
     
     Container *container = (Container *)[self.containers objectAtIndex:indexPath.row];
     
-    NSLog(@"%@", container);
-    
     UILabel *containerAddress = (UILabel *)[cell viewWithTag:100];
     UILabel *distanceToContainer = (UILabel *)[cell viewWithTag:200];
     
     containerAddress.text = container.address;
-    distanceToContainer.text = @"0.2km";
+    distanceToContainer.text = [NSString stringWithFormat:@"%.2fkm", [container.distance doubleValue]];
     
     return cell;
 }
 
-#pragma mark - CoreData
+#pragma mark - Actions
 
-- (NSMutableArray *)updateDumpList
+- (void)startLocationManager
 {
-    NSError *error;
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Container" inManagedObjectContext:self.context];
-	[fetchRequest setEntity:entity];
+	if (!self.locationManager) {
+		[self setLocationManager:[LPOLocationManager sharedManager]];
+		[self.locationManager addDelegate:self];
+	}
+}
+
+#pragma mark - LPOLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocation:(CLLocation *)location
+{
+    CLLocation *current = [[CLLocation alloc] initWithLatitude:self.currentLocation.latitude longitude:self.currentLocation.longitude];
     
-    NSMutableArray *containersArray = [[NSMutableArray alloc] init];
-    
-	NSArray *fetchedObjects = [self.context executeFetchRequest:fetchRequest error:&error];
-    
-    for (Container *container in fetchedObjects) {
-        [containersArray addObject:container];
+    if ([current distanceFromLocation:location] > 100) {
+        self.currentLocation = location.coordinate;
     }
-    
-    if (!error) {
-        NSLog(@"OK!");
-    } else {
-        NSLog(@"ERRO!");
-    }
-    
-    return containersArray;
 }
 
 @end

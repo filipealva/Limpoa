@@ -11,6 +11,8 @@
 		031091141923B09900EACF4D /* LPOPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031091131923B09900EACF4D /* LPOPageContentViewController.m */; };
 		03429F8D1924FC4000999B27 /* EcoPoint.txt in Resources */ = {isa = PBXBuildFile; fileRef = 03429F8C1924FC4000999B27 /* EcoPoint.txt */; };
 		03429F90192503F300999B27 /* LPOCookingOilsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03429F8F192503F300999B27 /* LPOCookingOilsTableViewController.m */; };
+		03429F94192B774D00999B27 /* LPOLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 03429F93192B774D00999B27 /* LPOLocationManager.m */; };
+		03429F97192CC9DD00999B27 /* LPOContainerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 03429F96192CC9DD00999B27 /* LPOContainerManager.m */; };
 		037156671922E9F50030BEA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037156661922E9F50030BEA2 /* Foundation.framework */; };
 		037156691922E9F50030BEA2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037156681922E9F50030BEA2 /* CoreGraphics.framework */; };
 		0371566B1922E9F50030BEA2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0371566A1922E9F50030BEA2 /* UIKit.framework */; };
@@ -41,6 +43,9 @@
 		037156CE19243ED20030BEA2 /* Dump.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156CD19243ED20030BEA2 /* Dump.m */; };
 		037156D1192440FE0030BEA2 /* LPOContainersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156D0192440FE0030BEA2 /* LPOContainersTableViewController.m */; };
 		037156D41925429C0030BEA2 /* LPOEcoPointsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156D31925429C0030BEA2 /* LPOEcoPointsTableViewController.m */; };
+		037156F2192BE6310030BEA2 /* LPODumpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156F1192BE6310030BEA2 /* LPODumpManager.m */; };
+		037156F5192D2A0E0030BEA2 /* LPOCookingOilManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156F4192D2A0E0030BEA2 /* LPOCookingOilManager.m */; };
+		037156F8192D2E280030BEA2 /* LPOEcoPointManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156F7192D2E280030BEA2 /* LPOEcoPointManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +66,10 @@
 		03429F8C1924FC4000999B27 /* EcoPoint.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EcoPoint.txt; sourceTree = "<group>"; };
 		03429F8E192503F300999B27 /* LPOCookingOilsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOCookingOilsTableViewController.h; path = Controller/LPOCookingOilsTableViewController.h; sourceTree = "<group>"; };
 		03429F8F192503F300999B27 /* LPOCookingOilsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOCookingOilsTableViewController.m; path = Controller/LPOCookingOilsTableViewController.m; sourceTree = "<group>"; };
+		03429F92192B774D00999B27 /* LPOLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOLocationManager.h; path = Controller/LPOLocationManager.h; sourceTree = "<group>"; };
+		03429F93192B774D00999B27 /* LPOLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOLocationManager.m; path = Controller/LPOLocationManager.m; sourceTree = "<group>"; };
+		03429F95192CC9DD00999B27 /* LPOContainerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOContainerManager.h; path = Controller/LPOContainerManager.h; sourceTree = "<group>"; };
+		03429F96192CC9DD00999B27 /* LPOContainerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOContainerManager.m; path = Controller/LPOContainerManager.m; sourceTree = "<group>"; };
 		037156631922E9F50030BEA2 /* LimPOA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LimPOA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		037156661922E9F50030BEA2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		037156681922E9F50030BEA2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -104,6 +113,12 @@
 		037156D0192440FE0030BEA2 /* LPOContainersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOContainersTableViewController.m; path = Controller/LPOContainersTableViewController.m; sourceTree = "<group>"; };
 		037156D21925429C0030BEA2 /* LPOEcoPointsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOEcoPointsTableViewController.h; path = Controller/LPOEcoPointsTableViewController.h; sourceTree = "<group>"; };
 		037156D31925429C0030BEA2 /* LPOEcoPointsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOEcoPointsTableViewController.m; path = Controller/LPOEcoPointsTableViewController.m; sourceTree = "<group>"; };
+		037156F0192BE6310030BEA2 /* LPODumpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPODumpManager.h; path = Controller/LPODumpManager.h; sourceTree = "<group>"; };
+		037156F1192BE6310030BEA2 /* LPODumpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPODumpManager.m; path = Controller/LPODumpManager.m; sourceTree = "<group>"; };
+		037156F3192D2A0E0030BEA2 /* LPOCookingOilManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOCookingOilManager.h; path = Controller/LPOCookingOilManager.h; sourceTree = "<group>"; };
+		037156F4192D2A0E0030BEA2 /* LPOCookingOilManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOCookingOilManager.m; path = Controller/LPOCookingOilManager.m; sourceTree = "<group>"; };
+		037156F6192D2E280030BEA2 /* LPOEcoPointManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOEcoPointManager.h; path = Controller/LPOEcoPointManager.h; sourceTree = "<group>"; };
+		037156F7192D2E280030BEA2 /* LPOEcoPointManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOEcoPointManager.m; path = Controller/LPOEcoPointManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +159,23 @@
 				037156B51923D7780030BEA2 /* LPOStartViewController.m */,
 			);
 			name = Intro;
+			sourceTree = "<group>";
+		};
+		03429F91192B772500999B27 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				03429F92192B774D00999B27 /* LPOLocationManager.h */,
+				03429F93192B774D00999B27 /* LPOLocationManager.m */,
+				037156F0192BE6310030BEA2 /* LPODumpManager.h */,
+				037156F1192BE6310030BEA2 /* LPODumpManager.m */,
+				03429F95192CC9DD00999B27 /* LPOContainerManager.h */,
+				03429F96192CC9DD00999B27 /* LPOContainerManager.m */,
+				037156F3192D2A0E0030BEA2 /* LPOCookingOilManager.h */,
+				037156F4192D2A0E0030BEA2 /* LPOCookingOilManager.m */,
+				037156F6192D2E280030BEA2 /* LPOEcoPointManager.h */,
+				037156F7192D2E280030BEA2 /* LPOEcoPointManager.m */,
+			);
+			name = Manager;
 			sourceTree = "<group>";
 		};
 		0371565A1922E9F50030BEA2 = {
@@ -238,6 +270,7 @@
 		0371569C1922EB200030BEA2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				03429F91192B772500999B27 /* Manager */,
 				0310910E1923B06900EACF4D /* Intro */,
 				037156AA1922F2420030BEA2 /* LPODumpsTableViewController.h */,
 				037156AB1922F2420030BEA2 /* LPODumpsTableViewController.m */,
@@ -379,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				037156CE19243ED20030BEA2 /* Dump.m in Sources */,
+				037156F8192D2E280030BEA2 /* LPOEcoPointManager.m in Sources */,
 				037156D1192440FE0030BEA2 /* LPOContainersTableViewController.m in Sources */,
 				031091111923B08700EACF4D /* LPOIntroViewController.m in Sources */,
 				037156791922E9F50030BEA2 /* LPOAppDelegate.m in Sources */,
@@ -388,10 +422,14 @@
 				037156C819243ED20030BEA2 /* CookingOil.m in Sources */,
 				037156751922E9F50030BEA2 /* main.m in Sources */,
 				037156CB19243ED20030BEA2 /* EcoPoint.m in Sources */,
+				03429F97192CC9DD00999B27 /* LPOContainerManager.m in Sources */,
 				03429F90192503F300999B27 /* LPOCookingOilsTableViewController.m in Sources */,
+				03429F94192B774D00999B27 /* LPOLocationManager.m in Sources */,
 				037156C519243ED20030BEA2 /* Container.m in Sources */,
 				037156AF1922F7E10030BEA2 /* UIColor+ColorWithHex.m in Sources */,
 				037156AC1922F2420030BEA2 /* LPODumpsTableViewController.m in Sources */,
+				037156F2192BE6310030BEA2 /* LPODumpManager.m in Sources */,
+				037156F5192D2A0E0030BEA2 /* LPOCookingOilManager.m in Sources */,
 				037156B31922FB120030BEA2 /* LPOCustomTabViewController.m in Sources */,
 				031091141923B09900EACF4D /* LPOPageContentViewController.m in Sources */,
 			);

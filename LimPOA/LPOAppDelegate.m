@@ -80,6 +80,7 @@
 	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     
     [[UITabBar appearance] setTintColor:baseColor];
+    [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
     
 	// Changes appearance of TextFields/TextViews
 	[[UITextField appearance] setTintColor:baseColor];

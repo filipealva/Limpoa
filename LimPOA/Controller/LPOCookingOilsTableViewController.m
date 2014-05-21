@@ -11,7 +11,8 @@
 @interface LPOCookingOilsTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *cookingOilPoints;
-@property (nonatomic, strong) NSManagedObjectContext *context;
+@property (nonatomic, assign) CLLocationCoordinate2D currentLocation;
+@property (nonatomic, strong) LPOLocationManager *locationManager;
 
 @end
 
@@ -20,23 +21,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self startLocationManager];
 }
 
 #pragma mark - Lazy Instantiation
 
-- (NSManagedObjectContext *)context
-{
-    if (!_context) {
-        _context = [(LPOAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-    }
-    
-    return _context;
-}
-
 - (NSMutableArray *)cookingOilPoints
 {
     if (!_cookingOilPoints) {
-        _cookingOilPoints = [[NSMutableArray alloc] initWithArray:[self selectAllCookingOilPoints]];
+        _cookingOilPoints = [[NSMutableArray alloc] initWithArray:[[LPOCookingOilManager new] selectAllCookingOilsOrderedByDistanceFromLocation:self.currentLocation]];
     }
     
     return _cookingOilPoints;
@@ -55,44 +48,36 @@
     
     CookingOil *cookingOil = (CookingOil *)[self.cookingOilPoints objectAtIndex:indexPath.row];
     
-    NSLog(@"%@", cookingOil);
-    
     UILabel *cookingOilName = (UILabel *)[cell viewWithTag:100];
     UILabel *cookingOilAddress = (UILabel *)[cell viewWithTag:200];
     UILabel *distanceToCoookingOilPoint = (UILabel *)[cell viewWithTag:300];
     
     cookingOilName.text = cookingOil.name;
     cookingOilAddress.text = cookingOil.address;
-    distanceToCoookingOilPoint.text = @"0.2km";
+    distanceToCoookingOilPoint.text = [NSString stringWithFormat:@"%.2fkm", [cookingOil.distance doubleValue]];
     
     return cell;
 }
 
-#pragma mark - CoreData
+#pragma mark - Actions
 
-- (NSMutableArray *)selectAllCookingOilPoints
+- (void)startLocationManager
 {
-    NSError *error;
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"CookingOil" inManagedObjectContext:self.context];
-	[fetchRequest setEntity:entity];
-    
-    NSMutableArray *cookingOilPointsArray = [[NSMutableArray alloc] init];
-    
-	NSArray *fetchedObjects = [self.context executeFetchRequest:fetchRequest error:&error];
-    
-    for (CookingOil *cookingOil in fetchedObjects) {
-        [cookingOilPointsArray addObject:cookingOil];
-    }
-    
-    if (!error) {
-        NSLog(@"OK!");
-    } else {
-        NSLog(@"ERRO!");
-    }
-    
-    return cookingOilPointsArray;
+	if (!self.locationManager) {
+		[self setLocationManager:[LPOLocationManager sharedManager]];
+		[self.locationManager addDelegate:self];
+	}
 }
 
+#pragma mark - LPOLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocation:(CLLocation *)location
+{
+    CLLocation *current = [[CLLocation alloc] initWithLatitude:self.currentLocation.latitude longitude:self.currentLocation.longitude];
+    
+    if ([current distanceFromLocation:location] > 100) {
+        self.currentLocation = location.coordinate;
+    }
+}
 
 @end
