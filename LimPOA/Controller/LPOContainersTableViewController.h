@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Container.h"
 #import "LPOAppDelegate.h"
+#import "LPOLocationManager.h"
+#import "LPOContainerManager.h"
 
-@interface LPOContainersTableViewController : UITableViewController
+@interface LPOContainersTableViewController : UITableViewController <LPOLocationManagerDelegate>
 
 @end
