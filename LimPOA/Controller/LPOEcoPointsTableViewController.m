@@ -29,7 +29,7 @@
 - (NSMutableArray *)ecoPoints
 {
     if (!_ecoPoints) {
-        _ecoPoints = [[NSMutableArray alloc] initWithArray:[[LPOEcoPointManager new] selectAllCookingOilsOrderedByDistanceFromLocation:self.currentLocation]];
+        _ecoPoints = [[NSMutableArray alloc] initWithArray:[[LPOEcoPointManager new] selectAllEcoPointsOrderedByDistanceFromLocation:self.currentLocation]];
     }
     
     return _ecoPoints;

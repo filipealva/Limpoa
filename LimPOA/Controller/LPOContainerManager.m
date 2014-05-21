@@ -29,6 +29,35 @@
 
 #pragma mark - CoreData
 
+- (NSMutableArray *)selectAllContainersWithLocation:(CLLocationCoordinate2D)currentLocation
+{
+    NSError *error;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Container" inManagedObjectContext:self.context];
+	[fetchRequest setEntity:entity];
+    
+    NSMutableArray *containersArray = [[NSMutableArray alloc] init];
+    CLLocation *current = [[CLLocation alloc] initWithLatitude:currentLocation.latitude longitude:currentLocation.longitude];
+    
+	NSArray *fetchedObjects = [self.context executeFetchRequest:fetchRequest error:&error];
+    
+    for (Container *container in fetchedObjects) {
+        CLLocation *containerLocation = [[CLLocation alloc]
+                                    initWithLatitude:[container.latitude doubleValue] longitude:[container.longitude doubleValue]];
+        container.distance = [NSNumber numberWithDouble:[current distanceFromLocation:containerLocation] / 1000];
+        
+        [containersArray addObject:container];
+    }
+    
+    if (!error) {
+        NSLog(@"OK!");
+    } else {
+        NSLog(@"ERRO!");
+    }
+    
+    return containersArray;
+}
+
 - (NSMutableArray *)selectAllContainersOrderedByDistanceFromLocation:(CLLocationCoordinate2D)currentLocation
 {
     NSError *error;

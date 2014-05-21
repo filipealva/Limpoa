@@ -29,7 +29,36 @@
 
 #pragma mark - CoreData
 
-- (NSMutableArray *)selectAllCookingOilsOrderedByDistanceFromLocation:(CLLocationCoordinate2D)currentLocation
+- (NSMutableArray *)selectAllEcoPointsWithLocation:(CLLocationCoordinate2D)currentLocation
+{
+    NSError *error;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"EcoPoint" inManagedObjectContext:self.context];
+	[fetchRequest setEntity:entity];
+    
+    NSMutableArray *ecoPointsArray = [[NSMutableArray alloc] init];
+    CLLocation *current = [[CLLocation alloc] initWithLatitude:currentLocation.latitude longitude:currentLocation.longitude];
+    
+	NSArray *fetchedObjects = [self.context executeFetchRequest:fetchRequest error:&error];
+    
+    for (EcoPoint *ecoPoint in fetchedObjects) {
+        CLLocation *ecoPointLocation = [[CLLocation alloc]
+                                          initWithLatitude:[ecoPoint.latitude doubleValue] longitude:[ecoPoint.longitude doubleValue]];
+        ecoPoint.distance = [NSNumber numberWithDouble:[current distanceFromLocation:ecoPointLocation] / 1000];
+        
+        [ecoPointsArray addObject:ecoPoint];
+    }
+    
+    if (!error) {
+        NSLog(@"OK!");
+    } else {
+        NSLog(@"ERRO!");
+    }
+    
+    return ecoPointsArray;
+}
+
+- (NSMutableArray *)selectAllEcoPointsOrderedByDistanceFromLocation:(CLLocationCoordinate2D)currentLocation
 {
     NSError *error;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -50,12 +79,12 @@
         NSLog(@"ERRO!");
     }
     
-    return [self orderContainers:ecoPointArray byDistanceFromLocation:currentLocation];
+    return [self orderEcoPoints:ecoPointArray byDistanceFromLocation:currentLocation];
 }
 
 #pragma mark - Ordering Helpers
 
-- (NSMutableArray *)orderContainers:(NSMutableArray *)ecoPoints byDistanceFromLocation:(CLLocationCoordinate2D)currentLocation
+- (NSMutableArray *)orderEcoPoints:(NSMutableArray *)ecoPoints byDistanceFromLocation:(CLLocationCoordinate2D)currentLocation
 {
     CLLocation *current = [[CLLocation alloc] initWithLatitude:currentLocation.latitude longitude:currentLocation.longitude];
     
