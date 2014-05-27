@@ -49,6 +49,8 @@
 		0371572C192D4DE10030BEA2 /* CookingOil.m in Sources */ = {isa = PBXBuildFile; fileRef = 03715725192D4DE10030BEA2 /* CookingOil.m */; };
 		0371572D192D4DE10030BEA2 /* Dump.m in Sources */ = {isa = PBXBuildFile; fileRef = 03715727192D4DE10030BEA2 /* Dump.m */; };
 		0371572E192D4DE10030BEA2 /* EcoPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 03715729192D4DE10030BEA2 /* EcoPoint.m */; };
+		037157371933CEB10030BEA2 /* LPODumpMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037157361933CEB10030BEA2 /* LPODumpMapViewController.m */; };
+		0371573A1933D9590030BEA2 /* LPODumpPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 037157391933D9590030BEA2 /* LPODumpPointAnnotation.m */; };
 		D1AF71C04412485B8D8FD93F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A96F51C8B94440DA203FB00 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +132,10 @@
 		03715728192D4DE10030BEA2 /* EcoPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EcoPoint.h; path = Model/EcoPoint.h; sourceTree = "<group>"; };
 		03715729192D4DE10030BEA2 /* EcoPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EcoPoint.m; path = Model/EcoPoint.m; sourceTree = "<group>"; };
 		03715734192EC24E0030BEA2 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		037157351933CEB10030BEA2 /* LPODumpMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPODumpMapViewController.h; path = Controller/LPODumpMapViewController.h; sourceTree = "<group>"; };
+		037157361933CEB10030BEA2 /* LPODumpMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPODumpMapViewController.m; path = Controller/LPODumpMapViewController.m; sourceTree = "<group>"; };
+		037157381933D9590030BEA2 /* LPODumpPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPODumpPointAnnotation.h; path = Controller/LPODumpPointAnnotation.h; sourceTree = "<group>"; };
+		037157391933D9590030BEA2 /* LPODumpPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPODumpPointAnnotation.m; path = Controller/LPODumpPointAnnotation.m; sourceTree = "<group>"; };
 		1A96F51C8B94440DA203FB00 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BD1F8BCB7F4DF2B1FD638B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -333,6 +339,10 @@
 			children = (
 				037156AA1922F2420030BEA2 /* LPODumpsTableViewController.h */,
 				037156AB1922F2420030BEA2 /* LPODumpsTableViewController.m */,
+				037157351933CEB10030BEA2 /* LPODumpMapViewController.h */,
+				037157361933CEB10030BEA2 /* LPODumpMapViewController.m */,
+				037157381933D9590030BEA2 /* LPODumpPointAnnotation.h */,
+				037157391933D9590030BEA2 /* LPODumpPointAnnotation.m */,
 			);
 			name = Dump;
 			sourceTree = "<group>";
@@ -514,6 +524,7 @@
 				031091111923B08700EACF4D /* LPOIntroViewController.m in Sources */,
 				037156791922E9F50030BEA2 /* LPOAppDelegate.m in Sources */,
 				0371567C1922E9F50030BEA2 /* LimPOA.xcdatamodeld in Sources */,
+				037157371933CEB10030BEA2 /* LPODumpMapViewController.m in Sources */,
 				037156D41925429C0030BEA2 /* LPOEcoPointsTableViewController.m in Sources */,
 				0371572E192D4DE10030BEA2 /* EcoPoint.m in Sources */,
 				0371572B192D4DE10030BEA2 /* Container.m in Sources */,
@@ -533,6 +544,7 @@
 				037156F5192D2A0E0030BEA2 /* LPOCookingOilManager.m in Sources */,
 				037156B31922FB120030BEA2 /* LPOCustomTabViewController.m in Sources */,
 				031091141923B09900EACF4D /* LPOPageContentViewController.m in Sources */,
+				0371573A1933D9590030BEA2 /* LPODumpPointAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

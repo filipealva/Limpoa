@@ -260,7 +260,7 @@
                     <navigationItem key="navigationItem" title="Lixeiras" id="Sto-RQ-kzK">
                         <barButtonItem key="rightBarButtonItem" image="Map" id="iZ0-8i-Une">
                             <connections>
-                                <segue destination="wrz-6N-Jf8" kind="push" id="cUH-FS-ayi"/>
+                                <segue destination="wrz-6N-Jf8" kind="push" identifier="showDumpsMap" id="cUH-FS-ayi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -753,10 +753,10 @@
             </objects>
             <point key="canvasLocation" x="628" y="3162"/>
         </scene>
-        <!--View Controller - Mapa-->
+        <!--Dump Map View Controller - Mapa-->
         <scene sceneID="Zbo-3s-Zv9">
             <objects>
-                <viewController id="wrz-6N-Jf8" sceneMemberID="viewController">
+                <viewController id="wrz-6N-Jf8" customClass="LPODumpMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wNZ-ma-Exx"/>
                         <viewControllerLayoutGuide type="bottom" id="QG9-8Q-rr3"/>
@@ -773,6 +773,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Mapa" id="vRh-Sv-sIB"/>
+                    <connections>
+                        <outlet property="mapView" destination="tRr-td-uWt" id="njQ-ei-LMw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KXF-ne-Vyf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

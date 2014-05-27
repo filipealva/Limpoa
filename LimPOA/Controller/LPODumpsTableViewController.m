@@ -7,6 +7,7 @@
 //
 
 #import "LPODumpsTableViewController.h"
+#import "LPODumpMapViewController.h"
 
 @interface LPODumpsTableViewController ()
 
@@ -98,6 +99,16 @@
     if ([current distanceFromLocation:location] > 100) {
         self.currentLocation = location.coordinate;
     }
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showDumpsMap"]) {
+		LPODumpMapViewController *mapViewController = segue.destinationViewController;
+        mapViewController.dumps = [NSMutableArray arrayWithArray:[self.dumps subarrayWithRange:NSMakeRange(0, 5)]];
+	}
 }
 
 @end
