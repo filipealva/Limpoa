@@ -143,12 +143,12 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-//	CRDPlacePointAnnotation *annotation = (CRDPlacePointAnnotation *)view.annotation;
+	LPODumpPointAnnotation *annotation = (LPODumpPointAnnotation *)view.annotation;
     
     if (self.dumps.count == 1) {
 //        [self buttonRoutePressed];
     } else {
-//        [self performSegueWithIdentifier:@"Place" sender:annotation];
+        [self performSegueWithIdentifier:@"showDumpDetail" sender:annotation];
     }
 }
 
