@@ -6,6 +6,12 @@
 // project.
 
 
+// CMMapLauncher
+#define COCOAPODS_POD_AVAILABLE_CMMapLauncher
+#define COCOAPODS_VERSION_MAJOR_CMMapLauncher 1
+#define COCOAPODS_VERSION_MINOR_CMMapLauncher 1
+#define COCOAPODS_VERSION_PATCH_CMMapLauncher 0
+
 // pop
 #define COCOAPODS_POD_AVAILABLE_pop
 #define COCOAPODS_VERSION_MAJOR_pop 1

@@ -1,10 +1,13 @@
 PODS:
+  - CMMapLauncher (1.1.0)
   - pop (1.0.5)
 
 DEPENDENCIES:
+  - CMMapLauncher
   - pop
 
 SPEC CHECKSUMS:
+  CMMapLauncher: 4b95899cc39bd14dfa3e8525470e34cb8edbb028
   pop: 75fa2b33934200a8a68abb449ac1726fcf7e43b9
 
 COCOAPODS: 0.32.1

@@ -53,7 +53,7 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsU-Dn-t7u">
                                 <rect key="frame" x="18" y="438" width="284" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -210,6 +210,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Lixeira" id="CXC-cF-AIZ"/>
+                    <connections>
+                        <segue destination="wrz-6N-Jf8" kind="push" identifier="showDumpOnMap" id="agw-ET-lrj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kbg-m6-Lvh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -916,7 +919,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="tEk-0d-t9B"/>
+        <segue reference="34T-uS-BmF"/>
+        <segue reference="agw-ET-lrj"/>
         <segue reference="HUf-QB-4lS"/>
         <segue reference="4bq-vO-KAa"/>
         <segue reference="i4m-rg-kgc"/>
