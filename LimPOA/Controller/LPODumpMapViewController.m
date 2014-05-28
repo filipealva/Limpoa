@@ -23,6 +23,8 @@
     [super viewDidLoad];
     [self updateAnnotationsWithPlaces:self.dumps];
     [self zoomToFitMapWithAnnotations:self.mapView.annotations];
+    
+    [self.mapView setShowsUserLocation:YES];
 }
 
 
@@ -36,9 +38,7 @@
 			if ([[[annotationObject.dump objectID] URIRepresentation] isEqual:[[dump objectID] URIRepresentation]]) {
 				return annotationObject;
 			}
-		} else {
-            return annotation;
-        }
+		}
 	}
 	
 	return nil;
@@ -99,12 +99,7 @@
         bottomRightCoord.longitude = fmax(bottomRightCoord.longitude, annotation.coordinate.longitude);
         bottomRightCoord.latitude = fmin(bottomRightCoord.latitude, annotation.coordinate.latitude);
     }
-    
-    topLeftCoord.longitude = fmin(topLeftCoord.longitude, self.mapView.userLocation.coordinate.longitude);
-    topLeftCoord.latitude = fmax(topLeftCoord.latitude, self.mapView.userLocation.coordinate.latitude);
-    bottomRightCoord.longitude = fmax(bottomRightCoord.longitude, self.mapView.userLocation.coordinate.longitude);
-    bottomRightCoord.latitude = fmin(bottomRightCoord.latitude, self.mapView.userLocation.coordinate.latitude);
-    
+
     MKCoordinateRegion region;
     region.center.latitude = topLeftCoord.latitude - (topLeftCoord.latitude - bottomRightCoord.latitude) * 0.5;
     region.center.longitude = topLeftCoord.longitude + (bottomRightCoord.longitude - topLeftCoord.longitude) * 0.5;
