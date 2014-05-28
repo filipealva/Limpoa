@@ -137,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="-808" y="-2050"/>
         </scene>
-        <!--Table View Controller - Lixeira-->
+        <!--Dump Detail Table View Controller - Lixeira-->
         <scene sceneID="hCe-e2-3d0">
             <objects>
-                <tableViewController id="1RG-AV-KnT" sceneMemberID="viewController">
+                <tableViewController id="1RG-AV-KnT" customClass="LPODumpDetailTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="J3p-J1-oWu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -778,6 +778,7 @@
                     <navigationItem key="navigationItem" title="Mapa" id="vRh-Sv-sIB"/>
                     <connections>
                         <outlet property="mapView" destination="tRr-td-uWt" id="njQ-ei-LMw"/>
+                        <segue destination="1RG-AV-KnT" kind="push" identifier="showDumpDetail" id="tEk-0d-t9B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KXF-ne-Vyf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -915,9 +916,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="tEk-0d-t9B"/>
+        <segue reference="HUf-QB-4lS"/>
         <segue reference="4bq-vO-KAa"/>
         <segue reference="i4m-rg-kgc"/>
-        <segue reference="HUf-QB-4lS"/>
-        <segue reference="34T-uS-BmF"/>
     </inferredMetricsTieBreakers>
 </document>

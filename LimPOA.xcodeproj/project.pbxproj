@@ -51,6 +51,8 @@
 		0371572E192D4DE10030BEA2 /* EcoPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 03715729192D4DE10030BEA2 /* EcoPoint.m */; };
 		037157371933CEB10030BEA2 /* LPODumpMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037157361933CEB10030BEA2 /* LPODumpMapViewController.m */; };
 		0371573A1933D9590030BEA2 /* LPODumpPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 037157391933D9590030BEA2 /* LPODumpPointAnnotation.m */; };
+		0371573F19364F020030BEA2 /* LPODumpDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0371573E19364F020030BEA2 /* LPODumpDetailTableViewController.m */; };
+		037157431936551A0030BEA2 /* CMMapLauncher.m in Sources */ = {isa = PBXBuildFile; fileRef = 037157411936551A0030BEA2 /* CMMapLauncher.m */; };
 		D1AF71C04412485B8D8FD93F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A96F51C8B94440DA203FB00 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +138,10 @@
 		037157361933CEB10030BEA2 /* LPODumpMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPODumpMapViewController.m; path = Controller/LPODumpMapViewController.m; sourceTree = "<group>"; };
 		037157381933D9590030BEA2 /* LPODumpPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPODumpPointAnnotation.h; path = Controller/LPODumpPointAnnotation.h; sourceTree = "<group>"; };
 		037157391933D9590030BEA2 /* LPODumpPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPODumpPointAnnotation.m; path = Controller/LPODumpPointAnnotation.m; sourceTree = "<group>"; };
+		0371573D19364F020030BEA2 /* LPODumpDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPODumpDetailTableViewController.h; path = Controller/LPODumpDetailTableViewController.h; sourceTree = "<group>"; };
+		0371573E19364F020030BEA2 /* LPODumpDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPODumpDetailTableViewController.m; path = Controller/LPODumpDetailTableViewController.m; sourceTree = "<group>"; };
+		037157411936551A0030BEA2 /* CMMapLauncher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMMapLauncher.m; sourceTree = "<group>"; };
+		037157421936551A0030BEA2 /* CMMapLauncher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMapLauncher.h; sourceTree = "<group>"; };
 		1A96F51C8B94440DA203FB00 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BD1F8BCB7F4DF2B1FD638B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,6 +243,7 @@
 		0371566E1922E9F50030BEA2 /* LimPOA */ = {
 			isa = PBXGroup;
 			children = (
+				037157401936550D0030BEA2 /* External */,
 				0371569D1922EB280030BEA2 /* Model */,
 				0371569C1922EB200030BEA2 /* Controller */,
 				037156B11922FB120030BEA2 /* LPOCustomTabViewController.h */,
@@ -343,6 +350,8 @@
 				037157361933CEB10030BEA2 /* LPODumpMapViewController.m */,
 				037157381933D9590030BEA2 /* LPODumpPointAnnotation.h */,
 				037157391933D9590030BEA2 /* LPODumpPointAnnotation.m */,
+				0371573D19364F020030BEA2 /* LPODumpDetailTableViewController.h */,
+				0371573E19364F020030BEA2 /* LPODumpDetailTableViewController.m */,
 			);
 			name = Dump;
 			sourceTree = "<group>";
@@ -381,6 +390,15 @@
 				037156FD192D3AAF0030BEA2 /* LPOGeneralTableViewController.m */,
 			);
 			name = General;
+			sourceTree = "<group>";
+		};
+		037157401936550D0030BEA2 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				037157411936551A0030BEA2 /* CMMapLauncher.m */,
+				037157421936551A0030BEA2 /* CMMapLauncher.h */,
+			);
+			name = External;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -519,6 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0371573F19364F020030BEA2 /* LPODumpDetailTableViewController.m in Sources */,
 				037156F8192D2E280030BEA2 /* LPOEcoPointManager.m in Sources */,
 				037156D1192440FE0030BEA2 /* LPOContainersTableViewController.m in Sources */,
 				031091111923B08700EACF4D /* LPOIntroViewController.m in Sources */,
@@ -536,6 +555,7 @@
 				037156AF1922F7E10030BEA2 /* UIColor+ColorWithHex.m in Sources */,
 				0371572A192D4DE10030BEA2 /* BaseEntity.m in Sources */,
 				037156FB192D32850030BEA2 /* LPOGeneralDataManager.m in Sources */,
+				037157431936551A0030BEA2 /* CMMapLauncher.m in Sources */,
 				037156AC1922F2420030BEA2 /* LPODumpsTableViewController.m in Sources */,
 				0371572C192D4DE10030BEA2 /* CookingOil.m in Sources */,
 				037156FE192D3AAF0030BEA2 /* LPOGeneralTableViewController.m in Sources */,

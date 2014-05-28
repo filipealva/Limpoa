@@ -9,14 +9,24 @@
 #import "LPODumpMapViewController.h"
 #import "LPODumpPointAnnotation.h"
 #import "Dump.h"
+#import "CMMapLauncher.h"
 
-@interface LPODumpMapViewController ()
+static const NSString *WAZE_TITLE = @"Waze";
+static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
+
+@interface LPODumpMapViewController () <UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
 
 @implementation LPODumpMapViewController
+{
+	BOOL isGoogleMapsInstalled;
+	BOOL isWazeInstalled;
+	NSMutableArray *routeButtons;
+}
+
 
 - (void)viewDidLoad
 {
@@ -146,11 +156,71 @@
 	LPODumpPointAnnotation *annotation = (LPODumpPointAnnotation *)view.annotation;
     
     if (self.dumps.count == 1) {
-//        [self buttonRoutePressed];
+        [self buttonRoutePressed];
     } else {
         [self performSegueWithIdentifier:@"showDumpDetail" sender:annotation];
     }
 }
 
+#pragma mark - Actions
+
+- (void)traceRouteWithApp:(CMMapApp)app
+{
+	Dump *dump = [self.dumps objectAtIndex:0];
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([dump.latitude doubleValue], [dump.longitude doubleValue]);
+    CMMapPoint *point = [CMMapPoint mapPointWithName:@"Lixeira" coordinate:coordinate];
+	[CMMapLauncher launchMapApp:app forDirectionsTo:point];
+}
+
+- (void)buttonRoutePressed
+{
+	routeButtons = [[NSMutableArray alloc] init];
+	
+	isGoogleMapsInstalled = [CMMapLauncher isMapAppInstalled:CMMapAppGoogleMaps];
+	isWazeInstalled = [CMMapLauncher isMapAppInstalled:CMMapAppWaze];
+	
+	if (!isGoogleMapsInstalled && !isWazeInstalled) {
+		[self traceRouteWithApp:CMMapAppAppleMaps];
+	} else {
+		[routeButtons addObject:NSLocalizedString(@"Maps", nil)];
+		
+		if (isGoogleMapsInstalled) {
+			[routeButtons addObject:GOOGLE_MAPS_TITLE];
+		}
+		
+		if (isWazeInstalled) {
+			[routeButtons addObject:WAZE_TITLE];
+		}
+        
+		UIActionSheet *actionSheet = [[UIActionSheet alloc] init];
+		actionSheet.title = NSLocalizedString(@"place_title_route_options", nil);
+		actionSheet.delegate = self;
+		
+		for (NSString *title in routeButtons) {
+			[actionSheet addButtonWithTitle:title];
+		}
+		
+		actionSheet.cancelButtonIndex = [actionSheet addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
+		
+		[actionSheet showInView:self.view];
+	}
+}
+
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	if (buttonIndex != routeButtons.count) {
+		NSString *buttonTitle = routeButtons[buttonIndex];
+        
+		if (buttonIndex == 0) {
+			[self traceRouteWithApp:CMMapAppAppleMaps];
+		} else if ([buttonTitle isEqualToString:[NSString stringWithFormat:@"%@", GOOGLE_MAPS_TITLE]]) {
+			[self traceRouteWithApp:CMMapAppGoogleMaps];
+		} else {
+			[self traceRouteWithApp:CMMapAppWaze];
+		}
+	}
+}
 
 @end
