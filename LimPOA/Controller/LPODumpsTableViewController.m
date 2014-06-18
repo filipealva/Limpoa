@@ -8,6 +8,7 @@
 
 #import "LPODumpsTableViewController.h"
 #import "LPODumpMapViewController.h"
+#import "LPODumpDetailTableViewController.h"
 
 @interface LPODumpsTableViewController ()
 
@@ -107,7 +108,15 @@
 {
     if ([segue.identifier isEqualToString:@"showDumpsMap"]) {
 		LPODumpMapViewController *mapViewController = segue.destinationViewController;
-        mapViewController.dumps = [NSMutableArray arrayWithArray:[self.dumps subarrayWithRange:NSMakeRange(0, 9)]];
+        mapViewController.dumps = [NSMutableArray arrayWithArray:[self.dumps subarrayWithRange:NSMakeRange(0, 1)]];
+	}
+    
+    if ([segue.identifier isEqualToString:@"showDetails"]) {
+		LPODumpDetailTableViewController *mapViewController = segue.destinationViewController;
+        
+        Dump *dump = [self.dumps objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        
+        mapViewController.dumps = [NSArray arrayWithObject:dump];
 	}
 }
 
