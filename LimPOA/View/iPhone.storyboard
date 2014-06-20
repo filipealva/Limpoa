@@ -17,7 +17,6 @@
                     <connections>
                         <segue destination="xOJ-fw-Vhk" kind="relationship" relationship="viewControllers" id="OfV-UY-JLp"/>
                         <segue destination="8Lo-P9-bpY" kind="relationship" relationship="viewControllers" id="hPf-gt-eet"/>
-                        <segue destination="5ft-5X-Gmk" kind="relationship" relationship="viewControllers" id="MXV-aC-Adm"/>
                         <segue destination="0c8-Do-lhz" kind="relationship" relationship="viewControllers" id="zYP-m6-2JH"/>
                         <segue destination="16z-4r-EOf" kind="relationship" relationship="viewControllers" id="o5Y-RR-wPA"/>
                     </connections>
@@ -286,11 +285,11 @@
             </objects>
             <point key="canvasLocation" x="-170" y="-401"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Lixeira-->
         <scene sceneID="FnY-on-uzb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xOJ-fw-Vhk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Buzz-Trash-icon" id="KEd-OP-WOH"/>
+                    <tabBarItem key="tabBarItem" title="Lixeira" image="Dump#2" id="KEd-OP-WOH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jsr-hA-s71">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -443,11 +442,11 @@
             </objects>
             <point key="canvasLocation" x="648" y="865"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Container-->
         <scene sceneID="HCK-6f-UoO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Lo-P9-bpY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Buzz-Trash-icon" id="QF0-uP-N20"/>
+                    <tabBarItem key="tabBarItem" title="Container" image="Container#2" id="QF0-uP-N20"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="I9V-j9-bLt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -802,11 +801,11 @@
             </objects>
             <point key="canvasLocation" x="648" y="-721"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Óleo de Cozinha-->
         <scene sceneID="O5g-qT-P7C">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0c8-Do-lhz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Buzz-Trash-icon" id="RDb-46-cWD"/>
+                    <tabBarItem key="tabBarItem" title="Óleo de Cozinha" image="CookingOil#2" id="RDb-46-cWD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ck9-aG-gds">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -884,11 +883,11 @@
             </objects>
             <point key="canvasLocation" x="-170" y="5361"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - EcoPonto-->
         <scene sceneID="NRC-dK-5xL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="16z-4r-EOf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Buzz-Trash-icon" id="Q3q-6f-vAW"/>
+                    <tabBarItem key="tabBarItem" title="EcoPonto" image="EcoPoint#2" id="Q3q-6f-vAW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3nG-rt-vm1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -925,6 +924,10 @@
     </scenes>
     <resources>
         <image name="Buzz-Trash-icon" width="32" height="32"/>
+        <image name="Container#2" width="32" height="32"/>
+        <image name="CookingOil#2" width="32" height="32"/>
+        <image name="Dump#2" width="32" height="32"/>
+        <image name="EcoPoint#2" width="32" height="32"/>
         <image name="Map" width="28" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
