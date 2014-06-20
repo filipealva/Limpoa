@@ -42,7 +42,6 @@
 		037156F5192D2A0E0030BEA2 /* LPOCookingOilManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156F4192D2A0E0030BEA2 /* LPOCookingOilManager.m */; };
 		037156F8192D2E280030BEA2 /* LPOEcoPointManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156F7192D2E280030BEA2 /* LPOEcoPointManager.m */; };
 		037156FB192D32850030BEA2 /* LPOGeneralDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156FA192D32850030BEA2 /* LPOGeneralDataManager.m */; };
-		037156FE192D3AAF0030BEA2 /* LPOGeneralTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037156FD192D3AAF0030BEA2 /* LPOGeneralTableViewController.m */; };
 		0371571F192D4DD70030BEA2 /* LPOStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0371571E192D4DD70030BEA2 /* LPOStartViewController.m */; };
 		0371572A192D4DE10030BEA2 /* BaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 03715721192D4DE10030BEA2 /* BaseEntity.m */; };
 		0371572B192D4DE10030BEA2 /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 03715723192D4DE10030BEA2 /* Container.m */; };
@@ -118,8 +117,6 @@
 		037156F7192D2E280030BEA2 /* LPOEcoPointManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOEcoPointManager.m; path = Controller/LPOEcoPointManager.m; sourceTree = "<group>"; };
 		037156F9192D32850030BEA2 /* LPOGeneralDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOGeneralDataManager.h; path = Controller/LPOGeneralDataManager.h; sourceTree = "<group>"; };
 		037156FA192D32850030BEA2 /* LPOGeneralDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOGeneralDataManager.m; path = Controller/LPOGeneralDataManager.m; sourceTree = "<group>"; };
-		037156FC192D3AAF0030BEA2 /* LPOGeneralTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOGeneralTableViewController.h; path = Controller/LPOGeneralTableViewController.h; sourceTree = "<group>"; };
-		037156FD192D3AAF0030BEA2 /* LPOGeneralTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOGeneralTableViewController.m; path = Controller/LPOGeneralTableViewController.m; sourceTree = "<group>"; };
 		0371571D192D4DD70030BEA2 /* LPOStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOStartViewController.h; path = Controller/LPOStartViewController.h; sourceTree = "<group>"; };
 		0371571E192D4DD70030BEA2 /* LPOStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOStartViewController.m; path = Controller/LPOStartViewController.m; sourceTree = "<group>"; };
 		03715720192D4DE10030BEA2 /* BaseEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseEntity.h; path = Model/BaseEntity.h; sourceTree = "<group>"; };
@@ -306,7 +303,6 @@
 				03715730192D4E210030BEA2 /* Container */,
 				03715731192D4E290030BEA2 /* CookingOil */,
 				03715732192D4E350030BEA2 /* EcoPoint */,
-				03715733192D4E3F0030BEA2 /* General */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -377,15 +373,6 @@
 				037156D31925429C0030BEA2 /* LPOEcoPointsTableViewController.m */,
 			);
 			name = EcoPoint;
-			sourceTree = "<group>";
-		};
-		03715733192D4E3F0030BEA2 /* General */ = {
-			isa = PBXGroup;
-			children = (
-				037156FC192D3AAF0030BEA2 /* LPOGeneralTableViewController.h */,
-				037156FD192D3AAF0030BEA2 /* LPOGeneralTableViewController.m */,
-			);
-			name = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -544,7 +531,6 @@
 				037156FB192D32850030BEA2 /* LPOGeneralDataManager.m in Sources */,
 				037156AC1922F2420030BEA2 /* LPODumpsTableViewController.m in Sources */,
 				0371572C192D4DE10030BEA2 /* CookingOil.m in Sources */,
-				037156FE192D3AAF0030BEA2 /* LPOGeneralTableViewController.m in Sources */,
 				037156F2192BE6310030BEA2 /* LPODumpManager.m in Sources */,
 				0371571F192D4DD70030BEA2 /* LPOStartViewController.m in Sources */,
 				037156F5192D2A0E0030BEA2 /* LPOCookingOilManager.m in Sources */,
