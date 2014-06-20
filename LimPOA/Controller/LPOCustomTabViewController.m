@@ -18,10 +18,10 @@
 {
     [super viewDidLoad];
     
-    //Adjust image position to no-title item position.
-    for (UITabBarItem *item in self.tabBar.items){
-        item.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
-    }
+//    //Adjust image position to no-title item position.
+//    for (UITabBarItem *item in self.tabBar.items){
+//        item.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
+//    }
 }
 
 @end

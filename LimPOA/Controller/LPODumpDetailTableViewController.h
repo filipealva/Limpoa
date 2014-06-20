@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import "Dump.h"
 
-@interface LPODumpDetailTableViewController : UITableViewController
+@interface LPODumpDetailTableViewController : UITableViewController <MKMapViewDelegate>
+
+@property (nonatomic, strong) NSArray *dumps;
 
 @end
