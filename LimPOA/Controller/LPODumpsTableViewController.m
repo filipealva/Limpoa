@@ -108,7 +108,7 @@
 {
     if ([segue.identifier isEqualToString:@"showDumpsMap"]) {
 		LPODumpMapViewController *mapViewController = segue.destinationViewController;
-        mapViewController.dumps = [NSMutableArray arrayWithArray:[self.dumps subarrayWithRange:NSMakeRange(0, 1)]];
+        mapViewController.dumps = [NSMutableArray arrayWithArray:[self.dumps subarrayWithRange:NSMakeRange(0, 9)]];
 	}
     
     if ([segue.identifier isEqualToString:@"showDetails"]) {

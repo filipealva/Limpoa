@@ -7,6 +7,8 @@
 //
 
 #import "LPOContainersTableViewController.h"
+#import "LPOContainerMapViewController.h"
+#import "LPOContainerDetailTableViewController.h"
 
 @interface LPOContainersTableViewController ()
 
@@ -86,5 +88,25 @@
         self.currentLocation = location.coordinate;
     }
 }
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showContainersMap"]) {
+		LPOContainerMapViewController *mapViewController = segue.destinationViewController;
+        mapViewController.containers = [NSMutableArray arrayWithArray:[self.containers subarrayWithRange:NSMakeRange(0, 9)]];
+	}
+    
+    if ([segue.identifier isEqualToString:@"showDetails"]) {
+		LPOContainerDetailTableViewController *detailViewController = segue.destinationViewController;
+        
+        Container *container = [self.containers objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        
+        detailViewController.containers = [NSArray arrayWithObject:container];
+
+	}
+}
+
 
 @end
