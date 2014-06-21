@@ -54,6 +54,9 @@
 		037157371933CEB10030BEA2 /* LPODumpMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037157361933CEB10030BEA2 /* LPODumpMapViewController.m */; };
 		0371573A1933D9590030BEA2 /* LPODumpPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 037157391933D9590030BEA2 /* LPODumpPointAnnotation.m */; };
 		0371573F19364F020030BEA2 /* LPODumpDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0371573E19364F020030BEA2 /* LPODumpDetailTableViewController.m */; };
+		03D0B6A919555FE500DA2F7C /* LPOCookingOilMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D0B6A819555FE500DA2F7C /* LPOCookingOilMapViewController.m */; };
+		03D0B6AC1955603300DA2F7C /* LPOCookingOilPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D0B6AB1955603300DA2F7C /* LPOCookingOilPointAnnotation.m */; };
+		03D0B6AF1955605D00DA2F7C /* LPOCookingOilDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D0B6AE1955605D00DA2F7C /* LPOCookingOilDetailTableViewController.m */; };
 		D1AF71C04412485B8D8FD93F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A96F51C8B94440DA203FB00 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +148,12 @@
 		037157391933D9590030BEA2 /* LPODumpPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPODumpPointAnnotation.m; path = Controller/LPODumpPointAnnotation.m; sourceTree = "<group>"; };
 		0371573D19364F020030BEA2 /* LPODumpDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPODumpDetailTableViewController.h; path = Controller/LPODumpDetailTableViewController.h; sourceTree = "<group>"; };
 		0371573E19364F020030BEA2 /* LPODumpDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPODumpDetailTableViewController.m; path = Controller/LPODumpDetailTableViewController.m; sourceTree = "<group>"; };
+		03D0B6A719555FE500DA2F7C /* LPOCookingOilMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOCookingOilMapViewController.h; path = Controller/LPOCookingOilMapViewController.h; sourceTree = "<group>"; };
+		03D0B6A819555FE500DA2F7C /* LPOCookingOilMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOCookingOilMapViewController.m; path = Controller/LPOCookingOilMapViewController.m; sourceTree = "<group>"; };
+		03D0B6AA1955603300DA2F7C /* LPOCookingOilPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOCookingOilPointAnnotation.h; path = Controller/LPOCookingOilPointAnnotation.h; sourceTree = "<group>"; };
+		03D0B6AB1955603300DA2F7C /* LPOCookingOilPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOCookingOilPointAnnotation.m; path = Controller/LPOCookingOilPointAnnotation.m; sourceTree = "<group>"; };
+		03D0B6AD1955605D00DA2F7C /* LPOCookingOilDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOCookingOilDetailTableViewController.h; path = Controller/LPOCookingOilDetailTableViewController.h; sourceTree = "<group>"; };
+		03D0B6AE1955605D00DA2F7C /* LPOCookingOilDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOCookingOilDetailTableViewController.m; path = Controller/LPOCookingOilDetailTableViewController.m; sourceTree = "<group>"; };
 		1A96F51C8B94440DA203FB00 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BD1F8BCB7F4DF2B1FD638B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -377,6 +386,12 @@
 			children = (
 				03429F8E192503F300999B27 /* LPOCookingOilsTableViewController.h */,
 				03429F8F192503F300999B27 /* LPOCookingOilsTableViewController.m */,
+				03D0B6A719555FE500DA2F7C /* LPOCookingOilMapViewController.h */,
+				03D0B6A819555FE500DA2F7C /* LPOCookingOilMapViewController.m */,
+				03D0B6AA1955603300DA2F7C /* LPOCookingOilPointAnnotation.h */,
+				03D0B6AB1955603300DA2F7C /* LPOCookingOilPointAnnotation.m */,
+				03D0B6AD1955605D00DA2F7C /* LPOCookingOilDetailTableViewController.h */,
+				03D0B6AE1955605D00DA2F7C /* LPOCookingOilDetailTableViewController.m */,
 			);
 			name = CookingOil;
 			sourceTree = "<group>";
@@ -536,9 +551,11 @@
 				037157371933CEB10030BEA2 /* LPODumpMapViewController.m in Sources */,
 				037156D41925429C0030BEA2 /* LPOEcoPointsTableViewController.m in Sources */,
 				0371572E192D4DE10030BEA2 /* EcoPoint.m in Sources */,
+				03D0B6A919555FE500DA2F7C /* LPOCookingOilMapViewController.m in Sources */,
 				0371572B192D4DE10030BEA2 /* Container.m in Sources */,
 				037156751922E9F50030BEA2 /* main.m in Sources */,
 				03429F97192CC9DD00999B27 /* LPOContainerManager.m in Sources */,
+				03D0B6AC1955603300DA2F7C /* LPOCookingOilPointAnnotation.m in Sources */,
 				03429F90192503F300999B27 /* LPOCookingOilsTableViewController.m in Sources */,
 				03429F94192B774D00999B27 /* LPOLocationManager.m in Sources */,
 				0335B6381954CA620029E235 /* LPOContainerPointAnnotation.m in Sources */,
@@ -546,6 +563,7 @@
 				037156AF1922F7E10030BEA2 /* UIColor+ColorWithHex.m in Sources */,
 				0335B63E1954D6C90029E235 /* LPOContainerDetailTableViewController.m in Sources */,
 				0371572A192D4DE10030BEA2 /* BaseEntity.m in Sources */,
+				03D0B6AF1955605D00DA2F7C /* LPOCookingOilDetailTableViewController.m in Sources */,
 				037156FB192D32850030BEA2 /* LPOGeneralDataManager.m in Sources */,
 				037156AC1922F2420030BEA2 /* LPODumpsTableViewController.m in Sources */,
 				0371572C192D4DE10030BEA2 /* CookingOil.m in Sources */,
