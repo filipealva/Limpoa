@@ -1,29 +1,28 @@
 //
-//  LPODumpDetailTableViewController.m
+//  LPOCotnainerMapViewController.m
 //  LimPOA
 //
-//  Created by Filipe Alvarenga on 5/28/14.
+//  Created by Filipe Alvarenga on 6/20/14.
 //  Copyright (c) 2014 Filipe Alvarenga. All rights reserved.
 //
 
-#import "LPODumpDetailTableViewController.h"
-
-#import "LPODumpPointAnnotation.h"
+#import "LPOContainerMapViewController.h"
+#import "LPOContainerPointAnnotation.h"
 #import "Dump.h"
+#import "Container.h"
 #import "CMMapLauncher.h"
 
 static const NSString *WAZE_TITLE = @"Waze";
 static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
-@interface LPODumpDetailTableViewController () <UIActionSheetDelegate>
+
+@interface LPOContainerMapViewController () <UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
-
 
 @end
 
-@implementation LPODumpDetailTableViewController
+@implementation LPOContainerMapViewController
 {
 	BOOL isGoogleMapsInstalled;
 	BOOL isWazeInstalled;
@@ -34,12 +33,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    Dump *dump = (Dump *)self.dumps[0];
-    
-    self.addressLabel.text = dump.address;
-    
-    [self updateAnnotationsWithPlaces:self.dumps];
+    [self updateAnnotationsWithPlaces:self.containers];
     [self zoomToFitMapWithAnnotations:self.mapView.annotations];
     
     [self.mapView setShowsUserLocation:YES];
@@ -47,13 +41,13 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
 
 
-- (MKPointAnnotation *)mapViewAnnotationWithPlace:(Dump *)dump
+- (MKPointAnnotation *)mapViewAnnotationWithPlace:(Container *)container
 {
 	for (MKPointAnnotation *annotation in self.mapView.annotations) {
-		if ([annotation isKindOfClass:[LPODumpPointAnnotation class]]) {
-			LPODumpPointAnnotation *annotationObject = (LPODumpPointAnnotation *)annotation;
+		if ([annotation isKindOfClass:[LPOContainerPointAnnotation class]]) {
+			LPOContainerPointAnnotation *annotationObject = (LPOContainerPointAnnotation *)annotation;
             
-			if ([[[annotationObject.dump objectID] URIRepresentation] isEqual:[[dump objectID] URIRepresentation]]) {
+			if ([[[annotationObject.container objectID] URIRepresentation] isEqual:[[container objectID] URIRepresentation]]) {
 				return annotationObject;
 			}
 		}
@@ -62,28 +56,28 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 	return nil;
 }
 
-- (void)updateAnnotationsWithPlaces:(NSArray *)dumpsList
+- (void)updateAnnotationsWithPlaces:(NSArray *)containerList
 {
-    NSMutableArray *dumps = [[NSMutableArray alloc] initWithArray:dumpsList];
+    NSMutableArray *containers = [[NSMutableArray alloc] initWithArray:containerList];
 	NSMutableArray *annotations = [[NSMutableArray alloc] init];
 	
 	// Get annotations that isn't on MapView new annotations
-	for (Dump *dump in dumpsList) {
-		LPODumpPointAnnotation *annotation = (LPODumpPointAnnotation *)[self mapViewAnnotationWithPlace:dump];
+	for (Container *container in containerList) {
+		LPOContainerPointAnnotation *annotation = (LPOContainerPointAnnotation *)[self mapViewAnnotationWithPlace:container];
         
 		if (annotation) {
-            [dumps removeObject:dump];
+            [containers removeObject:container];
 		}
 	}
 	
     // Construct Annotations
-	for (int i = 0; i < dumps.count; i++) {
-		Dump *dump = [dumps objectAtIndex:i];
-		LPODumpPointAnnotation *annotation = [[LPODumpPointAnnotation alloc] init];
-		[annotation setDump:dump];
-		[annotation setCoordinate:CLLocationCoordinate2DMake([dump.latitude doubleValue], [dump.longitude doubleValue])];
-		[annotation setTitle:@"Lixeira"];
-		[annotation setSubtitle:dump.address];
+	for (int i = 0; i < containers.count; i++) {
+		Container *container = [containers objectAtIndex:i];
+		LPOContainerPointAnnotation *annotation = [[LPOContainerPointAnnotation alloc] init];
+		[annotation setContainer:container];
+		[annotation setCoordinate:CLLocationCoordinate2DMake([container.latitude doubleValue], [container.longitude doubleValue])];
+		[annotation setTitle:@"Container"];
+		[annotation setSubtitle:container.address];
 		[annotations addObject:annotation];
 	}
 	
@@ -161,12 +155,12 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-	LPODumpPointAnnotation *annotation = (LPODumpPointAnnotation *)view.annotation;
+	LPOContainerPointAnnotation *annotation = (LPOContainerPointAnnotation *)view.annotation;
     
-    if (self.dumps.count == 1) {
+    if (self.containers.count == 1) {
         [self buttonRoutePressed];
     } else {
-        [self performSegueWithIdentifier:@"showDumpDetail" sender:annotation];
+        [self performSegueWithIdentifier:@"showContainerDetail" sender:annotation];
     }
 }
 
@@ -174,9 +168,9 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
 - (void)traceRouteWithApp:(CMMapApp)app
 {
-	Dump *dump = [self.dumps objectAtIndex:0];
+	Dump *dump = [self.containers objectAtIndex:0];
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([dump.latitude doubleValue], [dump.longitude doubleValue]);
-    CMMapPoint *point = [CMMapPoint mapPointWithName:@"Lixeira" coordinate:coordinate];
+    CMMapPoint *point = [CMMapPoint mapPointWithName:@"Container" coordinate:coordinate];
 	[CMMapLauncher launchMapApp:app forDirectionsTo:point];
 }
 
@@ -212,28 +206,6 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 		
 		[actionSheet showInView:self.view];
 	}
-}
-
-#pragma mark - UITableViewDelegate
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.section == 2) {
-        [self buttonRoutePressed];
-    }
-    
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.section == 1) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Lixeira"
-                                                            message:@"Texto Sobre Lixeiras Bem Legal"
-                                                           delegate:nil cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil];
-        [alertView show];
-    }
 }
 
 #pragma mark - UIActionSheetDelegate
