@@ -7,7 +7,10 @@
 //
 
 #import <MapKit/MapKit.h>
+#import "CookingOil.h"
 
 @interface LPOCookingOilPointAnnotation : MKPointAnnotation
+
+@property (nonatomic, strong) CookingOil *cookingOil;
 
 @end

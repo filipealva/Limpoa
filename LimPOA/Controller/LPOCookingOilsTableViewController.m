@@ -7,6 +7,7 @@
 //
 
 #import "LPOCookingOilsTableViewController.h"
+#import "LPOCookingOilMapViewController.h"
 
 @interface LPOCookingOilsTableViewController ()
 
@@ -78,6 +79,14 @@
     if ([current distanceFromLocation:location] > 100) {
         self.currentLocation = location.coordinate;
     }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showCookingOilMap"]) {
+		LPOCookingOilMapViewController *mapViewController = segue.destinationViewController;
+        mapViewController.cookingOils = [NSMutableArray arrayWithArray:[self.cookingOilPoints subarrayWithRange:NSMakeRange(0, 9)]];
+	}
 }
 
 @end

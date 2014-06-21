@@ -543,17 +543,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Oléo de cozinha" id="k3x-Jm-BcW">
-                        <barButtonItem key="rightBarButtonItem" image="Map" id="dFK-71-DOT"/>
+                        <barButtonItem key="rightBarButtonItem" image="Map" id="dFK-71-DOT">
+                            <connections>
+                                <segue destination="Nqq-Wb-XlF" kind="push" identifier="showCookingOilMap" id="PdG-QP-OLI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeZ-NG-w7I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-182" y="2682"/>
         </scene>
-        <!--View Controller-->
+        <!--Cooking Oil Map View Controller - Mapa-->
         <scene sceneID="Rq0-Ig-e4G">
             <objects>
-                <viewController id="Nqq-Wb-XlF" sceneMemberID="viewController">
+                <viewController id="Nqq-Wb-XlF" customClass="LPOCookingOilMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ewy-GW-DfA"/>
                         <viewControllerLayoutGuide type="bottom" id="fse-od-jvi"/>
@@ -565,10 +569,17 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="azh-R4-4sS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Nqq-Wb-XlF" id="cz0-Dy-hfn"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Mapa" id="TGT-NJ-LkM"/>
+                    <connections>
+                        <outlet property="mapView" destination="azh-R4-4sS" id="rXD-VX-wJy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LOa-z3-kfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -739,10 +750,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
+                            <tableViewSection headerTitle="" id="HWz-Rr-X12">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="150" id="OdG-l6-j4j">
+                                        <rect key="frame" x="0.0" y="99" width="320" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OdG-l6-j4j" id="Emz-Nf-Qp4">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wHQ-0q-b9Q">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </mapView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="" id="G5O-9e-k4b">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="177" id="QhR-sc-HGD">
-                                        <rect key="frame" x="0.0" y="99" width="320" height="177"/>
+                                        <rect key="frame" x="0.0" y="269" width="320" height="177"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QhR-sc-HGD" id="FM4-NA-i9p">
                                             <rect key="frame" x="0.0" y="0.0" width="273" height="176"/>
@@ -785,7 +814,7 @@
                             <tableViewSection headerTitle="" id="v7y-gK-lDH">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fVA-AG-bNu">
-                                        <rect key="frame" x="0.0" y="296" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="466" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fVA-AG-bNu" id="zNi-oA-YYK">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
