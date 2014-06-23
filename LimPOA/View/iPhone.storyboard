@@ -15,10 +15,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="xOJ-fw-Vhk" kind="relationship" relationship="viewControllers" id="OfV-UY-JLp"/>
-                        <segue destination="8Lo-P9-bpY" kind="relationship" relationship="viewControllers" id="hPf-gt-eet"/>
                         <segue destination="0c8-Do-lhz" kind="relationship" relationship="viewControllers" id="zYP-m6-2JH"/>
                         <segue destination="16z-4r-EOf" kind="relationship" relationship="viewControllers" id="o5Y-RR-wPA"/>
+                        <segue destination="xOJ-fw-Vhk" kind="relationship" relationship="viewControllers" id="OfV-UY-JLp"/>
+                        <segue destination="8Lo-P9-bpY" kind="relationship" relationship="viewControllers" id="hPf-gt-eet"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQi-qO-j28" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -165,15 +165,15 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="zac-Ku-mZM">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="126" id="A2y-my-GL8">
-                                        <rect key="frame" x="0.0" y="269" width="320" height="126"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="A2y-my-GL8">
+                                        <rect key="frame" x="0.0" y="269" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A2y-my-GL8" id="NfI-TA-aNP">
-                                            <rect key="frame" x="0.0" y="0.0" width="273" height="125"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="273" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Av. Foobar, 100" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="198" translatesAutoresizingMaskIntoConstraints="NO" id="JWF-UC-E5b">
-                                                    <rect key="frame" x="75" y="38" width="198" height="50"/>
+                                                    <rect key="frame" x="55" y="4" width="198" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
@@ -184,31 +184,10 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Dump#2" translatesAutoresizingMaskIntoConstraints="NO" id="vfW-Ri-5nB">
-                                                    <rect key="frame" x="20" y="39" width="47" height="47"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="701-location-selected-selected" translatesAutoresizingMaskIntoConstraints="NO" id="vfW-Ri-5nB">
+                                                    <rect key="frame" x="15" y="21" width="32" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="" id="PyR-78-NvQ">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="j3y-5q-MrD">
-                                        <rect key="frame" x="0.0" y="415" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j3y-5q-MrD" id="Ofm-6g-bq8">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Traçar rota" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gg4-C6-Dkg">
-                                                    <rect key="frame" x="89" y="6" width="142" height="32"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                                    <color key="textColor" red="0.03529411927" green="0.72156864399999998" blue="0.53333336109999996" alpha="1" colorSpace="deviceRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -221,7 +200,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Detalhes" id="CXC-cF-AIZ">
-                        <barButtonItem key="rightBarButtonItem" title="Rota" id="RSb-EF-A0F"/>
+                        <barButtonItem key="rightBarButtonItem" title="Rota" style="done" id="RSb-EF-A0F">
+                            <connections>
+                                <action selector="routePressed:" destination="1RG-AV-KnT" id="9sS-LO-nFc"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addressLabel" destination="JWF-UC-E5b" id="3dr-SO-iT1"/>
@@ -233,7 +216,7 @@
             </objects>
             <point key="canvasLocation" x="648" y="39"/>
         </scene>
-        <!--Dumps Table View Controller - Lixeiras-->
+        <!--Dumps Table View Controller - Lixeira-->
         <scene sceneID="SDP-Wm-y5C">
             <objects>
                 <tableViewController id="Ktl-gz-Z4q" customClass="LPODumpsTableViewController" sceneMemberID="viewController">
@@ -275,7 +258,7 @@
                             <outlet property="delegate" destination="Ktl-gz-Z4q" id="kyx-Jn-hMr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Lixeiras" id="Sto-RQ-kzK">
+                    <navigationItem key="navigationItem" title="Lixeira" id="Sto-RQ-kzK">
                         <barButtonItem key="rightBarButtonItem" image="Map" id="iZ0-8i-Une">
                             <connections>
                                 <segue destination="wrz-6N-Jf8" kind="push" identifier="showDumpsMap" id="cUH-FS-ayi"/>
@@ -395,7 +378,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="273" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Container#2" translatesAutoresizingMaskIntoConstraints="NO" id="vsq-sK-FXN">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="701-location-selected-selected" translatesAutoresizingMaskIntoConstraints="NO" id="vsq-sK-FXN">
                                                     <rect key="frame" x="20" y="39" width="47" height="47"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
@@ -438,7 +421,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Detalhes" id="jRj-qR-gFb">
-                        <barButtonItem key="rightBarButtonItem" title="Rota" id="vMe-k8-Xdo"/>
+                        <barButtonItem key="rightBarButtonItem" title="Rota" style="done" id="vMe-k8-Xdo"/>
                     </navigationItem>
                     <connections>
                         <outlet property="addressLabel" destination="PQA-E8-uCq" id="qgo-ex-t0q"/>
@@ -499,7 +482,7 @@
             </objects>
             <point key="canvasLocation" x="-820" y="1185"/>
         </scene>
-        <!--Cooking Oils Table View Controller - Oléo de cozinha-->
+        <!--Cooking Oils Table View Controller - Oléo vegetal-->
         <scene sceneID="6JL-mI-qMs">
             <objects>
                 <tableViewController id="rnn-T8-vfs" customClass="LPOCookingOilsTableViewController" sceneMemberID="viewController">
@@ -547,7 +530,7 @@
                             <outlet property="delegate" destination="rnn-T8-vfs" id="1b5-Kg-85c"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Oléo de cozinha" id="k3x-Jm-BcW">
+                    <navigationItem key="navigationItem" title="Oléo vegetal" id="k3x-Jm-BcW">
                         <barButtonItem key="rightBarButtonItem" image="Map" id="dFK-71-DOT">
                             <connections>
                                 <segue destination="Nqq-Wb-XlF" kind="push" identifier="showCookingOilMap" id="PdG-QP-OLI"/>
@@ -740,7 +723,9 @@
                             <outlet property="delegate" destination="Gdf-iT-P2L" id="4vV-Qv-lf4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Detalhes" id="V7N-nC-Ig4"/>
+                    <navigationItem key="navigationItem" title="Detalhes" id="V7N-nC-Ig4">
+                        <barButtonItem key="rightBarButtonItem" title="Rota" style="done" id="Qbh-gh-9Le"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DPD-my-FSF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -764,7 +749,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wHQ-0q-b9Q">
+                                                <mapView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHQ-0q-b9Q">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </mapView>
@@ -775,62 +760,63 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="G5O-9e-k4b">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="177" id="QhR-sc-HGD">
-                                        <rect key="frame" x="0.0" y="269" width="320" height="177"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="QhR-sc-HGD">
+                                        <rect key="frame" x="0.0" y="269" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QhR-sc-HGD" id="FM4-NA-i9p">
-                                            <rect key="frame" x="0.0" y="0.0" width="273" height="176"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="273" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DMLU - Sede" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="178" translatesAutoresizingMaskIntoConstraints="NO" id="1Xm-Qk-EH1">
-                                                    <rect key="frame" x="83" y="6" width="178" height="75"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CookingOil#2" translatesAutoresizingMaskIntoConstraints="NO" id="1d9-Gc-1yT">
-                                                    <rect key="frame" x="28" y="20" width="47" height="47"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="701-location-selected-selected" translatesAutoresizingMaskIntoConstraints="NO" id="1d9-Gc-1yT">
+                                                    <rect key="frame" x="15" y="22" width="32" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Av. Alberto Bins, 1000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hi-Sy-oHW">
-                                                    <rect key="frame" x="28" y="76" width="233" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Av. Alberto Bins, 1000" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="216" translatesAutoresizingMaskIntoConstraints="NO" id="Xk8-Hp-ifq">
+                                                    <rect key="frame" x="55" y="4" width="216" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(51) 3042-5694" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNv-gs-GnE">
-                                                    <rect key="frame" x="28" y="105" width="221" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Todos os dias das 17 as 20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybj-ie-UGP">
-                                                    <rect key="frame" x="28" y="134" width="253" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" red="0.85994819972826086" green="0.070791158558687811" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="" id="v7y-gK-lDH">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fVA-AG-bNu">
-                                        <rect key="frame" x="0.0" y="466" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="MWE-Ig-5Dn">
+                                        <rect key="frame" x="0.0" y="344" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fVA-AG-bNu" id="zNi-oA-YYK">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MWE-Ig-5Dn" id="dzm-y0-SnX">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ver no mapa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGi-ZY-eXJ">
-                                                    <rect key="frame" x="95" y="11" width="125" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(51)8463-2222" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="245" translatesAutoresizingMaskIntoConstraints="NO" id="P40-7q-bRK">
+                                                    <rect key="frame" x="55" y="4" width="245" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="735-phone-selected" translatesAutoresizingMaskIntoConstraints="NO" id="zmQ-il-B48">
+                                                    <rect key="frame" x="15" y="21" width="32" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="K2r-6b-Hbu">
+                                        <rect key="frame" x="0.0" y="419" width="320" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K2r-6b-Hbu" id="X8k-SD-5SS">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seg - Sex - Horário comercial" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="245" translatesAutoresizingMaskIntoConstraints="NO" id="ge9-8l-3Vb">
+                                                    <rect key="frame" x="55" y="4" width="245" height="65"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="728-clock-selected" translatesAutoresizingMaskIntoConstraints="NO" id="gwF-Oz-xBq">
+                                                    <rect key="frame" x="15" y="21" width="32" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -842,13 +828,11 @@
                             <outlet property="delegate" destination="eZG-QG-ab0" id="z3G-1f-J5e"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Detalhes" id="iNB-bu-gL9"/>
+                    <navigationItem key="navigationItem" title="Detalhes" id="iNB-bu-gL9">
+                        <barButtonItem key="rightBarButtonItem" title="Rota" style="done" id="mI9-Ej-G3v"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="addressLabel" destination="3hi-Sy-oHW" id="FRQ-h0-MhS"/>
                         <outlet property="mapView" destination="wHQ-0q-b9Q" id="gO6-Hy-ckt"/>
-                        <outlet property="nameLabel" destination="1Xm-Qk-EH1" id="zfF-78-k1Q"/>
-                        <outlet property="openHoursLabel" destination="Ybj-ie-UGP" id="G6s-m2-EWp"/>
-                        <outlet property="phoneLabel" destination="XNv-gs-GnE" id="fKd-lm-s5p"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VFk-9t-QLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -887,11 +871,11 @@
             </objects>
             <point key="canvasLocation" x="648" y="-721"/>
         </scene>
-        <!--Navigation Controller - Óleo de Cozinha-->
+        <!--Navigation Controller - Óleo vegetal-->
         <scene sceneID="O5g-qT-P7C">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0c8-Do-lhz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Óleo de Cozinha" image="CookingOil#2" id="RDb-46-cWD"/>
+                    <tabBarItem key="tabBarItem" title="Óleo vegetal" image="CookingOil#2" id="RDb-46-cWD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ck9-aG-gds">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -927,6 +911,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="701-location-selected-selected" width="28" height="28"/>
+        <image name="728-clock-selected" width="28" height="28"/>
+        <image name="735-phone-selected" width="28" height="28"/>
         <image name="Buzz-Trash-icon" width="32" height="32"/>
         <image name="Container#2" width="32" height="32"/>
         <image name="CookingOil#2" width="32" height="32"/>
@@ -941,6 +928,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="34T-uS-BmF"/>
-        <segue reference="agw-ET-lrj"/>
+        <segue reference="cUH-FS-ayi"/>
     </inferredMetricsTieBreakers>
 </document>

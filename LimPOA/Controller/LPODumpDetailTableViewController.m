@@ -17,6 +17,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
 @interface LPODumpDetailTableViewController () <UIActionSheetDelegate>
 
+- (IBAction)routePressed:(UIBarButtonItem *)sender;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 
@@ -216,15 +217,6 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
 #pragma mark - UITableViewDelegate
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.section == 2) {
-        [self buttonRoutePressed];
-    }
-    
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1) {
@@ -253,4 +245,8 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 	}
 }
 
+- (IBAction)routePressed:(UIBarButtonItem *)sender
+{
+    [self buttonRoutePressed];
+}
 @end
