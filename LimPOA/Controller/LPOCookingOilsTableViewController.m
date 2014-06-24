@@ -7,6 +7,9 @@
 //
 
 #import "LPOCookingOilsTableViewController.h"
+#import "LPOCookingOilMapViewController.h"
+#import "LPOCookingOilDetailTableViewController.h"
+#import "LPOIntroViewController.h"
 
 @interface LPOCookingOilsTableViewController ()
 
@@ -22,6 +25,13 @@
 {
     [super viewDidLoad];
     [self startLocationManager];
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"firstRun"]) {
+        LPOIntroViewController *intro = [self.storyboard instantiateViewControllerWithIdentifier:@"IntroViewController"];
+        [self.navigationController presentViewController:intro animated:NO completion:nil];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstRun"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 }
 
 #pragma mark - Lazy Instantiation
@@ -78,6 +88,22 @@
     if ([current distanceFromLocation:location] > 100) {
         self.currentLocation = location.coordinate;
     }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showCookingOilMap"]) {
+		LPOCookingOilMapViewController *mapViewController = segue.destinationViewController;
+        mapViewController.cookingOils = [NSMutableArray arrayWithArray:[self.cookingOilPoints subarrayWithRange:NSMakeRange(0, 9)]];
+	}
+    
+    if ([segue.identifier isEqualToString:@"showDetails"]) {
+		LPOCookingOilDetailTableViewController *mapViewController = segue.destinationViewController;
+        
+        CookingOil *cookingOilPoint = [self.cookingOilPoints objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        
+        mapViewController.cookingOils = [NSArray arrayWithObject:cookingOilPoint];
+	}
 }
 
 @end

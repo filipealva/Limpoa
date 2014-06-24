@@ -57,6 +57,9 @@
 		03D0B6A919555FE500DA2F7C /* LPOCookingOilMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D0B6A819555FE500DA2F7C /* LPOCookingOilMapViewController.m */; };
 		03D0B6AC1955603300DA2F7C /* LPOCookingOilPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D0B6AB1955603300DA2F7C /* LPOCookingOilPointAnnotation.m */; };
 		03D0B6AF1955605D00DA2F7C /* LPOCookingOilDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D0B6AE1955605D00DA2F7C /* LPOCookingOilDetailTableViewController.m */; };
+		03D0B6B219591ECA00DA2F7C /* LPOEcoPointMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D0B6B119591ECA00DA2F7C /* LPOEcoPointMapViewController.m */; };
+		03D0B6B519591F0D00DA2F7C /* LPOEcoPointPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D0B6B419591F0D00DA2F7C /* LPOEcoPointPointAnnotation.m */; };
+		03D0B6B819591F2800DA2F7C /* LPOEcoPointDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D0B6B719591F2800DA2F7C /* LPOEcoPointDetailTableViewController.m */; };
 		D1AF71C04412485B8D8FD93F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A96F51C8B94440DA203FB00 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -154,6 +157,12 @@
 		03D0B6AB1955603300DA2F7C /* LPOCookingOilPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOCookingOilPointAnnotation.m; path = Controller/LPOCookingOilPointAnnotation.m; sourceTree = "<group>"; };
 		03D0B6AD1955605D00DA2F7C /* LPOCookingOilDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOCookingOilDetailTableViewController.h; path = Controller/LPOCookingOilDetailTableViewController.h; sourceTree = "<group>"; };
 		03D0B6AE1955605D00DA2F7C /* LPOCookingOilDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOCookingOilDetailTableViewController.m; path = Controller/LPOCookingOilDetailTableViewController.m; sourceTree = "<group>"; };
+		03D0B6B019591ECA00DA2F7C /* LPOEcoPointMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOEcoPointMapViewController.h; path = Controller/LPOEcoPointMapViewController.h; sourceTree = "<group>"; };
+		03D0B6B119591ECA00DA2F7C /* LPOEcoPointMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOEcoPointMapViewController.m; path = Controller/LPOEcoPointMapViewController.m; sourceTree = "<group>"; };
+		03D0B6B319591F0D00DA2F7C /* LPOEcoPointPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOEcoPointPointAnnotation.h; path = Controller/LPOEcoPointPointAnnotation.h; sourceTree = "<group>"; };
+		03D0B6B419591F0D00DA2F7C /* LPOEcoPointPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOEcoPointPointAnnotation.m; path = Controller/LPOEcoPointPointAnnotation.m; sourceTree = "<group>"; };
+		03D0B6B619591F2800DA2F7C /* LPOEcoPointDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOEcoPointDetailTableViewController.h; path = Controller/LPOEcoPointDetailTableViewController.h; sourceTree = "<group>"; };
+		03D0B6B719591F2800DA2F7C /* LPOEcoPointDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOEcoPointDetailTableViewController.m; path = Controller/LPOEcoPointDetailTableViewController.m; sourceTree = "<group>"; };
 		1A96F51C8B94440DA203FB00 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BD1F8BCB7F4DF2B1FD638B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -401,6 +410,12 @@
 			children = (
 				037156D21925429C0030BEA2 /* LPOEcoPointsTableViewController.h */,
 				037156D31925429C0030BEA2 /* LPOEcoPointsTableViewController.m */,
+				03D0B6B019591ECA00DA2F7C /* LPOEcoPointMapViewController.h */,
+				03D0B6B119591ECA00DA2F7C /* LPOEcoPointMapViewController.m */,
+				03D0B6B319591F0D00DA2F7C /* LPOEcoPointPointAnnotation.h */,
+				03D0B6B419591F0D00DA2F7C /* LPOEcoPointPointAnnotation.m */,
+				03D0B6B619591F2800DA2F7C /* LPOEcoPointDetailTableViewController.h */,
+				03D0B6B719591F2800DA2F7C /* LPOEcoPointDetailTableViewController.m */,
 			);
 			name = EcoPoint;
 			sourceTree = "<group>";
@@ -547,6 +562,7 @@
 				031091111923B08700EACF4D /* LPOIntroViewController.m in Sources */,
 				0335B6351954CA1B0029E235 /* LPOContainerMapViewController.m in Sources */,
 				037156791922E9F50030BEA2 /* LPOAppDelegate.m in Sources */,
+				03D0B6B819591F2800DA2F7C /* LPOEcoPointDetailTableViewController.m in Sources */,
 				0371567C1922E9F50030BEA2 /* LimPOA.xcdatamodeld in Sources */,
 				037157371933CEB10030BEA2 /* LPODumpMapViewController.m in Sources */,
 				037156D41925429C0030BEA2 /* LPOEcoPointsTableViewController.m in Sources */,
@@ -558,6 +574,8 @@
 				03D0B6AC1955603300DA2F7C /* LPOCookingOilPointAnnotation.m in Sources */,
 				03429F90192503F300999B27 /* LPOCookingOilsTableViewController.m in Sources */,
 				03429F94192B774D00999B27 /* LPOLocationManager.m in Sources */,
+				03D0B6B219591ECA00DA2F7C /* LPOEcoPointMapViewController.m in Sources */,
+				03D0B6B519591F0D00DA2F7C /* LPOEcoPointPointAnnotation.m in Sources */,
 				0335B6381954CA620029E235 /* LPOContainerPointAnnotation.m in Sources */,
 				0371572D192D4DE10030BEA2 /* Dump.m in Sources */,
 				037156AF1922F7E10030BEA2 /* UIColor+ColorWithHex.m in Sources */,

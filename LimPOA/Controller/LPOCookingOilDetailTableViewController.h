@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface LPOCookingOilDetailTableViewController : UITableViewController
+@interface LPOCookingOilDetailTableViewController : UITableViewController <MKMapViewDelegate>
+
+@property (nonatomic, strong) NSArray *cookingOils;
 
 @end

@@ -25,13 +25,6 @@
     [super viewDidLoad];
     
     [self startLocationManager];
-    
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"firstRun"]) {
-        LPOIntroViewController *intro = [self.storyboard instantiateViewControllerWithIdentifier:@"IntroViewController"];
-        [self.navigationController presentViewController:intro animated:NO completion:nil];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstRun"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
 }
 
 -(void)viewWillAppear:(BOOL)animated
