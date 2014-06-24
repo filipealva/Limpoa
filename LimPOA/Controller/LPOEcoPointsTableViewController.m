@@ -88,7 +88,7 @@
 {
     if ([segue.identifier isEqualToString:@"showMap"]) {
 		LPOEcoPointMapViewController *mapViewController = segue.destinationViewController;
-        mapViewController.ecoPoints = [NSMutableArray arrayWithArray:[self.ecoPoints subarrayWithRange:NSMakeRange(0, self.ecoPoints.count -1)]];
+        mapViewController.ecoPoints = [NSMutableArray arrayWithArray:[self.ecoPoints subarrayWithRange:NSMakeRange(0, self.ecoPoints.count)]];
 	}
     
     if ([segue.identifier isEqualToString:@"showDetails"]) {

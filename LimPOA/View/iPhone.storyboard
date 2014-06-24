@@ -615,7 +615,7 @@
             </objects>
             <point key="canvasLocation" x="-170" y="4204"/>
         </scene>
-        <!--Eco Point Map View Controller-->
+        <!--Eco Point Map View Controller - Mapa-->
         <scene sceneID="gqJ-Ff-aRu">
             <objects>
                 <viewController id="s3x-bA-haS" customClass="LPOEcoPointMapViewController" sceneMemberID="viewController">
@@ -630,11 +630,14 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="J1v-J9-1FZ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="s3x-bA-haS" id="BJJ-OF-SVk"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7Kh-PF-ohb"/>
+                    <navigationItem key="navigationItem" title="Mapa" id="7Kh-PF-ohb"/>
                     <connections>
                         <outlet property="mapView" destination="J1v-J9-1FZ" id="PC4-8B-tQv"/>
                     </connections>
