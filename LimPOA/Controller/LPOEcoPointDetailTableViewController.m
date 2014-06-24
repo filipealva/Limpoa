@@ -1,20 +1,20 @@
 //
-//  LPOCookingOilDetailTableViewController.m
+//  LPOEcoPointDetailTableViewController.m
 //  LimPOA
 //
-//  Created by Filipe Alvarenga on 6/21/14.
+//  Created by Filipe Alvarenga on 6/23/14.
 //  Copyright (c) 2014 Filipe Alvarenga. All rights reserved.
 //
 
-#import "LPOCookingOilDetailTableViewController.h"
-#import "LPOCookingOilPointAnnotation.h"
-#import "CookingOil.h"
+#import "LPOEcoPointDetailTableViewController.h"
+#import "LPOEcoPointPointAnnotation.h"
+#import "EcoPoint.h"
 #import "CMMapLauncher.h"
 
 static const NSString *WAZE_TITLE = @"Waze";
 static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
-@interface LPOCookingOilDetailTableViewController () <UIActionSheetDelegate>
+@interface LPOEcoPointDetailTableViewController () <UIActionSheetDelegate>
 
 - (IBAction)routePressed:(UIBarButtonItem *)sender;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -24,7 +24,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
 @end
 
-@implementation LPOCookingOilDetailTableViewController
+@implementation LPOEcoPointDetailTableViewController
 {
 	BOOL isGoogleMapsInstalled;
 	BOOL isWazeInstalled;
@@ -36,13 +36,13 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 {
     [super viewDidLoad];
     
-    CookingOil *cookingOil = (CookingOil *)self.cookingOils[0];
-
-    self.addressLabel.text = cookingOil.address;
-    self.phoneLabel.text = cookingOil.telephone ? cookingOil.telephone : @"Telefone indisponível";
-    self.openHoursLabel.text = cookingOil.openHours ? cookingOil.openHours : @"Seg a Sex - Horário comercial";
+    EcoPoint *ecoPoint = (EcoPoint *)self.ecoPoints[0];
     
-    [self updateAnnotationsWithPlaces:self.cookingOils];
+    self.addressLabel.text = ecoPoint.address;
+    self.phoneLabel.text = ecoPoint.telephone ? ecoPoint.telephone : @"Telefone indisponível";
+    self.openHoursLabel.text = @"Seg a Sex - Horário comercial";
+    
+    [self updateAnnotationsWithPlaces:self.ecoPoints];
     [self zoomToFitMapWithAnnotations:self.mapView.annotations];
     
     [self.mapView setShowsUserLocation:YES];
@@ -50,13 +50,13 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
 
 
-- (MKPointAnnotation *)mapViewAnnotationWithPlace:(CookingOil *)cookingOil
+- (MKPointAnnotation *)mapViewAnnotationWithPlace:(EcoPoint *)ecoPoint
 {
 	for (MKPointAnnotation *annotation in self.mapView.annotations) {
-		if ([annotation isKindOfClass:[LPOCookingOilPointAnnotation class]]) {
-			LPOCookingOilPointAnnotation *annotationObject = (LPOCookingOilPointAnnotation *)annotation;
+		if ([annotation isKindOfClass:[LPOEcoPointPointAnnotation class]]) {
+			LPOEcoPointPointAnnotation *annotationObject = (LPOEcoPointPointAnnotation *)annotation;
             
-			if ([[[annotationObject.cookingOil objectID] URIRepresentation] isEqual:[[cookingOil objectID] URIRepresentation]]) {
+			if ([[[annotationObject.ecoPoint objectID] URIRepresentation] isEqual:[[ecoPoint objectID] URIRepresentation]]) {
 				return annotationObject;
 			}
 		}
@@ -65,28 +65,28 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 	return nil;
 }
 
-- (void)updateAnnotationsWithPlaces:(NSArray *)cookingOilList
+- (void)updateAnnotationsWithPlaces:(NSArray *)ecoPointList
 {
-    NSMutableArray *cookingOils = [[NSMutableArray alloc] initWithArray:cookingOilList];
+    NSMutableArray *ecoPoints = [[NSMutableArray alloc] initWithArray:ecoPointList];
 	NSMutableArray *annotations = [[NSMutableArray alloc] init];
 	
 	// Get annotations that isn't on MapView new annotations
-	for (CookingOil *cookingOil in cookingOilList) {
-		LPOCookingOilPointAnnotation *annotation = (LPOCookingOilPointAnnotation *)[self mapViewAnnotationWithPlace:cookingOil];
+	for (EcoPoint *ecoPoint in ecoPointList) {
+		LPOEcoPointPointAnnotation *annotation = (LPOEcoPointPointAnnotation *)[self mapViewAnnotationWithPlace:ecoPoint];
         
 		if (annotation) {
-            [cookingOils removeObject:cookingOil];
+            [ecoPoints removeObject:ecoPoint];
 		}
 	}
 	
     // Construct Annotations
-	for (int i = 0; i < cookingOils.count; i++) {
-		CookingOil *cookingOil = [cookingOils objectAtIndex:i];
-		LPOCookingOilPointAnnotation *annotation = [[LPOCookingOilPointAnnotation alloc] init];
-		[annotation setCookingOil:cookingOil];
-		[annotation setCoordinate:CLLocationCoordinate2DMake([cookingOil.latitude doubleValue], [cookingOil.longitude doubleValue])];
-		[annotation setTitle:cookingOil.name];
-		[annotation setSubtitle:cookingOil.address];
+	for (int i = 0; i < ecoPoints.count; i++) {
+		EcoPoint *ecoPoint = [ecoPoints objectAtIndex:i];
+		LPOEcoPointPointAnnotation *annotation = [[LPOEcoPointPointAnnotation alloc] init];
+		[annotation setEcoPoint:ecoPoint];
+		[annotation setCoordinate:CLLocationCoordinate2DMake([ecoPoint.latitude doubleValue], [ecoPoint.longitude doubleValue])];
+		[annotation setTitle:ecoPoint.neighborhood];
+		[annotation setSubtitle:ecoPoint.address];
 		[annotations addObject:annotation];
 	}
 	
@@ -164,9 +164,9 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-	LPOCookingOilPointAnnotation *annotation = (LPOCookingOilPointAnnotation *)view.annotation;
+	LPOEcoPointPointAnnotation *annotation = (LPOEcoPointPointAnnotation *)view.annotation;
     
-    if (self.cookingOils.count == 1) {
+    if (self.ecoPoints.count == 1) {
         [self buttonRoutePressed];
     } else {
         [self performSegueWithIdentifier:@"showDumpDetail" sender:annotation];
@@ -177,9 +177,9 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
 - (void)traceRouteWithApp:(CMMapApp)app
 {
-	CookingOil *cookingOil = [self.cookingOils objectAtIndex:0];
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([cookingOil.latitude doubleValue], [cookingOil.longitude doubleValue]);
-    CMMapPoint *point = [CMMapPoint mapPointWithName:cookingOil.name coordinate:coordinate];
+	EcoPoint *ecoPoint = [self.ecoPoints objectAtIndex:0];
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([ecoPoint.latitude doubleValue], [ecoPoint.longitude doubleValue]);
+    CMMapPoint *point = [CMMapPoint mapPointWithName:ecoPoint.neighborhood coordinate:coordinate];
 	[CMMapLauncher launchMapApp:app forDirectionsTo:point];
 }
 
@@ -228,8 +228,8 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Óleo Vegetal"
-                                                            message:@"Texto Sobre Óleo Vegetal Bem Legal"
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"EcoPonto"
+                                                            message:@"Texto Sobre EcoPonto Bem Legal"
                                                            delegate:nil cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil];
         [alertView show];

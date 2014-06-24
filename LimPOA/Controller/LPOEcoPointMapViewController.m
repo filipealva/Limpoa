@@ -1,12 +1,14 @@
 //
-//  LPOCookingOilDetailTableViewController.m
+//  LPOEcoPointMapViewController.m
 //  LimPOA
 //
-//  Created by Filipe Alvarenga on 6/21/14.
+//  Created by Filipe Alvarenga on 6/23/14.
 //  Copyright (c) 2014 Filipe Alvarenga. All rights reserved.
 //
 
-#import "LPOCookingOilDetailTableViewController.h"
+#import "LPOEcoPointMapViewController.h"
+
+#import "LPODumpMapViewController.h"
 #import "LPOCookingOilPointAnnotation.h"
 #import "CookingOil.h"
 #import "CMMapLauncher.h"
@@ -14,17 +16,13 @@
 static const NSString *WAZE_TITLE = @"Waze";
 static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
-@interface LPOCookingOilDetailTableViewController () <UIActionSheetDelegate>
+@interface LPOEcoPointMapViewController () <UIActionSheetDelegate>
 
-- (IBAction)routePressed:(UIBarButtonItem *)sender;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
-@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
-@property (weak, nonatomic) IBOutlet UILabel *openHoursLabel;
 
 @end
 
-@implementation LPOCookingOilDetailTableViewController
+@implementation LPOEcoPointMapViewController
 {
 	BOOL isGoogleMapsInstalled;
 	BOOL isWazeInstalled;
@@ -35,14 +33,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    CookingOil *cookingOil = (CookingOil *)self.cookingOils[0];
-
-    self.addressLabel.text = cookingOil.address;
-    self.phoneLabel.text = cookingOil.telephone ? cookingOil.telephone : @"Telefone indisponível";
-    self.openHoursLabel.text = cookingOil.openHours ? cookingOil.openHours : @"Seg a Sex - Horário comercial";
-    
-    [self updateAnnotationsWithPlaces:self.cookingOils];
+    [self updateAnnotationsWithPlaces:self.ecoPoints];
     [self zoomToFitMapWithAnnotations:self.mapView.annotations];
     
     [self.mapView setShowsUserLocation:YES];
@@ -166,7 +157,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 {
 	LPOCookingOilPointAnnotation *annotation = (LPOCookingOilPointAnnotation *)view.annotation;
     
-    if (self.cookingOils.count == 1) {
+    if (self.ecoPoints.count == 1) {
         [self buttonRoutePressed];
     } else {
         [self performSegueWithIdentifier:@"showDumpDetail" sender:annotation];
@@ -177,7 +168,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
 - (void)traceRouteWithApp:(CMMapApp)app
 {
-	CookingOil *cookingOil = [self.cookingOils objectAtIndex:0];
+	CookingOil *cookingOil = [self.ecoPoints objectAtIndex:0];
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([cookingOil.latitude doubleValue], [cookingOil.longitude doubleValue]);
     CMMapPoint *point = [CMMapPoint mapPointWithName:cookingOil.name coordinate:coordinate];
 	[CMMapLauncher launchMapApp:app forDirectionsTo:point];
@@ -215,25 +206,6 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 		
 		[actionSheet showInView:self.view];
 	}
-}
-
-
-- (IBAction)routePressed:(UIBarButtonItem *)sender
-{
-    [self buttonRoutePressed];
-}
-
-#pragma mark - UITableViewDelegate
-
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.section == 1) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Óleo Vegetal"
-                                                            message:@"Texto Sobre Óleo Vegetal Bem Legal"
-                                                           delegate:nil cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil];
-        [alertView show];
-    }
 }
 
 #pragma mark - UIActionSheetDelegate

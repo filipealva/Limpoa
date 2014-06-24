@@ -7,6 +7,8 @@
 //
 
 #import "LPOEcoPointsTableViewController.h"
+#import "LPOEcoPointMapViewController.h"
+#import "LPOEcoPointDetailTableViewController.h"
 
 @interface LPOEcoPointsTableViewController ()
 
@@ -78,6 +80,24 @@
     if ([current distanceFromLocation:location] > 100) {
         self.currentLocation = location.coordinate;
     }
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showMap"]) {
+		LPOEcoPointMapViewController *mapViewController = segue.destinationViewController;
+        mapViewController.ecoPoints = [NSMutableArray arrayWithArray:[self.ecoPoints subarrayWithRange:NSMakeRange(0, self.ecoPoints.count -1)]];
+	}
+    
+    if ([segue.identifier isEqualToString:@"showDetails"]) {
+		LPOEcoPointDetailTableViewController *detailViewControler = segue.destinationViewController;
+        
+        EcoPoint *ecoPoint = [self.ecoPoints objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        
+        detailViewControler.ecoPoints = [NSArray arrayWithObject:ecoPoint];
+	}
 }
 
 @end

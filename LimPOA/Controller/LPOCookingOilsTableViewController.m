@@ -9,6 +9,7 @@
 #import "LPOCookingOilsTableViewController.h"
 #import "LPOCookingOilMapViewController.h"
 #import "LPOCookingOilDetailTableViewController.h"
+#import "LPOIntroViewController.h"
 
 @interface LPOCookingOilsTableViewController ()
 
@@ -24,6 +25,13 @@
 {
     [super viewDidLoad];
     [self startLocationManager];
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"firstRun"]) {
+        LPOIntroViewController *intro = [self.storyboard instantiateViewControllerWithIdentifier:@"IntroViewController"];
+        [self.navigationController presentViewController:intro animated:NO completion:nil];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstRun"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 }
 
 #pragma mark - Lazy Instantiation

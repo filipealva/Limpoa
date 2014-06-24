@@ -215,6 +215,11 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 	}
 }
 
+- (IBAction)routePressed:(UIBarButtonItem *)sender
+{
+    [self buttonRoutePressed];
+}
+
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
@@ -245,8 +250,4 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 	}
 }
 
-- (IBAction)routePressed:(UIBarButtonItem *)sender
-{
-    [self buttonRoutePressed];
-}
 @end
