@@ -28,7 +28,7 @@
         [self loadAllData];
     });
     
-    _pageTitles = @[@"Matenha a cidade limpa", @"Não encontrou uma lixeira próxima?", @"Convide seus amigos", @"Começar!"];
+    _pageTitles = @[@"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..", @"Não encontrou uma lixeira próxima?", @"Convide seus amigos", @"Começar!"];
     _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
     
     [self.pageIndicator setNumberOfPages:self.pageTitles.count];
