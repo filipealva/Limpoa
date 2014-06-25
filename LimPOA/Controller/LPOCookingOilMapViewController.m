@@ -7,7 +7,7 @@
 //
 
 #import "LPOCookingOilMapViewController.h"
-
+#import "LPOCookingOilDetailTableViewController.h"
 #import "LPODumpMapViewController.h"
 #import "LPOCookingOilPointAnnotation.h"
 #import "CookingOil.h"
@@ -160,7 +160,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
     if (self.cookingOils.count == 1) {
         [self buttonRoutePressed];
     } else {
-        [self performSegueWithIdentifier:@"showDumpDetail" sender:annotation];
+        [self performSegueWithIdentifier:@"showCookingOilDetail" sender:annotation];
     }
 }
 
@@ -222,6 +222,21 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 		} else {
 			[self traceRouteWithApp:CMMapAppWaze];
 		}
+	}
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showCookingOilDetail"]) {
+		LPOCookingOilDetailTableViewController *detailViewController = segue.destinationViewController;
+        
+        LPOCookingOilPointAnnotation *annotation = (LPOCookingOilPointAnnotation *)sender;
+        
+        CookingOil *cookingOilPoint = annotation.cookingOil;
+        
+        detailViewController.cookingOils = [NSArray arrayWithObject:cookingOilPoint];
 	}
 }
 

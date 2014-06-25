@@ -8,6 +8,7 @@
 
 #import "LPODumpMapViewController.h"
 #import "LPODumpPointAnnotation.h"
+#import "LPODumpDetailTableViewController.h"
 #import "Dump.h"
 #import "CMMapLauncher.h"
 
@@ -220,6 +221,19 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 		} else {
 			[self traceRouteWithApp:CMMapAppWaze];
 		}
+	}
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showDumpDetail"]) {
+		LPODumpDetailTableViewController *detailViewController = segue.destinationViewController;
+        
+        LPODumpPointAnnotation *annotation = (LPODumpPointAnnotation *)sender;
+        
+        Dump *dump = annotation.dump;
+        
+        detailViewController.dumps = [NSArray arrayWithObject:dump];
 	}
 }
 

@@ -17,6 +17,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
 @interface LPOContainerDetailTableViewController () <UIActionSheetDelegate>
 
+- (IBAction)routePressed:(UIBarButtonItem *)sender;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 
@@ -212,6 +213,12 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 		
 		[actionSheet showInView:self.view];
 	}
+}
+
+
+- (IBAction)routePressed:(UIBarButtonItem *)sender
+{
+    [self buttonRoutePressed];
 }
 
 #pragma mark - UITableViewDelegate

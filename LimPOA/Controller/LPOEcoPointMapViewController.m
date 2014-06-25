@@ -7,8 +7,7 @@
 //
 
 #import "LPOEcoPointMapViewController.h"
-
-#import "LPODumpMapViewController.h"
+#import "LPOEcoPointDetailTableViewController.h"
 #import "LPOEcoPointPointAnnotation.h"
 #import "EcoPoint.h"
 #import "CMMapLauncher.h"
@@ -160,7 +159,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
     if (self.ecoPoints.count == 1) {
         [self buttonRoutePressed];
     } else {
-        [self performSegueWithIdentifier:@"showDumpDetail" sender:annotation];
+        [self performSegueWithIdentifier:@"showEcoPointDetail" sender:annotation];
     }
 }
 
@@ -222,6 +221,21 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 		} else {
 			[self traceRouteWithApp:CMMapAppWaze];
 		}
+	}
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showEcoPointDetail"]) {
+		LPOEcoPointDetailTableViewController *detailViewControler = segue.destinationViewController;
+        
+        LPOEcoPointPointAnnotation *annotation = (LPOEcoPointPointAnnotation *)sender;
+        
+        EcoPoint *ecoPoint = annotation.ecoPoint;
+        
+        detailViewControler.ecoPoints = [NSArray arrayWithObject:ecoPoint];
 	}
 }
 
