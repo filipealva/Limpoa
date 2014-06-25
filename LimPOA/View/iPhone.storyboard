@@ -401,7 +401,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Detalhes" id="jRj-qR-gFb">
-                        <barButtonItem key="rightBarButtonItem" title="Rota" style="done" id="vMe-k8-Xdo"/>
+                        <barButtonItem key="rightBarButtonItem" title="Rota" style="done" id="vMe-k8-Xdo">
+                            <connections>
+                                <action selector="routePressed:" destination="7JL-9G-h3V" id="5qR-dm-VMW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addressLabel" destination="PQA-E8-uCq" id="qgo-ex-t0q"/>
@@ -443,6 +447,7 @@
                     <navigationItem key="navigationItem" title="Mapa" id="IOm-HQ-RUw"/>
                     <connections>
                         <outlet property="mapView" destination="g8r-eP-Dig" id="1Jv-OA-c8v"/>
+                        <segue destination="7JL-9G-h3V" kind="push" identifier="showContainerDetail" id="ilz-dO-uhI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gur-zf-OmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -560,6 +565,7 @@
                     <navigationItem key="navigationItem" title="Mapa" id="TGT-NJ-LkM"/>
                     <connections>
                         <outlet property="mapView" destination="azh-R4-4sS" id="rXD-VX-wJy"/>
+                        <segue destination="eZG-QG-ab0" kind="push" identifier="showCookingOilDetail" id="73e-h5-MnQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LOa-z3-kfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -657,6 +663,7 @@
                     <navigationItem key="navigationItem" title="Mapa" id="7Kh-PF-ohb"/>
                     <connections>
                         <outlet property="mapView" destination="J1v-J9-1FZ" id="PC4-8B-tQv"/>
+                        <segue destination="Gdf-iT-P2L" kind="push" identifier="showEcoPointDetail" id="1V2-lf-TVM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZjF-LL-5M3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -989,6 +996,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="ilz-dO-uhI"/>
         <segue reference="tEk-0d-t9B"/>
+        <segue reference="73e-h5-MnQ"/>
+        <segue reference="1V2-lf-TVM"/>
     </inferredMetricsTieBreakers>
 </document>

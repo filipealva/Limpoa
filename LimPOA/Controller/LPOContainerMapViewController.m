@@ -8,6 +8,7 @@
 
 #import "LPOContainerMapViewController.h"
 #import "LPOContainerPointAnnotation.h"
+#import "LPOContainerDetailTableViewController.h"
 #import "Dump.h"
 #import "Container.h"
 #import "CMMapLauncher.h"
@@ -222,6 +223,22 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 		} else {
 			[self traceRouteWithApp:CMMapAppWaze];
 		}
+	}
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showContainerDetail"]) {
+		LPOContainerDetailTableViewController *detailViewController = segue.destinationViewController;
+        
+        LPOContainerPointAnnotation *annotation = (LPOContainerPointAnnotation *)sender;
+        
+        Container *container = annotation.container;
+        
+        detailViewController.containers = [NSArray arrayWithObject:container];
+        
 	}
 }
 
