@@ -94,7 +94,7 @@
 {
     if ([segue.identifier isEqualToString:@"showCookingOilMap"]) {
 		LPOCookingOilMapViewController *mapViewController = segue.destinationViewController;
-        mapViewController.cookingOils = [NSMutableArray arrayWithArray:[self.cookingOilPoints subarrayWithRange:NSMakeRange(0, 9)]];
+        mapViewController.cookingOils = [NSMutableArray arrayWithArray:[self.cookingOilPoints subarrayWithRange:NSMakeRange(0, 10)]];
 	}
     
     if ([segue.identifier isEqualToString:@"showDetails"]) {
