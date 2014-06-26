@@ -24,6 +24,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.title = NSLocalizedString(@"cooking_oil_list_title", nil);
+    
     [self startLocationManager];
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"firstRun"]) {

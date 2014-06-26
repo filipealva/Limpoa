@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  LimPOA
+
+  Created by Filipe Alvarenga on 6/26/14.
+  Copyright (c) 2014 Filipe Alvarenga. All rights reserved.
+*/
+
+//Dump List
+"dump_list_title" = "Lixeira";
+
+//Container List
+"container_list_title" = "Container";
+
+//Cooking Oil List
+"cooking_oil_list_title" = "Óleo Vegetal";
+
+//EcoPoint List
+"ecopoint_list_title" = "EcoPonto";
+
+//Detail Views
+"details_title" = "Detalhes";
+"route_button_title" = "Rota";
+"route_options_title" = "Qual app você prefere?";
+"Maps" = "Maps";
+"Cancel" = "Cancelar";
+
+//Map Views
+"map_view_title" = "Mapa";

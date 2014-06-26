@@ -244,6 +244,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="JWF-UC-E5b" id="3dr-SO-iT1"/>
                         <outlet property="mapView" destination="GFo-DG-MGf" id="UdW-ST-f8G"/>
+                        <outlet property="routeButton" destination="RSb-EF-A0F" id="wfj-Hm-uKe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kbg-m6-Lvh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -445,6 +446,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="PQA-E8-uCq" id="qgo-ex-t0q"/>
                         <outlet property="mapView" destination="fsj-8d-fCj" id="d7u-eM-tce"/>
+                        <outlet property="routeButton" destination="vMe-k8-Xdo" id="xZU-cB-CLw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgs-dQ-EmH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -815,6 +817,7 @@
                         <outlet property="mapView" destination="OEq-42-eJe" id="Laj-gf-ird"/>
                         <outlet property="openHoursLabel" destination="cof-zx-nJ5" id="fjv-7x-qo1"/>
                         <outlet property="phoneLabel" destination="P6T-Sx-9sY" id="wjC-85-EEB"/>
+                        <outlet property="routeButton" destination="Qbh-gh-9Le" id="QOe-cK-Yxy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DPD-my-FSF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -931,6 +934,7 @@
                         <outlet property="mapView" destination="wHQ-0q-b9Q" id="gO6-Hy-ckt"/>
                         <outlet property="openHoursLabel" destination="ge9-8l-3Vb" id="H2z-Sy-YKN"/>
                         <outlet property="phoneLabel" destination="P40-7q-bRK" id="wE6-B6-Teq"/>
+                        <outlet property="routeButton" destination="mI9-Ej-G3v" id="ZdB-9y-FxX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VFk-9t-QLV" userLabel="First Responder" sceneMemberID="firstResponder"/>

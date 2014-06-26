@@ -21,6 +21,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
 @property (weak, nonatomic) IBOutlet UILabel *openHoursLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *routeButton;
 
 @end
 
@@ -35,6 +36,10 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.title = NSLocalizedString(@"details_title", nil);
+    
+    self.routeButton.title = NSLocalizedString(@"route_button_title", nil);
     
     CookingOil *cookingOil = (CookingOil *)self.cookingOils[0];
 
@@ -204,7 +209,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 		}
         
 		UIActionSheet *actionSheet = [[UIActionSheet alloc] init];
-		actionSheet.title = NSLocalizedString(@"place_title_route_options", nil);
+		actionSheet.title = NSLocalizedString(@"route_options_title", nil);
 		actionSheet.delegate = self;
 		
 		for (NSString *title in routeButtons) {
