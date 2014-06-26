@@ -22,6 +22,7 @@
 "details_title" = "Detalhes";
 "route_button_title" = "Rota";
 "route_options_title" = "Qual app você prefere?";
+"phone_unavailable" = "Telefone indisponível";
 "Maps" = "Maps";
 "Cancel" = "Cancelar";
 

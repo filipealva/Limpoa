@@ -44,7 +44,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
     CookingOil *cookingOil = (CookingOil *)self.cookingOils[0];
 
     self.addressLabel.text = cookingOil.address;
-    self.phoneLabel.text = cookingOil.telephone ? cookingOil.telephone : @"Telefone indisponível";
+    self.phoneLabel.text = cookingOil.telephone ? cookingOil.telephone : NSLocalizedString(@"phone_unavailable", nil);
     self.openHoursLabel.text = cookingOil.openHours ? cookingOil.openHours : @"Seg a Sex - Horário comercial";
     
     [self updateAnnotationsWithPlaces:self.cookingOils];

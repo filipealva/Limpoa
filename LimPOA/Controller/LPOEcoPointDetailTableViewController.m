@@ -44,7 +44,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
     EcoPoint *ecoPoint = (EcoPoint *)self.ecoPoints[0];
     
     self.addressLabel.text = ecoPoint.address;
-    self.phoneLabel.text = ecoPoint.telephone ? ecoPoint.telephone : @"Telefone indisponível";
+    self.phoneLabel.text = ecoPoint.telephone ? ecoPoint.telephone : NSLocalizedString(@"phone_unavailable", nil);;
     self.openHoursLabel.text = @"Seg a Sex - Horário comercial";
     
     [self updateAnnotationsWithPlaces:self.ecoPoints];
