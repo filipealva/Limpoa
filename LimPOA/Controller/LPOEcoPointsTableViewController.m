@@ -23,6 +23,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.title = NSLocalizedString(@"ecopoint_list_title", nil);
+    
     [self startLocationManager];
 }
 

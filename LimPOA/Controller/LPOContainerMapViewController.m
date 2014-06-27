@@ -34,6 +34,9 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.title = NSLocalizedString(@"map_view_title", nil);
+    
     [self updateAnnotationsWithPlaces:self.containers];
     [self zoomToFitMapWithAnnotations:self.mapView.annotations];
     

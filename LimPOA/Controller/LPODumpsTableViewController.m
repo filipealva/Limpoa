@@ -24,6 +24,8 @@
 {
     [super viewDidLoad];
     
+    self.title = NSLocalizedString(@"dump_list_title", nil);
+    
     [self startLocationManager];
 }
 

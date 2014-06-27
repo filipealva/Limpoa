@@ -23,6 +23,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.title = NSLocalizedString(@"container_list_title", nil);
+    
     [self startLocationManager];
 }
 

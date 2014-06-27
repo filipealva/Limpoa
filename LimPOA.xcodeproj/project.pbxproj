@@ -60,6 +60,7 @@
 		03D0B6B219591ECA00DA2F7C /* LPOEcoPointMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D0B6B119591ECA00DA2F7C /* LPOEcoPointMapViewController.m */; };
 		03D0B6B519591F0D00DA2F7C /* LPOEcoPointPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D0B6B419591F0D00DA2F7C /* LPOEcoPointPointAnnotation.m */; };
 		03D0B6B819591F2800DA2F7C /* LPOEcoPointDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D0B6B719591F2800DA2F7C /* LPOEcoPointDetailTableViewController.m */; };
+		03E1AE28195C467C00E445E0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03E1AE2A195C467C00E445E0 /* Localizable.strings */; };
 		D1AF71C04412485B8D8FD93F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A96F51C8B94440DA203FB00 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -163,6 +164,10 @@
 		03D0B6B419591F0D00DA2F7C /* LPOEcoPointPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOEcoPointPointAnnotation.m; path = Controller/LPOEcoPointPointAnnotation.m; sourceTree = "<group>"; };
 		03D0B6B619591F2800DA2F7C /* LPOEcoPointDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOEcoPointDetailTableViewController.h; path = Controller/LPOEcoPointDetailTableViewController.h; sourceTree = "<group>"; };
 		03D0B6B719591F2800DA2F7C /* LPOEcoPointDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOEcoPointDetailTableViewController.m; path = Controller/LPOEcoPointDetailTableViewController.m; sourceTree = "<group>"; };
+		03E1AE26195C467300E445E0 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		03E1AE27195C467300E445E0 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		03E1AE29195C467C00E445E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		03E1AE2B195C468000E445E0 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1A96F51C8B94440DA203FB00 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BD1F8BCB7F4DF2B1FD638B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -275,6 +280,7 @@
 				0371567D1922E9F50030BEA2 /* Images.xcassets */,
 				0371567A1922E9F50030BEA2 /* LimPOA.xcdatamodeld */,
 				0371566F1922E9F50030BEA2 /* Supporting Files */,
+				03E1AE2A195C467C00E445E0 /* Localizable.strings */,
 			);
 			path = LimPOA;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				pt,
 			);
 			mainGroup = 0371565A1922E9F50030BEA2;
 			productRefGroup = 037156641922E9F50030BEA2 /* Products */;
@@ -503,6 +510,7 @@
 				037156A71922F1290030BEA2 /* CookingOil.txt in Resources */,
 				03429F8D1924FC4000999B27 /* EcoPoint.txt in Resources */,
 				037156A91922F1290030BEA2 /* Dump.txt in Resources */,
+				03E1AE28195C467C00E445E0 /* Localizable.strings in Resources */,
 				037156A61922F1290030BEA2 /* Container.txt in Resources */,
 				0371567E1922E9F50030BEA2 /* Images.xcassets in Resources */,
 			);
@@ -617,6 +625,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				037156721922E9F50030BEA2 /* en */,
+				03E1AE26195C467300E445E0 /* pt */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -625,8 +634,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				0371568F1922E9F50030BEA2 /* en */,
+				03E1AE27195C467300E445E0 /* pt */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		03E1AE2A195C467C00E445E0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03E1AE29195C467C00E445E0 /* en */,
+				03E1AE2B195C468000E445E0 /* pt */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

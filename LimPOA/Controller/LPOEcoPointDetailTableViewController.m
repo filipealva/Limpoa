@@ -21,6 +21,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
 @property (weak, nonatomic) IBOutlet UILabel *openHoursLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *routeButton;
 
 @end
 
@@ -36,10 +37,14 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 {
     [super viewDidLoad];
     
+    self.title = NSLocalizedString(@"details_title", nil);
+    
+    self.routeButton.title = NSLocalizedString(@"route_button_title", nil);
+    
     EcoPoint *ecoPoint = (EcoPoint *)self.ecoPoints[0];
     
     self.addressLabel.text = ecoPoint.address;
-    self.phoneLabel.text = ecoPoint.telephone ? ecoPoint.telephone : @"Telefone indisponível";
+    self.phoneLabel.text = ecoPoint.telephone ? ecoPoint.telephone : NSLocalizedString(@"phone_unavailable", nil);;
     self.openHoursLabel.text = @"Seg a Sex - Horário comercial";
     
     [self updateAnnotationsWithPlaces:self.ecoPoints];
@@ -204,7 +209,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 		}
         
 		UIActionSheet *actionSheet = [[UIActionSheet alloc] init];
-		actionSheet.title = NSLocalizedString(@"place_title_route_options", nil);
+		actionSheet.title = NSLocalizedString(@"route_options_title", nil);
 		actionSheet.delegate = self;
 		
 		for (NSString *title in routeButtons) {
