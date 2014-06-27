@@ -4,8 +4,8 @@ Sociedade Educacional Leonardo Da Vinci,Av. Nilo Peçanha,2400,(51) 3289-6991,2�
 Capatazia Belém Novo,Av. Juca Batista,10400,(51) 3289-8736,2º-6º: 8:00-18:00 sab: 8:00-12:00,-30.1788526,-51.1758952
 PSF Nossa Senhora de Belém,R. João do Couto,294,(51) 33652-555,2ªf a 6ªf - 8h-12h 13h-17h (menos 5ªf),-30.1154679,-51.1799679
 Centro Integrado de Desenvolvimento,R. Fernandes Vieira,553,(51) 33425099,2ª6ª: 8:00- 18:45,-30.0341861,-51.2110063
-Capatazia Fátima,R. Alfredo Ferreira Rodrigues,975,(51) 3289-5947/5946,2º-6º: 8:00-18:00 sab: 8:00-12:00,-30.047683,-51.1552075
-EMEF Fátima,R. A,15,(51) 32431021/(51) 3243-1099,2ª 6ª - 8:00-12:00 /14:00-18:00 /19:00-21:00h,-30.0464585,-51.1582987
+Capatazia Fátima,R. Alfredo Ferreira Rodrigues,975,(51) 3289-5947,2º-6º: 8:00-18:00 sab: 8:00-12:00,-30.047683,-51.1552075
+EMEF Fátima,R. A,15,(51) 32431021,2ª 6ª - 8:00-12:00 /14:00-18:00 /19:00-21:00h,-30.0464585,-51.1582987
 FASC Centro Regional Leste,R São Domingos,79,(51) 3231-6064,2º-6º: 8:00-12:00 /13:00-17:00,-30.0424188,-51.1528736
 EMEI Jardim Camaquã,R. Jardim das Bromélias,01,(51) 9638-7374,2ª 6ª - 7:00-19:00h,-30.1106149,-51.2344828
 EEEF Paulina Moresco,R. Thomé de Souza,160,(51) 3250-1527,2º-6º: 8:00-17:00,-30.0835272,-51.085081
@@ -18,7 +18,7 @@ Capatazia da Conceição Sc Centro,R. Alberto Bins,elevada Conceição,(51) 3259
 EMEF Porto Alegre,R. Washington Luis,203,(51) 32892284,2ª6ª - 8:00-17:00 h,-30.036398,-51.2383535
 FUFCS Porto Alegre,R. Sarmento Leite,245,(51) 3386-2690,2ª6ª - das 8h às 12h e das 13h às 17h,-30.0314298,-51.2206041
 DEP Fábrica de Pré-moldados,Av. Loureiro da Silva,250,(51) 3250-2430,2ª 6ª: 8:00-18:00,-30.0370041,-51.2391901
-DEP Lima e Silva,R. Gen. Lima e Silva,972,(51) 3328-6098/(51) 3328-9525,2ª 6ª - 8:30 às 18:30,-30.0406826,-51.2184564
+DEP Lima e Silva,R. Gen. Lima e Silva,972,(51) 3328-6098,2ª 6ª - 8:30 às 18:30,-30.0406826,-51.2184564
 EMEI dos Municipários Tio Barnabé,R. Otto Ernest Meyer,55,(51) 3217-9257,2ª 6ª - 8:00-18:00h,-30.045504,-51.216414
 SENAC Informática,Av. Venâncio Aires,93,(51) 3245-5753,2ª 6ª - 8h às 21h,-30.0430215,-51.2194719
 SESC Mulher,Av. João Pessoa,835,(51) 3347-1964,2ª 6ª - 8:00-22:00h,-30.0390641,-51.2182629
@@ -32,11 +32,11 @@ Colégio Adventista Marechal Rondon,R. Mali,255,(51) 3386-2044,2ª6ª: 7:15- 12:
 Capatazia Cancio Gomes Sc Norte,Trav. Carmem,111,(51) 3319-1206,2º-6º: 8:00-18:00 sab: 8:00-12:00,-30.0191919,-51.2046019
 Capatazia Glória,R. Carvalho de Freitas,1.012,(51) 3319-1146,2ªf a 6ª f - 7:30-17h Sáb. - 7:30 - 11:30h,-30.0797698,-51.2018539
 EMEF Prof. Anísio Teixeira,R. Francisco Mattos Terres,40,(51) 3287-6077,2ª 6ª - 7:45-12:00/ 13:25-17:40h,-30.1597487,-51.2004405
-Capatazia Humaitá Sc Norte,R. José Aloisio Filho,780,(51) 3334-4238/(51) 3386-7628,2º-6º: 8:00-18:00 sab: 8:00-12:00,-29.9816223,-51.185473
+Capatazia Humaitá Sc Norte,R. José Aloisio Filho,780,(51) 3334-4238,2º-6º: 8:00-18:00 sab: 8:00-12:00,-29.9816223,-51.185473
 Capatazia IAPI Sc Norte,Av Assis Brasil,1715,(51) 3268-3593,2º-6º: 8:00-18:00 sab: 8:00-12:00,-30.0111983,-51.1703391
 EMEI Ilha da Pintada,R. dos Garruchos, ,(51) 3268-4880,2ªf a 6ªf: de 8h a 18h,-29.9980551,-51.2772222
 Capatazia Ipanema,Av. Guaíba,2027,(51) 3338-3695,2ª-6ª: 8:00-18:00 sáb: 8:00-12:00,-30.0963702,-51.252855
-Fundação de Proteção Especial,R. Déa Coufal,878,(51) 3381-5657/(51) 9975-8259, ,-30.1294124,-51.2284351
+Fundação de Proteção Especial,R. Déa Coufal,878,(51) 3381-5657, ,-30.1294124,-51.2284351
 Clube do Professor Gaúcho,Av. Guaíba,12060,(51) 3226-1950,2ª 6ª:  9h às 20h,-30.1482803,-51.2252245
 EEEF Monte Líbano,R. Lemuria,10,(51) 3367-3777, ,-30.1298825,-51.2273491
 Escola de Educação Infantil Amoreco,R. Engenheiro Tito Marques Fernandes,80,(51) 3348-1732,2ª a 6ª: 7h15 às 19h,-30.1429791,-51.2255254
@@ -47,7 +47,7 @@ CTG Tiarayu,R. Abilio Mulle,251,(51) 3241-3604,todos os dias das 10 às 22 h,-30
 Capatazia Lami,R. Otaviano José Pinto,Pontal,(51) 3246-4659,2º-6º: 8:00-18:00 sab: 8:00-12:00,-30.153562,-51.1715588
 EMEI Maria Marques Fernandes,Av. Santo Dias da Silva,550  Vila Mapa,(51) 3322-0340,2ª 6ª - 7:00-19:00h,-30.0967583,-51.1327848
 EMEI da Vila Nova São Carlos,Estr. João de Oliveira Remião esq. A  Parada 12, ,2ª6ª - 10:00-15:00 h,2ª6ª - 10:00-15:00 h,-30.1152427,-51.1087288
-EMEF São Pedro,Beco da Taquara, ,5ª - 14:00 - 17:00h,5ª - 14:00 - 17:00h,-30.1163779,-51.1017602
+EMEF São Pedro,Beco da Taquara, , ,5ª - 14:00 - 17:00h,-30.1163779,-51.1017602
 EMEF Afonso Guerreiro Lima,R. Guaíba,203  PD 11,(51) 3266-6228,2ª6ª- 7:30-12/ 13:10-17:40/ 18:30-22:00h,-30.1113533,-51.1122204
 EMEF Chico Mendes,R. Gentil Amâncio Clemente,01,(51) 9974-6005,2ª6ª - 7:30-12:00 / 13:30-17:30 h,-30.0335342,-51.1126438
 CEEMEF Wenceslau Fontoura,R. Irmã Faveiro, ,(51) 3248-2490,2ª6ª - 7:35-12 / 13:30-17:30 / 18:30-22:30 h,-30.0225878,-51.0984041
@@ -57,19 +57,19 @@ Capatazia Niteroi,Av. Niteroi,19,(51) 3246-9212,2º-6º: 8:00-18:00 sab: 8:00-12
 Ginásio Tesourinha,R. Érico Veríssimo, ,(51) 3344-1522,2ª a 6ª - 8h às 22h,-30.0517697,-51.2183514
 Ponto das Padarias,Av. Sertório,1105,(51) 3289-8332,2ª6ª - 8 às 18 h,-30.0011292,-51.1944115
 SESC Administração Regional,Av. Brasil,483,(51) 3311-2789, ,-30.0048496,-51.2026278
-Colégio Luterano São Paulo,Av. Tarcila Moraes Dutra,799,(51) 3264-1540/(51) 3289-9598,2ª 6ª 8:00-12:00 / 13:30-17:30h,-29.9990311,-51.0941036
+Colégio Luterano São Paulo,Av. Tarcila Moraes Dutra,799,(51) 3264-1540,2ª 6ª 8:00-12:00 / 13:30-17:30h,-29.9990311,-51.0941036
 Capatazia Tenente Alpoin,R. José Rodrigues Sobral,958,(51) 3336-1893,2º-6º: 8:00-18:00 sab: 8:00-12:00,-30.0682205,-51.1771206
 EMEF Dep. Marcírio Goulart Loureiro,R. Saibreira,01,(51) 3289-2231,2ª6ª - 7:30-11:30 / 13:30-17:00 h,-30.0782642,-51.1723394
 Instituto Vicente Palloti,R. Tupi,212,(51) 3387-6400,2ª6ª: 8:00- 17:00,-30.010544,-51.1693424
 EMEF Pepita de Leão,R. Estádio,29,(51) 3319-1011,2ª6ª - 7:30-12 h / 13-17:45 h,-30.0138277,-51.1294196
-EMEI Érico Veríssimo,R. Modesto Franco,100,(51) 3366-2911/(51) 3289-5847,2ª6ª - 7:00-19:00 h,-30.0146788,-51.1281609
+EMEI Érico Veríssimo,R. Modesto Franco,100,(51) 3366-2911,2ª6ª - 7:00-19:00 h,-30.0146788,-51.1281609
 EMEF Presidente Vargas,R. Ana Aurora do Amaral Lisboa,60,(51) 3241-4986,2ª6ª - 7:30-12:00 / 13:30 - 17:45 h,-30.0163597,-51.1274087
 SMOV Sede,Av. Borges de Medeiros,2244,(51) 3246-4712,2º-6º:8:30-12:00/14:00-17:00,-30.0466791,-51.2291484
 AABB Associação Atlética Banco do Brasil,Av. Coronel Marcos,1000,(51) 3266-9139,dom a dom: 24 hrs,-30.1277931,-51.2454911
 EMEF Prof. Ana Iris do Amaral,Av. Mario Meneghetti,1000,(51) 3325-3160,2ª6ª- 7:45- 12:00 13:15- 17:30,-30.0314443,-51.1254104
 Capatazia Restinga,R. Rubens Torrelli,50,(51) 3354-6248,2º-6º: 8:00-18:00 sab: 8:00-12:00,-30.043005,-51.1493965
-EMEI Vila Nova Restinga,R. Álvaro Difini,480,(51) 3349-6600/(51) 3340-3375,2ª6ª - 7:00-19:00 h,-30.1487762,-51.1452578
-EMEF Tristão Sucupira Vianna,Av. Econ. Nilo Wulff,955,(51) 3348-1408/(51) 3289-5870,2ª6ª - 7:30-17:30 h,-30.1477589,-51.1528778
+EMEI Vila Nova Restinga,R. Álvaro Difini,480,(51) 3349-6600,2ª6ª - 7:00-19:00 h,-30.1487762,-51.1452578
+EMEF Tristão Sucupira Vianna,Av. Econ. Nilo Wulff,955,(51) 3348-1408,2ª6ª - 7:30-17:30 h,-30.1477589,-51.1528778
 EMEI Paulo Freire,Av. Meridional, ,(51) 3246-9999,2ª6ª- 7:00- 19:00,-30.1580428,-51.1372373
 Instituto Madre Tereza,R. Wolfran Metzler,605,(51) 3258-5055,2ª a 6ª:  7h às 18h,-30.0242809,-51.1029188
 Capatazia Silva Só,Av Silva Só,Sob elevada Tiradentes,(51) 3227-4591,2º-6º: 8:00-18:00 sab: 8:00-12:00,-30.0419916,-51.2041033

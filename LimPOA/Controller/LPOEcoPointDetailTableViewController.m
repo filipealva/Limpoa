@@ -51,6 +51,13 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
     [self zoomToFitMapWithAnnotations:self.mapView.annotations];
     
     [self.mapView setShowsUserLocation:YES];
+    
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([ecoPoint.latitude doubleValue], [ecoPoint.longitude doubleValue]);
+    
+    MKCoordinateRegion region =
+    MKCoordinateRegionMakeWithDistance (
+                                        coordinate, 800, 800);
+    [_mapView setRegion:region animated:NO];
 }
 
 
