@@ -14,7 +14,7 @@
 static const NSString *WAZE_TITLE = @"Waze";
 static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
-@interface LPOCookingOilDetailTableViewController () <UIActionSheetDelegate>
+@interface LPOCookingOilDetailTableViewController () <UIActionSheetDelegate,UIAlertViewDelegate>
 
 - (IBAction)routePressed:(UIBarButtonItem *)sender;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -235,17 +235,43 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
     [self buttonRoutePressed];
 }
 
+- (void)makeCall
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Quer realizar está ligação?"
+                                                        message:@"Tarifas adicionais podem ser cobradas."
+                                                       delegate:self
+                                              cancelButtonTitle:@"Não"
+                                              otherButtonTitles:@"Ligar!", nil];
+    alertView.tag = 100;
+    [alertView show];
+}
+
+- (NSString *)phoneFormatted:(NSString *)phone
+{
+    NSString *phoneFormatted = @"";
+    for (int i = 0; i < [phone length]; i++) {
+        char character = [phone characterAtIndex:i];
+        if (!(character == '(') && !(character == ')') && !(character == '-') && !(character == ' ') ) {
+            phoneFormatted = [NSString stringWithFormat:@"%@%c", phoneFormatted, character];
+        }
+    }
+    
+    return phoneFormatted;
+}
+
 #pragma mark - UITableViewDelegate
 
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Óleo Vegetal"
-                                                            message:@"Texto Sobre Óleo Vegetal Bem Legal"
-                                                           delegate:nil cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil];
-        [alertView show];
+        if (indexPath.row == 0) {
+            [self  buttonRoutePressed];
+        } else if (indexPath.row == 1) {
+            [self makeCall];
+        }
     }
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - UIActionSheetDelegate
@@ -261,6 +287,36 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 			[self traceRouteWithApp:CMMapAppGoogleMaps];
 		} else {
 			[self traceRouteWithApp:CMMapAppWaze];
+		}
+	}
+}
+
+#pragma mark - UIAlertViewDelegate
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag != 100) {
+		return;
+	}
+	
+	if (buttonIndex == 1) {
+		CookingOil *cookingOil = [self.cookingOils objectAtIndex:0];
+        
+        NSURL *url;
+        if (cookingOil.telephone != nil) {
+            url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", [self phoneFormatted:cookingOil.telephone]]];
+        }
+        
+		if ([[UIApplication sharedApplication] canOpenURL:url]) {
+			[[UIApplication sharedApplication] openURL:url];
+		} else {
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"call_failed_title", nil)
+															message:NSLocalizedString(@"call_failed_message", nil)
+														   delegate:self
+												  cancelButtonTitle:nil
+												  otherButtonTitles:@"OK", nil];
+            
+			[alert show];
 		}
 	}
 }
