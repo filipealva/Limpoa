@@ -237,11 +237,24 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
 - (void)makeCall
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Quer realizar está ligação?"
-                                                        message:@"Tarifas adicionais podem ser cobradas."
-                                                       delegate:self
-                                              cancelButtonTitle:@"Não"
-                                              otherButtonTitles:@"Ligar!", nil];
+    CookingOil *cookingOil = [self.cookingOils objectAtIndex:0];
+    UIAlertView *alertView;
+    
+    
+    if (cookingOil.telephone != nil) {
+        alertView = [[UIAlertView alloc] initWithTitle:@"Quer realizar esta ligação?"
+                                               message:@"Tarifas adicionais podem ser cobradas."
+                                              delegate:self
+                                     cancelButtonTitle:@"Não"
+                                     otherButtonTitles:@"Ligar!", nil];
+    } else {
+        alertView = [[UIAlertView alloc] initWithTitle:@""
+                                               message:@"Desculpe, telefone indisponível"
+                                              delegate:self
+                                     cancelButtonTitle:@"Ok"
+                                     otherButtonTitles:nil];
+    }
+    
     alertView.tag = 100;
     [alertView show];
 }
