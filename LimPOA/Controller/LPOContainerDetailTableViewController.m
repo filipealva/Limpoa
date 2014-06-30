@@ -235,26 +235,17 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
 #pragma mark - UITableViewDelegate
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 2) {
-        [self buttonRoutePressed];
+    if (indexPath.section == 1) {
+        if (indexPath.row == 0) {
+            [self buttonRoutePressed];
+        }
     }
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.section == 1) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Lixeira"
-                                                            message:@"Texto Sobre Lixeiras Bem Legal"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil];
-        [alertView show];
-    }
-}
 
 #pragma mark - UIActionSheetDelegate
 
