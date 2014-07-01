@@ -28,14 +28,14 @@
 "call_action_title" = "Wants to make this call?";
 "call_action_message" = "Fees may apply";
 "call_action_cancel" = "Cancel";
-"call_action_confirm" = "Call!";
+"call_action_confirm" = "Call";
 "call_action_no_phone" = "Sorry, phone unavailable";
 
 "call_failed_title" = "Call failed";
 "call_failed_message" = "Try again later";
 
 "route_confirmation_message" = "You wants to make a route to this place?";
-"route_confirmation_button" = "Make route!";
+"route_confirmation_button" = "Make route";
 
 
 
