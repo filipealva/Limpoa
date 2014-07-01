@@ -23,10 +23,10 @@
 {
     [super viewDidLoad];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
-                                             (unsigned long)NULL), ^(void) {
-        [self loadAllData];
-    });
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+//                                             (unsigned long)NULL), ^(void) {
+//        [self loadAllData];
+//    });
     
     _pageTitles = @[@"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..", @"Não encontrou uma lixeira próxima?", @"Convide seus amigos", @"Começar!"];
     _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
@@ -72,7 +72,8 @@
         if (i == self.pageTitles.count -1) {
              LPOStartViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"StartPageViewController"];
             pageContentViewController.start = ^{
-                [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+                [self loadAllData];
+//                [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
             };
             pageContentViewController.titleText = self.pageTitles[i];
             pageContentViewController.imageFile = (i % 2 == 0) ? @"iphone-5-aired-leather-dark" : @"Green-Background-iphone-5-wallpaper-ilikewallpaper_com";

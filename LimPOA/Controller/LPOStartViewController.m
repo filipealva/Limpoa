@@ -25,5 +25,8 @@
 - (IBAction)startButtonWasPressed:(UIButton *)sender
 {
     if (self.start) self.start();
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstRun"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 @end

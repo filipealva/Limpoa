@@ -29,6 +29,11 @@
     [self startLocationManager];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+}
+
 #pragma mark - Lazy Instantiation
 
 - (NSMutableArray *)ecoPoints

@@ -32,10 +32,14 @@
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"firstRun"]) {
         LPOIntroViewController *intro = [self.storyboard instantiateViewControllerWithIdentifier:@"IntroViewController"];
         [self.navigationController presentViewController:intro animated:NO completion:nil];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstRun"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+}
+
 
 #pragma mark - Lazy Instantiation
 
