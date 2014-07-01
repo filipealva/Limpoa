@@ -15,7 +15,7 @@
 static const NSString *WAZE_TITLE = @"Waze";
 static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
-@interface LPOContainerDetailTableViewController () <UIActionSheetDelegate>
+@interface LPOContainerDetailTableViewController () <UIActionSheetDelegate,UIAlertViewDelegate>
 
 - (IBAction)routePressed:(UIBarButtonItem *)sender;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -95,7 +95,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 		LPOContainerPointAnnotation *annotation = [[LPOContainerPointAnnotation alloc] init];
 		[annotation setContainer:container];
 		[annotation setCoordinate:CLLocationCoordinate2DMake([container.latitude doubleValue], [container.longitude doubleValue])];
-		[annotation setTitle:@"Container"];
+		[annotation setTitle:NSLocalizedString(@"container_list_title", nil)];
 		[annotation setSubtitle:container.address];
 		[annotations addObject:annotation];
 	}
@@ -189,7 +189,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 {
 	Container *container = [self.containers objectAtIndex:0];
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([container.latitude doubleValue], [container.longitude doubleValue]);
-    CMMapPoint *point = [CMMapPoint mapPointWithName:@"Lixeira" coordinate:coordinate];
+    CMMapPoint *point = [CMMapPoint mapPointWithName:@"Container" coordinate:coordinate];
 	[CMMapLauncher launchMapApp:app forDirectionsTo:point];
 }
 
@@ -235,26 +235,24 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
 #pragma mark - UITableViewDelegate
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 2) {
-        [self buttonRoutePressed];
+    if (indexPath.section == 1) {
+        if (indexPath.row == 0) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                                message:NSLocalizedString(@"route_confirmation_message", nil)
+                                                               delegate:self
+                                                      cancelButtonTitle:NSLocalizedString(@"call_action_cancel", nil)
+                                                      otherButtonTitles:NSLocalizedString(@"route_confirmation_button", nil), nil];
+            
+            alertView.tag = 200;
+            [alertView show];
+        }
     }
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.section == 1) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Lixeira"
-                                                            message:@"Texto Sobre Lixeiras Bem Legal"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil];
-        [alertView show];
-    }
-}
 
 #pragma mark - UIActionSheetDelegate
 
@@ -271,6 +269,18 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 			[self traceRouteWithApp:CMMapAppWaze];
 		}
 	}
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 200) {
+        if (buttonIndex == 1) {
+            [self buttonRoutePressed];
+        }
+    }
+	
 }
 
 @end

@@ -14,7 +14,7 @@
 static const NSString *WAZE_TITLE = @"Waze";
 static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
-@interface LPODumpDetailTableViewController () <UIActionSheetDelegate>
+@interface LPODumpDetailTableViewController () <UIActionSheetDelegate,UIAlertViewDelegate>
 
 - (IBAction)routePressed:(UIBarButtonItem *)sender;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -94,7 +94,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 		LPODumpPointAnnotation *annotation = [[LPODumpPointAnnotation alloc] init];
 		[annotation setDump:dump];
 		[annotation setCoordinate:CLLocationCoordinate2DMake([dump.latitude doubleValue], [dump.longitude doubleValue])];
-		[annotation setTitle:@"Lixeira"];
+		[annotation setTitle:NSLocalizedString(@"dump_list_title", nil)];
 		[annotation setSubtitle:dump.address];
 		[annotations addObject:annotation];
 	}
@@ -233,15 +233,22 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
 #pragma mark - UITableViewDelegate
 
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Lixeira"
-                                                            message:@"Texto Sobre Lixeiras Bem Legal"
-                                                           delegate:nil cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil];
-        [alertView show];
+        if (indexPath.row == 0) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                                message:NSLocalizedString(@"route_confirmation_message", nil)
+                                                               delegate:self
+                                                      cancelButtonTitle:NSLocalizedString(@"call_action_cancel", nil)
+                                                      otherButtonTitles:NSLocalizedString(@"route_confirmation_button", nil), nil];
+            
+            alertView.tag = 200;
+            [alertView show];
+        }
     }
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - UIActionSheetDelegate
@@ -259,6 +266,18 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 			[self traceRouteWithApp:CMMapAppWaze];
 		}
 	}
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 200) {
+        if (buttonIndex == 1) {
+            [self buttonRoutePressed];
+        }
+    }
+	
 }
 
 @end
