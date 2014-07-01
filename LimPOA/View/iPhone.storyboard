@@ -101,7 +101,7 @@
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7f-fd-2r5">
                                 <rect key="frame" x="42" y="80" width="236" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.6240234375" blue="0.31466505290000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.26666668057441711" green="0.7137255072593689" blue="0.30196079611778259" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="Vfu-Zc-yqo"/>
                                     <constraint firstAttribute="width" constant="236" id="g13-3u-33l"/>
