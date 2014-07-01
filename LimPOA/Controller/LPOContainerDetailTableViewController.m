@@ -95,7 +95,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 		LPOContainerPointAnnotation *annotation = [[LPOContainerPointAnnotation alloc] init];
 		[annotation setContainer:container];
 		[annotation setCoordinate:CLLocationCoordinate2DMake([container.latitude doubleValue], [container.longitude doubleValue])];
-		[annotation setTitle:@"Container"];
+		[annotation setTitle:NSLocalizedString(@"container_list_title", nil)];
 		[annotation setSubtitle:container.address];
 		[annotations addObject:annotation];
 	}
@@ -189,7 +189,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 {
 	Container *container = [self.containers objectAtIndex:0];
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([container.latitude doubleValue], [container.longitude doubleValue]);
-    CMMapPoint *point = [CMMapPoint mapPointWithName:@"Lixeira" coordinate:coordinate];
+    CMMapPoint *point = [CMMapPoint mapPointWithName:@"Container" coordinate:coordinate];
 	[CMMapLauncher launchMapApp:app forDirectionsTo:point];
 }
 

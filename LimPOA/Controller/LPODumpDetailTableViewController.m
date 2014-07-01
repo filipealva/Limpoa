@@ -94,7 +94,7 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 		LPODumpPointAnnotation *annotation = [[LPODumpPointAnnotation alloc] init];
 		[annotation setDump:dump];
 		[annotation setCoordinate:CLLocationCoordinate2DMake([dump.latitude doubleValue], [dump.longitude doubleValue])];
-		[annotation setTitle:@"Lixeira"];
+		[annotation setTitle:NSLocalizedString(@"dump_list_title", nil)];
 		[annotation setSubtitle:dump.address];
 		[annotations addObject:annotation];
 	}

@@ -25,6 +25,15 @@
 "phone_unavailable" = "Phone unavailable";
 "Maps" = "Maps";
 "Cancel" = "Cancel";
+"call_action_title" = "Wants to make this call?";
+"call_action_message" = "Fees may apply";
+"call_action_cancel" = "Cancel";
+"call_action_confirm" = "Call!";
+"call_action_no_phone" = "Sorry, phone unavailable";
+
+"call_failed_title" = "Call failed";
+"call_failed_message" = "Try again later";
+
 
 //Map Views
 "map_view_title" = "Map";

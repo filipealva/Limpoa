@@ -242,16 +242,16 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
     
     
     if (cookingOil.telephone != nil) {
-        alertView = [[UIAlertView alloc] initWithTitle:@"Quer realizar esta ligação?"
-                                               message:@"Tarifas adicionais podem ser cobradas."
+        alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"call_action_title", nil)
+                                               message:NSLocalizedString(@"call_action_message", nil)
                                               delegate:self
-                                     cancelButtonTitle:@"Não"
-                                     otherButtonTitles:@"Ligar!", nil];
+                                     cancelButtonTitle:NSLocalizedString(@"call_action_cancel", nil)
+                                     otherButtonTitles:NSLocalizedString(@"call_action_confirm", nil), nil];
     } else {
         alertView = [[UIAlertView alloc] initWithTitle:@""
-                                               message:@"Desculpe, telefone indisponível"
+                                               message:NSLocalizedString(@"call_action_no_phone", nil)
                                               delegate:self
-                                     cancelButtonTitle:@"Ok"
+                                     cancelButtonTitle:@"OK"
                                      otherButtonTitles:nil];
     }
     
