@@ -19,7 +19,7 @@
 //Cooking Oil List
 "cooking_oil_list_title" = "Óleo Vegetal";
 "cooking_oil_list_info" = "Esta é a lista de pontos de coleta de óleo vegetal (óleo de cozinha) mais próximos de você aqui em Porto Alegre. Para descartar corretamente o seu óleo, você deve armazená-lo em um recipiente plástico (exemplo: garrafa PET) e levar até um desses locais. Caso tenha alguma dúvida selecione o ponto de descarte de sua preferência e veja informações detalhadas.";
-"cooking_oil_list_info_confirm" = "Entendi!";
+"cooking_oil_list_info_confirm" = "Entendi";
 
 //EcoPoint List
 "ecopoint_list_title" = "EcoPonto";

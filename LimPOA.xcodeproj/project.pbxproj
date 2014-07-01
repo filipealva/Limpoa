@@ -54,6 +54,7 @@
 		037157371933CEB10030BEA2 /* LPODumpMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037157361933CEB10030BEA2 /* LPODumpMapViewController.m */; };
 		0371573A1933D9590030BEA2 /* LPODumpPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 037157391933D9590030BEA2 /* LPODumpPointAnnotation.m */; };
 		0371573F19364F020030BEA2 /* LPODumpDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0371573E19364F020030BEA2 /* LPODumpDetailTableViewController.m */; };
+		03733EF319636B0A003CD5E4 /* LPOInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03733EF219636B0A003CD5E4 /* LPOInfoViewController.m */; };
 		03D0B6A919555FE500DA2F7C /* LPOCookingOilMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D0B6A819555FE500DA2F7C /* LPOCookingOilMapViewController.m */; };
 		03D0B6AC1955603300DA2F7C /* LPOCookingOilPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D0B6AB1955603300DA2F7C /* LPOCookingOilPointAnnotation.m */; };
 		03D0B6AF1955605D00DA2F7C /* LPOCookingOilDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D0B6AE1955605D00DA2F7C /* LPOCookingOilDetailTableViewController.m */; };
@@ -152,6 +153,8 @@
 		037157391933D9590030BEA2 /* LPODumpPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPODumpPointAnnotation.m; path = Controller/LPODumpPointAnnotation.m; sourceTree = "<group>"; };
 		0371573D19364F020030BEA2 /* LPODumpDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPODumpDetailTableViewController.h; path = Controller/LPODumpDetailTableViewController.h; sourceTree = "<group>"; };
 		0371573E19364F020030BEA2 /* LPODumpDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPODumpDetailTableViewController.m; path = Controller/LPODumpDetailTableViewController.m; sourceTree = "<group>"; };
+		03733EF119636B0A003CD5E4 /* LPOInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOInfoViewController.h; path = Controller/LPOInfoViewController.h; sourceTree = "<group>"; };
+		03733EF219636B0A003CD5E4 /* LPOInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOInfoViewController.m; path = Controller/LPOInfoViewController.m; sourceTree = "<group>"; };
 		03D0B6A719555FE500DA2F7C /* LPOCookingOilMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOCookingOilMapViewController.h; path = Controller/LPOCookingOilMapViewController.h; sourceTree = "<group>"; };
 		03D0B6A819555FE500DA2F7C /* LPOCookingOilMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOCookingOilMapViewController.m; path = Controller/LPOCookingOilMapViewController.m; sourceTree = "<group>"; };
 		03D0B6AA1955603300DA2F7C /* LPOCookingOilPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOCookingOilPointAnnotation.h; path = Controller/LPOCookingOilPointAnnotation.h; sourceTree = "<group>"; };
@@ -336,6 +339,8 @@
 				03715730192D4E210030BEA2 /* Container */,
 				03715731192D4E290030BEA2 /* CookingOil */,
 				03715732192D4E350030BEA2 /* EcoPoint */,
+				03733EF119636B0A003CD5E4 /* LPOInfoViewController.h */,
+				03733EF219636B0A003CD5E4 /* LPOInfoViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -596,6 +601,7 @@
 				037156F2192BE6310030BEA2 /* LPODumpManager.m in Sources */,
 				0371571F192D4DD70030BEA2 /* LPOStartViewController.m in Sources */,
 				037156F5192D2A0E0030BEA2 /* LPOCookingOilManager.m in Sources */,
+				03733EF319636B0A003CD5E4 /* LPOInfoViewController.m in Sources */,
 				037156B31922FB120030BEA2 /* LPOCustomTabViewController.m in Sources */,
 				031091141923B09900EACF4D /* LPOPageContentViewController.m in Sources */,
 				0371573A1933D9590030BEA2 /* LPODumpPointAnnotation.m in Sources */,

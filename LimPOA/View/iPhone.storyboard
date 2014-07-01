@@ -685,7 +685,6 @@
                         <barButtonItem key="leftBarButtonItem" image="724-info" id="SgZ-kO-WlE">
                             <connections>
                                 <action selector="infoButtonTapped:" destination="6zf-qc-vJS" id="6DM-BB-4V7"/>
-                                <segue destination="lF6-78-O8F" kind="modal" id="bcz-KQ-zS2"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Map" id="w0f-5b-WXU">
@@ -737,10 +736,10 @@
             </objects>
             <point key="canvasLocation" x="628" y="3878"/>
         </scene>
-        <!--View Controller - Informações-->
+        <!--Info View Controller - Informações-->
         <scene sceneID="yGG-U3-EZY">
             <objects>
-                <viewController id="dbg-eu-qrI" sceneMemberID="viewController">
+                <viewController id="dbg-eu-qrI" customClass="LPOInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BLW-PB-Uvm"/>
                         <viewControllerLayoutGuide type="bottom" id="HEN-c3-W1e"/>
@@ -773,7 +772,7 @@
                                 <rect key="frame" x="20" y="137" width="280" height="344"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">Esta é a lista de EcoPontos (Destino Certo) mais próximos de você aqui em Porto Alegre. As unidades de Destino Certo recebem madeiras, latas com resto de tintas, móveis, colchões, terra, entulhos, caliça, cerâmica, sucatas de ferro, eletrodomésticos e resíduos arbóreos, materiais que não são recolhidos pelas coletas regulares, domiciliar e seletiva, e muitas vezes simplesmente são descartados irregularmente na via pública. As Unidades de Destino Certo não recebem lixo orgânico e se destinam apenas a pequenos geradores, por isso não aceitam descartes maiores do que 0,5 metro cúbico. Elas têm ainda um Posto de Entrega de Óleo de Fritura (PEOF), um Posto de Entrega Voluntária (PEV) para materiais destinados à coleta seletiva e um espaço cuidadosamente cercado e protegido para receber pneus velhos.</mutableString>
+                                <string key="text">Esta é a lista de containers para descarte de lixo orgânico mais próximos de você aqui em Porto Alegre. Para utilizar os containers você deve colocar seu lixo orgânico em sacos plásticos e colocá-lo dentro do container. Caso não haja nenhum container próximo de você, selecione o mais próximo e traçe uma rota no GPS através do Limpoa.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -790,6 +789,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirmButtonTapped:" destination="dbg-eu-qrI" eventType="touchUpInside" id="AoG-eO-eGq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
@@ -811,10 +813,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Informações" id="7jm-FY-7il"/>
+                    <connections>
+                        <outlet property="confirmButton" destination="RPq-wD-C10" id="lJh-qa-98R"/>
+                        <outlet property="infoTextField" destination="AsW-mO-XAH" id="nxc-SR-07e"/>
+                        <outlet property="titleLabel" destination="tvn-rv-A2c" id="4oK-m8-Uvn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bco-N7-0dK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="632" y="4896"/>
+            <point key="canvasLocation" x="889" y="-2050"/>
         </scene>
         <!--Eco Point Detail Table View Controller - Detalhes-->
         <scene sceneID="6f9-u6-buh">
@@ -1142,7 +1149,7 @@
         <!--Navigation Controller-->
         <scene sceneID="yho-UC-vd0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lF6-78-O8F" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Info" automaticallyAdjustsScrollViewInsets="NO" id="lF6-78-O8F" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UZ0-WW-eWH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1155,7 +1162,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wtF-4o-GIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="4896"/>
+            <point key="canvasLocation" x="367" y="-2050"/>
         </scene>
     </scenes>
     <resources>
