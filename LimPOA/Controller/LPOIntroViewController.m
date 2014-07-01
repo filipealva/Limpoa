@@ -22,7 +22,7 @@
 {
     [super viewDidLoad];
     
-    _pageTitles = @[@"Veja os pontos de coleta seletiva mais próximos de você em Porto Alegre.", @"Veja informações detalhadas de cada ponto.", @"Não sabe onde fica? O Limpoa te mostra!", @"Começar!"];
+    _pageTitles = @[@"Veja os pontos de coleta seletiva mais próximos de você.", @"Veja informações detalhadas de cada ponto.", @"Não sabe onde fica? O Limpoa te mostra!", @"Começar!"];
     _pageImages = @[@"Intro-Image-1", @"Intro-Image-2", @"Intro-Image-3", @"Intro-Image-4"];
     
     [self.pageIndicator setNumberOfPages:self.pageTitles.count];

@@ -13,6 +13,8 @@
 - (IBAction)startButtonWasPressed:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *activityIndicatorYConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttonStartYConstraint;
 @property (nonatomic, strong) NSManagedObjectContext *context;
 
 @end
@@ -25,6 +27,13 @@
     self.activityIndicator.alpha = 0;
     
     self.backgroundImage.image = [UIImage imageNamed:self.imageFile];
+}
+
+- (void)updateViewConstraints
+{
+    [super updateViewConstraints];
+    self.buttonStartYConstraint.constant = self.view.bounds.size.height == 568 ? 60.0 : 40.0;
+    self.activityIndicatorYConstraint.constant = self.view.bounds.size.height == 568 ? 75.0 : 55.0;
 }
 
 #pragma mark - Lazy Instantiation
