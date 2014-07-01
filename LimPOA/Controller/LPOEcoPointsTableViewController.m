@@ -9,6 +9,7 @@
 #import "LPOEcoPointsTableViewController.h"
 #import "LPOEcoPointMapViewController.h"
 #import "LPOEcoPointDetailTableViewController.h"
+#import "LPOInfoViewController.h"
 
 @interface LPOEcoPointsTableViewController ()
 
@@ -82,9 +83,10 @@
 
 - (IBAction)infoButtonTapped:(UIBarButtonItem *)sender
 {
-//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"ecopoint_list_info", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"ecopoint_list_info_confirm", nil) otherButtonTitles:nil];
-//    
-//    [alertView show];
+    UINavigationController *navigation = [self.storyboard instantiateViewControllerWithIdentifier:@"Info"];
+    LPOInfoViewController *info = (LPOInfoViewController *)[navigation.viewControllers objectAtIndex:0];
+    info.type = @"EcoPoint";
+    [self.navigationController presentViewController:navigation animated:YES completion:nil];
 }
 
 #pragma mark - LPOLocationManagerDelegate

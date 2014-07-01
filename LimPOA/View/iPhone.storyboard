@@ -749,20 +749,20 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bQ-4U-Z65">
-                                <rect key="frame" x="0.0" y="128" width="320" height="1"/>
+                                <rect key="frame" x="20" y="128" width="280" height="1"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="N0g-dR-2da"/>
-                                    <constraint firstAttribute="width" constant="320" id="lrN-0u-2qe"/>
+                                    <constraint firstAttribute="width" constant="280" id="lrN-0u-2qe"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lixeira" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvn-rv-A2c">
-                                <rect key="frame" x="20" y="87" width="129" height="33"/>
+                                <rect key="frame" x="20" y="83" width="284" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="129" id="kBb-OX-5nG"/>
-                                    <constraint firstAttribute="height" constant="33" id="xEe-IC-lXU"/>
+                                    <constraint firstAttribute="width" constant="284" id="kBb-OX-5nG"/>
+                                    <constraint firstAttribute="height" constant="37" id="xEe-IC-lXU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="31"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -773,7 +773,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Esta é a lista de containers para descarte de lixo orgânico mais próximos de você aqui em Porto Alegre. Para utilizar os containers você deve colocar seu lixo orgânico em sacos plásticos e colocá-lo dentro do container. Caso não haja nenhum container próximo de você, selecione o mais próximo e traçe uma rota no GPS através do Limpoa.</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPq-wD-C10">
@@ -801,14 +801,14 @@
                             <constraint firstAttribute="trailing" secondItem="RPq-wD-C10" secondAttribute="trailing" constant="16" id="AUw-wS-14J"/>
                             <constraint firstItem="RPq-wD-C10" firstAttribute="top" secondItem="AsW-mO-XAH" secondAttribute="bottom" constant="8" id="DA8-OO-YeP"/>
                             <constraint firstItem="5bQ-4U-Z65" firstAttribute="top" secondItem="tvn-rv-A2c" secondAttribute="bottom" constant="8" id="FsJ-b5-7Px"/>
-                            <constraint firstItem="5bQ-4U-Z65" firstAttribute="leading" secondItem="lCP-LX-Ziu" secondAttribute="leading" id="Hta-Rn-fOx"/>
-                            <constraint firstAttribute="trailing" secondItem="5bQ-4U-Z65" secondAttribute="trailing" id="JrY-g0-B6z"/>
+                            <constraint firstItem="5bQ-4U-Z65" firstAttribute="leading" secondItem="lCP-LX-Ziu" secondAttribute="leading" constant="20" id="Hta-Rn-fOx"/>
+                            <constraint firstAttribute="trailing" secondItem="5bQ-4U-Z65" secondAttribute="trailing" constant="20" id="JrY-g0-B6z"/>
                             <constraint firstItem="AsW-mO-XAH" firstAttribute="centerX" secondItem="5bQ-4U-Z65" secondAttribute="centerX" id="SKj-81-HGW"/>
                             <constraint firstItem="tvn-rv-A2c" firstAttribute="leading" secondItem="lCP-LX-Ziu" secondAttribute="leading" constant="20" id="cP3-n1-cSj"/>
                             <constraint firstItem="5bQ-4U-Z65" firstAttribute="top" secondItem="tvn-rv-A2c" secondAttribute="bottom" constant="8" id="jyq-tb-dk1"/>
                             <constraint firstItem="HEN-c3-W1e" firstAttribute="top" secondItem="RPq-wD-C10" secondAttribute="bottom" constant="20" id="nI1-Q5-08L"/>
-                            <constraint firstItem="tvn-rv-A2c" firstAttribute="top" secondItem="BLW-PB-Uvm" secondAttribute="bottom" constant="23" id="oGu-Lp-2kg"/>
-                            <constraint firstAttribute="trailing" secondItem="tvn-rv-A2c" secondAttribute="trailing" constant="171" id="s8n-MN-YRt"/>
+                            <constraint firstItem="tvn-rv-A2c" firstAttribute="top" secondItem="BLW-PB-Uvm" secondAttribute="bottom" constant="19" id="oGu-Lp-2kg"/>
+                            <constraint firstAttribute="trailing" secondItem="tvn-rv-A2c" secondAttribute="trailing" constant="16" id="s8n-MN-YRt"/>
                             <constraint firstItem="AsW-mO-XAH" firstAttribute="top" secondItem="5bQ-4U-Z65" secondAttribute="bottom" constant="8" id="wd4-pN-jbA"/>
                         </constraints>
                     </view>

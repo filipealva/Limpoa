@@ -9,6 +9,7 @@
 #import "LPOContainersTableViewController.h"
 #import "LPOContainerMapViewController.h"
 #import "LPOContainerDetailTableViewController.h"
+#import "LPOInfoViewController.h"
 
 @interface LPOContainersTableViewController ()
 
@@ -89,9 +90,10 @@
 
 - (IBAction)infoButtonTapped:(UIBarButtonItem *)sender
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"container_list_info", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"container_list_info_confirm", nil) otherButtonTitles:nil];
-    
-    [alertView show];
+    UINavigationController *navigation = [self.storyboard instantiateViewControllerWithIdentifier:@"Info"];
+    LPOInfoViewController *info = (LPOInfoViewController *)[navigation.viewControllers objectAtIndex:0];
+    info.type = @"Container";
+    [self.navigationController presentViewController:navigation animated:YES completion:nil];
 }
 
 #pragma mark - LPOLocationManagerDelegate
