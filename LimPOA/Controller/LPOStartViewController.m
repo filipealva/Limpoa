@@ -7,6 +7,7 @@
 //
 
 #import "LPOStartViewController.h"
+#import "UIColor+ColorWithHex.h"
 
 @interface LPOStartViewController ()
 
@@ -25,6 +26,8 @@
 {
     [super viewDidLoad];
     self.activityIndicator.alpha = 0;
+    
+    self.titleLabel.layer.cornerRadius = 2;
     
     self.backgroundImage.image = [UIImage imageNamed:self.imageFile];
 }
