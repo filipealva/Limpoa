@@ -13,6 +13,7 @@
 
 @interface LPOCookingOilsTableViewController ()
 
+- (IBAction)infoButtonTapped:(UIBarButtonItem *)sender;
 @property (nonatomic, strong) NSMutableArray *cookingOilPoints;
 @property (nonatomic, assign) CLLocationCoordinate2D currentLocation;
 @property (nonatomic, strong) LPOLocationManager *locationManager;
@@ -86,6 +87,12 @@
 	}
 }
 
+- (IBAction)infoButtonTapped:(UIBarButtonItem *)sender
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"cooking_oil_list_info", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"cooking_oil_list_info_confirm", nil) otherButtonTitles:nil];
+    
+    [alertView show];
+}
 #pragma mark - LPOLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocation:(CLLocation *)location

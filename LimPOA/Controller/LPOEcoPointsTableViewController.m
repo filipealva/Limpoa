@@ -12,6 +12,7 @@
 
 @interface LPOEcoPointsTableViewController ()
 
+- (IBAction)infoButtonTapped:(UIBarButtonItem *)sender;
 @property (nonatomic, strong) NSMutableArray *ecoPoints;
 @property (nonatomic, assign) CLLocationCoordinate2D currentLocation;
 @property (nonatomic, strong) LPOLocationManager *locationManager;
@@ -77,6 +78,13 @@
 		[self setLocationManager:[LPOLocationManager sharedManager]];
 		[self.locationManager addDelegate:self];
 	}
+}
+
+- (IBAction)infoButtonTapped:(UIBarButtonItem *)sender
+{
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"ecopoint_list_info", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"ecopoint_list_info_confirm", nil) otherButtonTitles:nil];
+//    
+//    [alertView show];
 }
 
 #pragma mark - LPOLocationManagerDelegate

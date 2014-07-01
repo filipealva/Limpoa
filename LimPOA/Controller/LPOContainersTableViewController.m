@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSMutableArray *containers;
 @property (nonatomic, assign) CLLocationCoordinate2D currentLocation;
 @property (nonatomic, strong) LPOLocationManager *locationManager;
+- (IBAction)infoButtonTapped:(UIBarButtonItem *)sender;
 
 @end
 
@@ -86,6 +87,13 @@
 	}
 }
 
+- (IBAction)infoButtonTapped:(UIBarButtonItem *)sender
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"container_list_info", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"container_list_info_confirm", nil) otherButtonTitles:nil];
+    
+    [alertView show];
+}
+
 #pragma mark - LPOLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocation:(CLLocation *)location
@@ -115,6 +123,5 @@
 
 	}
 }
-
 
 @end
