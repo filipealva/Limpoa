@@ -92,7 +92,7 @@
     }
 }
 
-#pragma Lazy Instantiation
+#pragma mark - Lazy Instantiation
 
 - (NSManagedObjectContext *)context
 {
