@@ -278,7 +278,14 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 {
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
-            [self  buttonRoutePressed];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                                message:NSLocalizedString(@"route_confirmation_message", nil)
+                                                               delegate:self
+                                                      cancelButtonTitle:NSLocalizedString(@"call_action_cancel", nil)
+                                                      otherButtonTitles:NSLocalizedString(@"route_confirmation_button", nil), nil];
+            
+            alertView.tag = 200;
+            [alertView show];
         } else if (indexPath.row == 1) {
             [self makeCall];
         }
@@ -308,30 +315,34 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (alertView.tag != 100) {
-		return;
-	}
-	
-	if (buttonIndex == 1) {
-		EcoPoint *ecopoint = [self.ecoPoints objectAtIndex:0];
-        
-        NSURL *url;
-        if (ecopoint.telephone != nil) {
-            url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", [self phoneFormatted:ecopoint.telephone]]];
-        }
-        
-		if ([[UIApplication sharedApplication] canOpenURL:url]) {
-			[[UIApplication sharedApplication] openURL:url];
-		} else {
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"call_failed_title", nil)
-															message:NSLocalizedString(@"call_failed_message", nil)
-														   delegate:self
-												  cancelButtonTitle:nil
-												  otherButtonTitles:@"OK", nil];
+    if (alertView.tag == 100) {
+		if (buttonIndex == 1) {
+            EcoPoint *ecopoint = [self.ecoPoints objectAtIndex:0];
             
-			[alert show];
-		}
+            NSURL *url;
+            if (ecopoint.telephone != nil) {
+                url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", [self phoneFormatted:ecopoint.telephone]]];
+            }
+            
+            if ([[UIApplication sharedApplication] canOpenURL:url]) {
+                [[UIApplication sharedApplication] openURL:url];
+            } else {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"call_failed_title", nil)
+                                                                message:NSLocalizedString(@"call_failed_message", nil)
+                                                               delegate:self
+                                                      cancelButtonTitle:nil
+                                                      otherButtonTitles:@"OK", nil];
+                
+                [alert show];
+            }
+        }
 	}
+    
+    if (alertView.tag == 200) {
+        if (buttonIndex == 1) {
+            [self buttonRoutePressed];
+        }
+    }
 }
 
 @end

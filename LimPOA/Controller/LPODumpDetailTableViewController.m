@@ -14,7 +14,7 @@
 static const NSString *WAZE_TITLE = @"Waze";
 static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 
-@interface LPODumpDetailTableViewController () <UIActionSheetDelegate>
+@interface LPODumpDetailTableViewController () <UIActionSheetDelegate,UIAlertViewDelegate>
 
 - (IBAction)routePressed:(UIBarButtonItem *)sender;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -237,7 +237,14 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 {
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
-            [self buttonRoutePressed];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                                message:NSLocalizedString(@"route_confirmation_message", nil)
+                                                               delegate:self
+                                                      cancelButtonTitle:NSLocalizedString(@"call_action_cancel", nil)
+                                                      otherButtonTitles:NSLocalizedString(@"route_confirmation_button", nil), nil];
+            
+            alertView.tag = 200;
+            [alertView show];
         }
     }
     
@@ -259,6 +266,18 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
 			[self traceRouteWithApp:CMMapAppWaze];
 		}
 	}
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 200) {
+        if (buttonIndex == 1) {
+            [self buttonRoutePressed];
+        }
+    }
+	
 }
 
 @end

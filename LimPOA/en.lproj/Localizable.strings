@@ -34,6 +34,10 @@
 "call_failed_title" = "Call failed";
 "call_failed_message" = "Try again later";
 
+"route_confirmation_message" = "You wants to make a route to this place?";
+"route_confirmation_button" = "Make route!";
+
+
 
 //Map Views
 "map_view_title" = "Map";

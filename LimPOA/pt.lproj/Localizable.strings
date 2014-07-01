@@ -34,5 +34,8 @@
 "call_failed_title" = "A ligação falhou";
 "call_failed_message" = "Tente novamente mais tarde";
 
+"route_confirmation_message" = "Quer traçar uma rota no GPS?";
+"route_confirmation_button" = "Traçar rota!";
+
 //Map Views
 "map_view_title" = "Mapa";
