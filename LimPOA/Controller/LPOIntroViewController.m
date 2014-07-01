@@ -22,8 +22,8 @@
 {
     [super viewDidLoad];
     
-    _pageTitles = @[@"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..", @"Não encontrou uma lixeira próxima?", @"Convide seus amigos", @"Começar!"];
-    _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
+    _pageTitles = @[@"Veja os pontos de coleta seletiva mais próximos de você em Porto Alegre.", @"Veja informações detalhadas de cada ponto.", @"Não sabe onde fica? O Limpoa te mostra!", @"Começar!"];
+    _pageImages = @[@"Intro-Image-1", @"Intro-Image-2", @"Intro-Image-3", @"Intro-Image-4"];
     
     [self.pageIndicator setNumberOfPages:self.pageTitles.count];
  
@@ -61,14 +61,14 @@
         if (i == self.pageTitles.count -1) {
              LPOStartViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"StartPageViewController"];
             pageContentViewController.titleText = self.pageTitles[i];
-            pageContentViewController.imageFile = (i % 2 == 0) ? @"iphone-5-aired-leather-dark" : @"Green-Background-iphone-5-wallpaper-ilikewallpaper_com";
+            pageContentViewController.imageFile = self.pageImages[i];
             pageContentViewController.pageIndex = i;
             
             [self.contentPages addObject:pageContentViewController];
         } else {
             LPOPageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
             pageContentViewController.titleText = self.pageTitles[i];
-            pageContentViewController.imageFile = (i % 2 == 0) ? @"iphone-5-aired-leather-dark" : @"Green-Background-iphone-5-wallpaper-ilikewallpaper_com";
+            pageContentViewController.imageFile = self.pageImages[i];
             pageContentViewController.titleLabel.textColor = [UIColor blackColor];
             pageContentViewController.pageIndex = i;
             
