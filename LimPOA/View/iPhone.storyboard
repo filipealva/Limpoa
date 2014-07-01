@@ -306,7 +306,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Lixeira" id="Sto-RQ-kzK">
-                        <barButtonItem key="leftBarButtonItem" image="724-info" id="g6m-YR-kjE"/>
+                        <barButtonItem key="leftBarButtonItem" image="724-info" id="g6m-YR-kjE">
+                            <connections>
+                                <action selector="infoButtonTapped:" destination="Ktl-gz-Z4q" id="Waa-fD-907"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Map" id="iZ0-8i-Une">
                             <connections>
                                 <segue destination="wrz-6N-Jf8" kind="push" identifier="showDumpsMap" id="cUH-FS-ayi"/>

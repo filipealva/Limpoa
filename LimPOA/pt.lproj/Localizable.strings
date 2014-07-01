@@ -8,15 +8,23 @@
 
 //Dump List
 "dump_list_title" = "Lixeira";
+"dump_list_info" = "Esta é a lista de lixeiras públicas mais próximas de você em Porto Alegre. Colabore utilizando as mesmas para descarte dos resíduos do dia-a-dia como embalagens pequenas em geral e bitucas de cigarro.";
+"dump_list_info_confirm" = "Entendi!";
 
 //Container List
 "container_list_title" = "Container";
+"container_list_info" = "Esta é a lista de containers para descarte de lixo orgânico mais próximos de você aqui em Porto Alegre. Para utilizar os containers você deve colocar seu lixo orgânico em sacos plásticos e colocá-lo dentro do container. Caso não haja nenhum container próximo de você, selecione o mais próximo e traçe uma rota no GPS através do Limpoa.";
+"container_list_info_confirm" = "Entendi!";
 
 //Cooking Oil List
 "cooking_oil_list_title" = "Óleo Vegetal";
+"cooking_oil_list_info" = "Esta é a lista de pontos de coleta de óleo vegetal (óleo de cozinha) mais próximos de você aqui em Porto Alegre. Para descartar corretamente o seu óleo, você deve armazená-lo em um recipiente plástico (exemplo: garrafa PET) e levar até um desses locais. Caso tenha alguma dúvida selecione o ponto de descarte de sua preferência e veja informações detalhadas.";
+"cooking_oil_list_info_confirm" = "Entendi!";
 
 //EcoPoint List
 "ecopoint_list_title" = "EcoPonto";
+"ecopoint_list_info" = "Esta é a lista de EcoPontos (Destino Certo) mais próximos de você aqui em Porto Alegre. As unidades de Destino Certo recebem madeiras, latas com resto de tintas, móveis, colchões, terra, entulhos, caliça, cerâmica, sucatas de ferro, eletrodomésticos e resíduos arbóreos, materiais que não são recolhidos pelas coletas regulares, domiciliar e seletiva, e muitas vezes simplesmente são descartados irregularmente na via pública. As Unidades de Destino Certo não recebem lixo orgânico e se destinam apenas a pequenos geradores, por isso não aceitam descartes maiores do que 0,5 metro cúbico. Elas têm ainda um Posto de Entrega de Óleo de Fritura (PEOF), um Posto de Entrega Voluntária (PEV) para materiais destinados à coleta seletiva e um espaço cuidadosamente cercado e protegido para receber pneus velhos.";
+"ecopoint_list_info_confirm" = "Entendi!";
 
 //Detail Views
 "details_title" = "Detalhes";

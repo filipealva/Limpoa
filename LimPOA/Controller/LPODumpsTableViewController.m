@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSMutableArray *dumps;
 @property (nonatomic, assign) CLLocationCoordinate2D currentLocation;
 @property (nonatomic, strong) LPOLocationManager *locationManager;
+- (IBAction)infoButtonTapped:(UIBarButtonItem *)sender;
 
 @end
 
@@ -84,6 +85,13 @@
 		[self setLocationManager:[LPOLocationManager sharedManager]];
 		[self.locationManager addDelegate:self];
 	}
+}
+
+- (IBAction)infoButtonTapped:(UIBarButtonItem *)sender
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"dump_list_info", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"dump_list_info_confirm", nil) otherButtonTitles:nil];
+    
+    [alertView show];
 }
 
 #pragma mark - LPOLocationManagerDelegate
