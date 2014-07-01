@@ -18,6 +18,9 @@
 //EcoPoint List
 "ecopoint_list_title" = "EcoPoint";
 
+//Info View
+"info_view_title" = "Informations";
+
 //Detail Views
 "details_title" = "Details";
 "route_button_title" = "Route";
