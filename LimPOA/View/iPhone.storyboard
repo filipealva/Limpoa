@@ -103,6 +103,10 @@
                                     <action selector="startButtonWasPressed:" destination="PHM-Xy-bSJ" eventType="touchUpInside" id="dpE-fF-JYj"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="eB1-bj-a5q">
+                                <rect key="frame" x="225" y="105" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -113,6 +117,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="eB1-bj-a5q" id="KQQ-KK-M1R"/>
                         <outlet property="backgroundImage" destination="1it-3g-Uya" id="RAd-wD-MW7"/>
                         <outlet property="titleLabel" destination="q7f-fd-2r5" id="ygv-TR-wZF"/>
                     </connections>

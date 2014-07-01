@@ -7,13 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LPOAppDelegate.h"
+#import "Dump.h"
+#import "Container.h"
+#import "CookingOil.h"
+#import "EcoPoint.h"
 
 @interface LPOStartViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property (weak, nonatomic) IBOutlet UIButton *titleLabel;
 
-@property (strong) dispatch_block_t start;
 @property NSUInteger pageIndex;
 @property NSString *titleText;
 @property NSString *imageFile;
