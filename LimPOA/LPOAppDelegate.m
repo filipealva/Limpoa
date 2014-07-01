@@ -85,6 +85,12 @@
 	// Changes appearance of TextFields/TextViews
 	[[UITextField appearance] setTintColor:baseColor];
 	[[UITextView appearance] setTintColor:baseColor];
+    
+    //Changes page controls appearance
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    pageControl.backgroundColor = [UIColor clearColor];
 }
 
 #pragma mark - Core Data stack
