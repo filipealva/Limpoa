@@ -6,6 +6,12 @@
 // project.
 
 
+// Bugsnag
+#define COCOAPODS_POD_AVAILABLE_Bugsnag
+#define COCOAPODS_VERSION_MAJOR_Bugsnag 3
+#define COCOAPODS_VERSION_MINOR_Bugsnag 1
+#define COCOAPODS_VERSION_PATCH_Bugsnag 2
+
 // CMMapLauncher
 #define COCOAPODS_POD_AVAILABLE_CMMapLauncher
 #define COCOAPODS_VERSION_MAJOR_CMMapLauncher 1

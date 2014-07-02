@@ -1,10 +1,13 @@
 PODS:
+  - Bugsnag (3.1.2)
   - CMMapLauncher (1.1.0)
 
 DEPENDENCIES:
+  - Bugsnag
   - CMMapLauncher
 
 SPEC CHECKSUMS:
+  Bugsnag: 74d109dfa41b55d16890c987c7551ca071afd3d2
   CMMapLauncher: 4b95899cc39bd14dfa3e8525470e34cb8edbb028
 
 COCOAPODS: 0.33.1

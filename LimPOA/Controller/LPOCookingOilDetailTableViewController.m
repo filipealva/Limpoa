@@ -10,6 +10,7 @@
 #import "LPOCookingOilPointAnnotation.h"
 #import "CookingOil.h"
 #import "CMMapLauncher.h"
+#import "Bugsnag.h"
 
 static const NSString *WAZE_TITLE = @"Waze";
 static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
