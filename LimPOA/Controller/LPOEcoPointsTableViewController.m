@@ -9,9 +9,11 @@
 #import "LPOEcoPointsTableViewController.h"
 #import "LPOEcoPointMapViewController.h"
 #import "LPOEcoPointDetailTableViewController.h"
+#import "LPOInfoViewController.h"
 
 @interface LPOEcoPointsTableViewController ()
 
+- (IBAction)infoButtonTapped:(UIBarButtonItem *)sender;
 @property (nonatomic, strong) NSMutableArray *ecoPoints;
 @property (nonatomic, assign) CLLocationCoordinate2D currentLocation;
 @property (nonatomic, strong) LPOLocationManager *locationManager;
@@ -77,6 +79,14 @@
 		[self setLocationManager:[LPOLocationManager sharedManager]];
 		[self.locationManager addDelegate:self];
 	}
+}
+
+- (IBAction)infoButtonTapped:(UIBarButtonItem *)sender
+{
+    UINavigationController *navigation = [self.storyboard instantiateViewControllerWithIdentifier:@"Info"];
+    LPOInfoViewController *info = (LPOInfoViewController *)[navigation.viewControllers objectAtIndex:0];
+    info.type = @"EcoPoint";
+    [self.navigationController presentViewController:navigation animated:YES completion:nil];
 }
 
 #pragma mark - LPOLocationManagerDelegate

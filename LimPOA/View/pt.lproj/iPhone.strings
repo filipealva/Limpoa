@@ -1,0 +1,132 @@
+
+/* Class = "IBUINavigationItem"; title = "Container"; ObjectID = "0MT-iw-RtP"; */
+"0MT-iw-RtP.title" = "Container";
+
+/* Class = "IBUILabel"; text = "1km"; ObjectID = "0R2-VY-xqg"; */
+"0R2-VY-xqg.text" = "1km";
+
+/* Class = "IBUILabel"; text = "Av. Alberto Bins, 1000"; ObjectID = "0c7-DD-bF8"; */
+"0c7-DD-bF8.text" = "Av. Alberto Bins, 1000";
+
+/* Class = "IBUILabel"; text = "Av. Foobar, 171"; ObjectID = "6ig-ix-Ybg"; */
+"6ig-ix-Ybg.text" = "Av. Foobar, 171";
+
+/* Class = "IBUINavigationItem"; title = "Mapa"; ObjectID = "7Kh-PF-ohb"; */
+"7Kh-PF-ohb.title" = "Mapa";
+
+/* Class = "IBUINavigationItem"; title = "Informações"; ObjectID = "7jm-FY-7il"; */
+"7jm-FY-7il.title" = "Informações";
+
+/* Class = "IBUILabel"; text = "1km"; ObjectID = "8SI-DL-PXa"; */
+"8SI-DL-PXa.text" = "1km";
+
+/* Class = "IBUITextView"; text = "Esta é a lista de containers para descarte de lixo orgânico mais próximos de você aqui em Porto Alegre. Para utilizar os containers você deve colocar seu lixo orgânico em sacos plásticos e colocá-lo dentro do container. Caso não haja nenhum container próximo de você, selecione o mais próximo e traçe uma rota no GPS através do Limpoa."; ObjectID = "AsW-mO-XAH"; */
+"AsW-mO-XAH.text" = "Esta é a lista de containers para descarte de lixo orgânico mais próximos de você aqui em Porto Alegre. Para utilizar os containers você deve colocar seu lixo orgânico em sacos plásticos e colocá-lo dentro do container. Caso não haja nenhum container próximo de você, selecione o mais próximo e traçe uma rota no GPS através do Limpoa.";
+
+/* Class = "IBUINavigationItem"; title = "Destino Certo"; ObjectID = "CNP-nf-cia"; */
+"CNP-nf-cia.title" = "Destino Certo";
+
+/* Class = "IBUINavigationItem"; title = "Detalhes"; ObjectID = "CXC-cF-AIZ"; */
+"CXC-cF-AIZ.title" = "Detalhes";
+
+/* Class = "IBUILabel"; text = "Av. Alberto Bins, 1100"; ObjectID = "DL1-oj-b0x"; */
+"DL1-oj-b0x.text" = "Av. Alberto Bins, 1100";
+
+/* Class = "IBUINavigationItem"; title = "Mapa"; ObjectID = "IOm-HQ-RUw"; */
+"IOm-HQ-RUw.title" = "Mapa";
+
+/* Class = "IBUILabel"; text = "Av. Foobar, 100"; ObjectID = "JWF-UC-E5b"; */
+"JWF-UC-E5b.text" = "Av. Foobar, 100";
+
+/* Class = "IBUITabBarItem"; title = "Lixeira"; ObjectID = "KEd-OP-WOH"; */
+"KEd-OP-WOH.title" = "Lixeira";
+
+/* Class = "IBUILabel"; text = "Av. Alberto Bins, 1100"; ObjectID = "MX6-Os-9Hl"; */
+"MX6-Os-9Hl.text" = "Av. Alberto Bins, 1100";
+
+/* Class = "IBUILabel"; text = "Av. Diário de Noticias, 1000"; ObjectID = "NjE-d8-lhq"; */
+"NjE-d8-lhq.text" = "Av. Diário de Noticias, 1000";
+
+/* Class = "IBUILabel"; text = "(51)8463-2222"; ObjectID = "P40-7q-bRK"; */
+"P40-7q-bRK.text" = "(51)8463-2222";
+
+/* Class = "IBUILabel"; text = "(51)65123-3423"; ObjectID = "P6T-Sx-9sY"; */
+"P6T-Sx-9sY.text" = "(51)65123-3423";
+
+/* Class = "IBUILabel"; text = "Av. Alberto Bins, 1000"; ObjectID = "PQA-E8-uCq"; */
+"PQA-E8-uCq.text" = "Av. Alberto Bins, 1000";
+
+/* Class = "IBUITabBarItem"; title = "EcoPonto"; ObjectID = "Q3q-6f-vAW"; */
+"Q3q-6f-vAW.title" = "EcoPonto";
+
+/* Class = "IBUITabBarItem"; title = "Container"; ObjectID = "QF0-uP-N20"; */
+"QF0-uP-N20.title" = "Container";
+
+/* Class = "IBUIBarButtonItem"; title = "Rota"; ObjectID = "Qbh-gh-9Le"; */
+"Qbh-gh-9Le.title" = "Rota";
+
+/* Class = "IBUILabel"; text = "0.2km"; ObjectID = "Qp6-hN-MqH"; */
+"Qp6-hN-MqH.text" = "0.2km";
+
+/* Class = "IBUITabBarItem"; title = "Óleo vegetal"; ObjectID = "RDb-46-cWD"; */
+"RDb-46-cWD.title" = "Óleo vegetal";
+
+/* Class = "IBUIButton"; normalTitle = "Entendi"; ObjectID = "RPq-wD-C10"; */
+"RPq-wD-C10.normalTitle" = "Entendi";
+
+/* Class = "IBUIBarButtonItem"; title = "Rota"; ObjectID = "RSb-EF-A0F"; */
+"RSb-EF-A0F.title" = "Rota";
+
+/* Class = "IBUINavigationItem"; title = "Lixeira"; ObjectID = "Sto-RQ-kzK"; */
+"Sto-RQ-kzK.title" = "Lixeira";
+
+/* Class = "IBUINavigationItem"; title = "Mapa"; ObjectID = "TGT-NJ-LkM"; */
+"TGT-NJ-LkM.title" = "Mapa";
+
+/* Class = "IBUILabel"; text = "DMLU - Sede"; ObjectID = "Ulg-fL-jBm"; */
+"Ulg-fL-jBm.text" = "DMLU - Sede";
+
+/* Class = "IBUILabel"; text = "TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto"; ObjectID = "UsU-Dn-t7u"; */
+"UsU-Dn-t7u.text" = "TextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTextoTexto";
+
+/* Class = "IBUINavigationItem"; title = "Detalhes"; ObjectID = "V7N-nC-Ig4"; */
+"V7N-nC-Ig4.title" = "Detalhes";
+
+/* Class = "IBUILabel"; text = "Cristal"; ObjectID = "Xe8-Qs-UER"; */
+"Xe8-Qs-UER.text" = "Cristal";
+
+/* Class = "IBUILabel"; text = "Av. Alberto Bins, 1000"; ObjectID = "Xk8-Hp-ifq"; */
+"Xk8-Hp-ifq.text" = "Av. Alberto Bins, 1000";
+
+/* Class = "IBUILabel"; text = "Seg - Sex - Horário comercial"; ObjectID = "cof-zx-nJ5"; */
+"cof-zx-nJ5.text" = "Seg - Sex - Horário comercial";
+
+/* Class = "IBUILabel"; text = "Seg - Sex - Horário comercial"; ObjectID = "ge9-8l-3Vb"; */
+"ge9-8l-3Vb.text" = "Seg - Sex - Horário comercial";
+
+/* Class = "IBUINavigationItem"; title = "Detalhes"; ObjectID = "iNB-bu-gL9"; */
+"iNB-bu-gL9.title" = "Detalhes";
+
+/* Class = "IBUINavigationItem"; title = "Detalhes"; ObjectID = "jRj-qR-gFb"; */
+"jRj-qR-gFb.title" = "Detalhes";
+
+/* Class = "IBUILabel"; text = "1km"; ObjectID = "jnK-5j-efc"; */
+"jnK-5j-efc.text" = "1km";
+
+/* Class = "IBUINavigationItem"; title = "Oléo vegetal"; ObjectID = "k3x-Jm-BcW"; */
+"k3x-Jm-BcW.title" = "Oléo vegetal";
+
+/* Class = "IBUIBarButtonItem"; title = "Rota"; ObjectID = "mI9-Ej-G3v"; */
+"mI9-Ej-G3v.title" = "Rota";
+
+/* Class = "IBUIButton"; normalTitle = "Começar"; ObjectID = "q7f-fd-2r5"; */
+"q7f-fd-2r5.normalTitle" = "Começar";
+
+/* Class = "IBUILabel"; text = "Lixeira"; ObjectID = "tvn-rv-A2c"; */
+"tvn-rv-A2c.text" = "Lixeira";
+
+/* Class = "IBUIBarButtonItem"; title = "Rota"; ObjectID = "vMe-k8-Xdo"; */
+"vMe-k8-Xdo.title" = "Rota";
+
+/* Class = "IBUINavigationItem"; title = "Mapa"; ObjectID = "vRh-Sv-sIB"; */
+"vRh-Sv-sIB.title" = "Mapa";

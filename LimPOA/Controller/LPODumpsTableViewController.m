@@ -9,12 +9,14 @@
 #import "LPODumpsTableViewController.h"
 #import "LPODumpMapViewController.h"
 #import "LPODumpDetailTableViewController.h"
+#import "LPOInfoViewController.h"
 
 @interface LPODumpsTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *dumps;
 @property (nonatomic, assign) CLLocationCoordinate2D currentLocation;
 @property (nonatomic, strong) LPOLocationManager *locationManager;
+- (IBAction)infoButtonTapped:(UIBarButtonItem *)sender;
 
 @end
 
@@ -84,6 +86,14 @@
 		[self setLocationManager:[LPOLocationManager sharedManager]];
 		[self.locationManager addDelegate:self];
 	}
+}
+
+- (IBAction)infoButtonTapped:(UIBarButtonItem *)sender
+{
+    UINavigationController *navigation = [self.storyboard instantiateViewControllerWithIdentifier:@"Info"];
+    LPOInfoViewController *info = (LPOInfoViewController *)[navigation.viewControllers objectAtIndex:0];
+    info.type = @"Dump";
+    [self.navigationController presentViewController:navigation animated:YES completion:nil];
 }
 
 #pragma mark - LPOLocationManagerDelegate

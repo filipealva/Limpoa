@@ -6,17 +6,34 @@
   Copyright (c) 2014 Filipe Alvarenga. All rights reserved.
 */
 
+//Intro
+"intro-text-1" = "See the selective waste collection points closest to you.";
+"intro-text-2" = "View detailed information for each point.";
+"intro-text-3" = "Do not know where it is? The LimPOA shows to you!";
+"intro-text-4" = "Start";
+
 //Dump List
 "dump_list_title" = "Dump";
+"dump_list_info" = "This is the list of public bins closest to you in Porto Alegre. Collaborate using the dumps for waste daily trash as small packages in general and cigarette butts.";
+"dump_list_info_confirm" = "Got it!";
 
 //Container List
 "container_list_title" = "Container";
+"container_list_info" = "This is the list of containers for disposal of organic waste closest to you here in Porto Alegre. To use the container you should place your organic waste in plastic bags and put it in the container. If there is no container near you, select the next and draw a route on the GPS using LimPOA.";
+"container_list_info_confirm" = "Got it!";
 
 //Cooking Oil List
 "cooking_oil_list_title" = "Cooking Oil";
+"cooking_oil_list_info" = "This is the list of cooking oil waste closest to you here in Porto Alegre. To properly dispose of your oil, you should store it in a plastic container (eg PET bottle) and take up one of these locations. If you have any questions select the waste point of your choice and see detailed information.";
+"cooking_oil_list_info_confirm" = "Got it!";
 
 //EcoPoint List
 "ecopoint_list_title" = "EcoPoint";
+"ecopoint_list_info" = "This is the list of EcoPoints closest (Destino Certo) you here in Porto Alegre. The Destino Certo units receive woods, paint cans with rest, furniture, mattresses, earth, debris, plaster, ceramics, scrap, appliances and arboreal waste materials that are not collected by regular, household and selective collections, and many times are simply discarded illegally on public roads. \n\n Destino Certo units not receive organic waste and are intended only to small generators, why not accept higher discharges than 0.5 cubic meter. They still have a Post Delivery Frying Oil (PEOF), a Post Voluntary Delivery (ENP) for materials for the selective collection and a carefully fenced and protected space to receive scrap tires.";
+"ecopoint_list_info_confirm" = "Got it!";
+
+//Info View
+"info_view_title" = "Informations";
 
 //Detail Views
 "details_title" = "Details";

@@ -10,9 +10,11 @@
 #import "LPOCookingOilMapViewController.h"
 #import "LPOCookingOilDetailTableViewController.h"
 #import "LPOIntroViewController.h"
+#import "LPOInfoViewController.h"
 
 @interface LPOCookingOilsTableViewController ()
 
+- (IBAction)infoButtonTapped:(UIBarButtonItem *)sender;
 @property (nonatomic, strong) NSMutableArray *cookingOilPoints;
 @property (nonatomic, assign) CLLocationCoordinate2D currentLocation;
 @property (nonatomic, strong) LPOLocationManager *locationManager;
@@ -86,6 +88,13 @@
 	}
 }
 
+- (IBAction)infoButtonTapped:(UIBarButtonItem *)sender
+{
+    UINavigationController *navigation = [self.storyboard instantiateViewControllerWithIdentifier:@"Info"];
+    LPOInfoViewController *info = (LPOInfoViewController *)[navigation.viewControllers objectAtIndex:0];
+    info.type = @"CookingOil";
+    [self.navigationController presentViewController:navigation animated:YES completion:nil];
+}
 #pragma mark - LPOLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocation:(CLLocation *)location
