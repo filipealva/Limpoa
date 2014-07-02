@@ -19,7 +19,7 @@
 
 //Container List
 "container_list_title" = "Container";
-"container_list_info" = "Esta é a lista de containers para descarte de lixo orgânico mais próximos de você aqui em Porto Alegre. Para utilizar os containers você deve colocar seu lixo orgânico em sacos plásticos e colocá-lo dentro do container. Caso não haja nenhum container próximo de você, selecione o mais próximo e traçe uma rota no GPS através do Limpoa.";
+"container_list_info" = "Esta é a lista de containers para descarte de lixo orgânico mais próximos de você aqui em Porto Alegre. Para utilizá-los, você deve colocar seu lixo orgânico em um saco plástico e depositá-lo dentro do container. Caso não localize nenhum perto de você, selecione o container mais próximo e trace uma rota no GPS através do LimPOA.";
 "container_list_info_confirm" = "Entendi";
 
 //Cooking Oil List
@@ -42,8 +42,8 @@
 "phone_unavailable" = "Telefone indisponível";
 "Maps" = "Maps";
 "Cancel" = "Cancelar";
-"call_action_title" = "Quer realizar esta ligação?";
-"call_action_message" = "Taxas da operadora podem ser aplicadas.";
+"call_action_title" = "Ligação";
+"call_action_message" = "Você gostaria de ligar para este local?";
 "call_action_cancel" = "Cancelar";
 "call_action_confirm" = "Ligar";
 "call_action_no_phone" = "Desculpe, telefone indisponível.";
