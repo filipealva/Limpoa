@@ -10,6 +10,9 @@
 #import "LPODumpPointAnnotation.h"
 #import "Dump.h"
 #import "CMMapLauncher.h"
+#import "GAI.h"
+#import "GAIFields.h"
+#import "GAIDictionaryBuilder.h"
 
 static const NSString *WAZE_TITLE = @"Waze";
 static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
@@ -57,7 +60,15 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
     [_mapView setRegion:region animated:NO];
 }
 
-
+- (void)viewDidAppear:(BOOL)animated
+{
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName
+           value:@"Detalhes da Lixeira"];
+    
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+}
 
 - (MKPointAnnotation *)mapViewAnnotationWithPlace:(Dump *)dump
 {

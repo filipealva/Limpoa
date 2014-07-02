@@ -11,6 +11,9 @@
 #import "LPOEcoPointPointAnnotation.h"
 #import "EcoPoint.h"
 #import "CMMapLauncher.h"
+#import "GAI.h"
+#import "GAIFields.h"
+#import "GAIDictionaryBuilder.h"
 
 static const NSString *WAZE_TITLE = @"Waze";
 static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
@@ -41,7 +44,15 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
     [self.mapView setShowsUserLocation:YES];
 }
 
-
+- (void)viewDidAppear:(BOOL)animated
+{
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName
+           value:@"Mapa de EcoPontos"];
+    
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+}
 
 - (MKPointAnnotation *)mapViewAnnotationWithPlace:(EcoPoint *)ecoPoint
 {

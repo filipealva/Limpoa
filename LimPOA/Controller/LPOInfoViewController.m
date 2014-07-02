@@ -7,6 +7,9 @@
 //
 
 #import "LPOInfoViewController.h"
+#import "GAI.h"
+#import "GAIFields.h"
+#import "GAIDictionaryBuilder.h"
 
 @interface LPOInfoViewController ()
 
@@ -21,6 +24,16 @@
 {
     [self getStrings];
     self.confirmButton.layer.cornerRadius = 2;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName
+           value:[NSString stringWithFormat:@"Informações: %@", self.type]];
+    
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 - (IBAction)confirmButtonTapped:(UIButton *)sender
