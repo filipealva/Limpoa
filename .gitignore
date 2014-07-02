@@ -3,3 +3,4 @@ xcuserdata
 xcshareddata
 *.xccheckout
 project.xcworkspace/
+/Pods
