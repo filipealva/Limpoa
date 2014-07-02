@@ -22,7 +22,7 @@
 {
     [super viewDidLoad];
     
-    _pageTitles = @[@"Veja os pontos de coleta seletiva mais próximos de você.", @"Veja informações detalhadas de cada ponto.", @"Não sabe onde fica? O Limpoa te mostra!", @"Começar"];
+    _pageTitles = @[NSLocalizedString(@"intro-text-1", nil), NSLocalizedString(@"intro-text-2", nil), NSLocalizedString(@"intro-text-3", nil), NSLocalizedString(@"intro-text-4", nil)];
     _pageImages = @[@"Intro-Image-1", @"Intro-Image-2", @"Intro-Image-3", @"Intro-Image-4"];
     
     [self.pageIndicator setNumberOfPages:self.pageTitles.count];

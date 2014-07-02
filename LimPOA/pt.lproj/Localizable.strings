@@ -6,6 +6,12 @@
   Copyright (c) 2014 Filipe Alvarenga. All rights reserved.
 */
 
+//Intro
+"intro-text-1" = "Veja os pontos de coleta seletiva mais próximos de você.";
+"intro-text-2" = "Veja informações detalhadas de cada ponto.";
+"intro-text-3" = "Não sabe onde fica? O LimPOA te mostra!";
+"intro-text-4" = "Começar";
+
 //Dump List
 "dump_list_title" = "Lixeira";
 "dump_list_info" = "Esta é a lista de lixeiras públicas mais próximas de você em Porto Alegre. Colabore utilizando as mesmas para descarte dos resíduos do dia-a-dia como embalagens pequenas em geral e bitucas de cigarro.";

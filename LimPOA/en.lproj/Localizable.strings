@@ -6,6 +6,12 @@
   Copyright (c) 2014 Filipe Alvarenga. All rights reserved.
 */
 
+//Intro
+"intro-text-1" = "See the selective waste collection points closest to you.";
+"intro-text-2" = "View detailed information for each point.";
+"intro-text-3" = "Do not know where it is? The LimPOA shows to you!";
+"intro-text-4" = "Start";
+
 //Dump List
 "dump_list_title" = "Dump";
 "dump_list_info" = "This is the list of public bins closest to you in Porto Alegre. Collaborate using the dumps for waste daily trash as small packages in general and cigarette butts.";
