@@ -10,6 +10,9 @@
 #import "LPODumpMapViewController.h"
 #import "LPODumpDetailTableViewController.h"
 #import "LPOInfoViewController.h"
+#import "GAI.h"
+#import "GAIFields.h"
+#import "GAIDictionaryBuilder.h"
 
 @interface LPODumpsTableViewController ()
 
@@ -29,6 +32,16 @@
     self.title = NSLocalizedString(@"dump_list_title", nil);
     
     [self startLocationManager];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName
+           value:@"Lista de Lixeiras"];
+    
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
