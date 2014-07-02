@@ -8,9 +8,13 @@
 
 //Dump List
 "dump_list_title" = "Dump";
+"dump_list_info" = "This is the list of public bins closest to you in Porto Alegre. Collaborate using the dumps for waste daily trash as small packages in general and cigarette butts.";
+"dump_list_info_confirm" = "Got it!";
 
 //Container List
 "container_list_title" = "Container";
+"container_list_info" = "This is the list of containers for disposal of organic waste closest to you here in Porto Alegre. To use the container you should place your organic waste in plastic bags and put it in the container. If there is no container near you, select the next and draw a route on the GPS using LimPOA.";
+"container_list_info_confirm" = "Got it!";
 
 //Cooking Oil List
 "cooking_oil_list_title" = "Cooking Oil";
