@@ -8,9 +8,14 @@
 
 //Intro
 "intro-text-1" = "See the selective waste collection points closest to you.";
-"intro-text-2" = "View detailed information for each point.";
-"intro-text-3" = "Do not know where it is? The LimPOA shows to you!";
+"intro-text-2" = "View detailed information for each place.";
+"intro-text-3" = "Do not know where it is? LimPOA shows to you!";
 "intro-text-4" = "Start";
+
+"intro-image-1" = "Intro-Page-1-enUS";
+"intro-image-2" = "Intro-Page-2-enUS";
+"intro-image-3" = "Intro-Page-3-enUS";
+"intro-image-4" = "Intro-Page-4-enUS";
 
 //Dump List
 "dump_list_title" = "Dump";
@@ -19,7 +24,7 @@
 
 //Container List
 "container_list_title" = "Container";
-"container_list_info" = "This is the list of containers for disposal of organic waste closest to you here in Porto Alegre. To use the container you should place your organic waste in plastic bags and put it in the container. If there is no container near you, select the next and draw a route on the GPS using LimPOA.";
+"container_list_info" = "This is the list of containers for disposal of organic waste closest to you here in Porto Alegre. To use the container you should place your organic waste in plastic bags and put it in the container. If there is no container near you, select the closest and make a route on the GPS using LimPOA.";
 "container_list_info_confirm" = "Got it!";
 
 //Cooking Oil List

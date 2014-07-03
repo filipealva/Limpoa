@@ -45,7 +45,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Intro-Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="hHX-Mj-vRN">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Intro-Page-4-ptBR" translatesAutoresizingMaskIntoConstraints="NO" id="hHX-Mj-vRN">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -94,7 +94,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Intro-Image-4" translatesAutoresizingMaskIntoConstraints="NO" id="1it-3g-Uya">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Intro-Page-4-ptBR" translatesAutoresizingMaskIntoConstraints="NO" id="1it-3g-Uya">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -1174,8 +1174,7 @@
         <image name="CookingOil#2" width="30" height="30"/>
         <image name="Dump#2" width="30" height="30"/>
         <image name="EcoPoint#2" width="30" height="30"/>
-        <image name="Intro-Image-1" width="320" height="568"/>
-        <image name="Intro-Image-4" width="320" height="568"/>
+        <image name="Intro-Page-4-ptBR" width="320" height="568"/>
         <image name="Map" width="28" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
