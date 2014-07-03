@@ -34,7 +34,7 @@
 
 //EcoPoint List
 "ecopoint_list_title" = "EcoPoint";
-"ecopoint_list_info" = "This is the list of EcoPoints closest (Destino Certo) you here in Porto Alegre. The Destino Certo units receive woods, paint cans with rest, furniture, mattresses, earth, debris, plaster, ceramics, scrap, appliances and arboreal waste materials that are not collected by regular, household and selective collections, and many times are simply discarded illegally on public roads. \n\n Destino Certo units not receive organic waste and are intended only to small generators, why not accept higher discharges than 0.5 cubic meter. They still have a Post Delivery Frying Oil (PEOF), a Post Voluntary Delivery (ENP) for materials for the selective collection and a carefully fenced and protected space to receive scrap tires.";
+"ecopoint_list_info" = "This is the list of EcoPoints closest (Destino Certo) you here in Porto Alegre. The Destino Certo units receive woods, paint cans with rest, furniture, mattresses, earth, debris, plaster, ceramics, scrap, appliances and arboreal waste materials that are not collected by regular, household and selective collections, and many times are simply discarded illegally on public roads. \n\nDestino Certo units not receive organic waste and are intended only to small generators, why not accept higher discharges than 0.5 cubic meter. They still have a Post Delivery Frying Oil (PEOF), a Post Voluntary Delivery (ENP) for materials for the selective collection and a carefully fenced and protected space to receive scrap tires.";
 "ecopoint_list_info_confirm" = "Got it!";
 
 //Info View
