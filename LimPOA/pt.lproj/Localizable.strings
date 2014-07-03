@@ -12,6 +12,11 @@
 "intro-text-3" = "Não sabe onde fica? O LimPOA te mostra!";
 "intro-text-4" = "Começar";
 
+"intro-image-1" = "Intro-Page-1-ptBR";
+"intro-image-2" = "Intro-Page-2-ptBR";
+"intro-image-3" = "Intro-Page-3-ptBR";
+"intro-image-4" = "Intro-Page-4-ptBR";
+
 //Dump List
 "dump_list_title" = "Lixeira";
 "dump_list_info" = "Esta é a lista de lixeiras públicas mais próximas de você em Porto Alegre. Colabore utilizando as mesmas para descarte dos resíduos do dia-a-dia como embalagens pequenas em geral e bitucas de cigarro.";

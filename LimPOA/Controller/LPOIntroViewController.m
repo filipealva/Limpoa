@@ -23,7 +23,7 @@
     [super viewDidLoad];
     
     _pageTitles = @[NSLocalizedString(@"intro-text-1", nil), NSLocalizedString(@"intro-text-2", nil), NSLocalizedString(@"intro-text-3", nil), NSLocalizedString(@"intro-text-4", nil)];
-    _pageImages = @[@"Intro-Image-1", @"Intro-Image-2", @"Intro-Image-3", @"Intro-Image-4"];
+    _pageImages = @[NSLocalizedString(@"intro-image-1", nil), NSLocalizedString(@"intro-image-2", nil), NSLocalizedString(@"intro-image-3", nil), NSLocalizedString(@"intro-image-4", nil)];
     
     [self.pageIndicator setNumberOfPages:self.pageTitles.count];
  
