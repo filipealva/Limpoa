@@ -142,19 +142,6 @@
             [self.pageIndicator setCurrentPage:self.currentPage];
         }
     }
-    
-    LPOPageContentViewController *currentViewController = (LPOPageContentViewController *)[self.contentPages objectAtIndex:self.currentPage];
-    currentViewController.titleLabel.center = CGPointMake(scrollView.frame.size.width / 2 - offset * .5, currentViewController.titleLabel.center.y);
-    
-    if (self.currentPage > 0) {
-        LPOPageContentViewController *previusViewController = (LPOPageContentViewController *)[self.contentPages objectAtIndex:self.currentPage - 1];
-        previusViewController.titleLabel.center = CGPointMake(- offset * .5, previusViewController.titleLabel.center.y);
-    }
-    
-    if (self.currentPage < self.contentPages.count - 1) {
-        LPOPageContentViewController *nextViewController = (LPOPageContentViewController *)[self.contentPages objectAtIndex:self.currentPage + 1];
-        nextViewController.titleLabel.center = CGPointMake(scrollView.frame.size.width - offset * .5, nextViewController.titleLabel.center.y);
-    }
 }
 
 @end
