@@ -12,9 +12,6 @@
 #import "LPOCookingOilPointAnnotation.h"
 #import "CookingOil.h"
 #import "CMMapLauncher.h"
-#import "GAI.h"
-#import "GAIFields.h"
-#import "GAIDictionaryBuilder.h"
 
 static const NSString *WAZE_TITLE = @"Waze";
 static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
@@ -43,16 +40,6 @@ static const NSString *GOOGLE_MAPS_TITLE = @"Google Maps";
     [self zoomToFitMapWithAnnotations:self.mapView.annotations];
     
     [self.mapView setShowsUserLocation:YES];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    id tracker = [[GAI sharedInstance] defaultTracker];
-    
-    [tracker set:kGAIScreenName
-           value:@"Mapa Óleo Vegetal"];
-    
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 - (MKPointAnnotation *)mapViewAnnotationWithPlace:(CookingOil *)cookingOil

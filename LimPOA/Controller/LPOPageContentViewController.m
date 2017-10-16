@@ -27,7 +27,7 @@
 - (void)updateViewConstraints
 {
     [super updateViewConstraints];
-    self.titleLabelYConstraint.constant = self.view.bounds.size.height == 568 ? 40.0 : 20.0;
+    self.titleLabelYConstraint.constant = self.view.bounds.size.height < 568 ? 20.0 : 40.0;
 }
 
 @end

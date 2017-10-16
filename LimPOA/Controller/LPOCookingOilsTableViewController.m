@@ -11,9 +11,6 @@
 #import "LPOCookingOilDetailTableViewController.h"
 #import "LPOIntroViewController.h"
 #import "LPOInfoViewController.h"
-#import "GAI.h"
-#import "GAIFields.h"
-#import "GAIDictionaryBuilder.h"
 
 @interface LPOCookingOilsTableViewController ()
 
@@ -21,6 +18,7 @@
 @property (nonatomic, strong) NSMutableArray *cookingOilPoints;
 @property (nonatomic, assign) CLLocationCoordinate2D currentLocation;
 @property (nonatomic, strong) LPOLocationManager *locationManager;
+@property (nonatomic) BOOL shouldReload;
 
 @end
 
@@ -35,23 +33,19 @@
     [self startLocationManager];
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"firstRun"]) {
+        self.shouldReload = true;
         LPOIntroViewController *intro = [self.storyboard instantiateViewControllerWithIdentifier:@"IntroViewController"];
         [self.navigationController presentViewController:intro animated:NO completion:nil];
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    id tracker = [[GAI sharedInstance] defaultTracker];
-    
-    [tracker set:kGAIScreenName
-           value:@"Lista Óleo Vegetal"];
-    
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
+    if (self.shouldReload && [[NSUserDefaults standardUserDefaults] boolForKey:@"firstRun"]) {
+        self.cookingOilPoints = [[NSMutableArray alloc] initWithArray:[[LPOCookingOilManager new] selectAllCookingOilsOrderedByDistanceFromLocation:self.currentLocation]];
+        self.shouldReload = false;
+        [self.tableView reloadData];
+    }
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
 }
 

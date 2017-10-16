@@ -1,10 +1,28 @@
 {
   "images" : [
     {
+      "size" : "20x20",
+      "idiom" : "iphone",
+      "filename" : "cópia de limpoa.fw.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "20x20",
+      "idiom" : "iphone",
+      "filename" : "Cópia limpoa.fw de 2.png",
+      "scale" : "3x"
+    },
+    {
       "size" : "29x29",
       "idiom" : "iphone",
       "filename" : "limpoa.fw.png",
       "scale" : "2x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "Cópia limpoa.fw de 3.png",
+      "scale" : "3x"
     },
     {
       "size" : "40x40",
@@ -13,10 +31,28 @@
       "scale" : "2x"
     },
     {
+      "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "limpoa.fw-3.png",
+      "scale" : "3x"
+    },
+    {
       "size" : "60x60",
       "idiom" : "iphone",
       "filename" : "limpoa.fw-2.png",
       "scale" : "2x"
+    },
+    {
+      "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "Cópia limpoa.fw de 4.png",
+      "scale" : "3x"
+    },
+    {
+      "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "limpoa.fw-4.png",
+      "scale" : "1x"
     }
   ],
   "info" : {

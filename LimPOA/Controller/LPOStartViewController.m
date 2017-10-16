@@ -35,8 +35,8 @@
 - (void)updateViewConstraints
 {
     [super updateViewConstraints];
-    self.buttonStartYConstraint.constant = self.view.bounds.size.height == 568 ? 60.0 : 40.0;
-    self.activityIndicatorYConstraint.constant = self.view.bounds.size.height == 568 ? 75.0 : 55.0;
+    self.buttonStartYConstraint.constant = self.view.bounds.size.height < 568 ? 40.0 : 60.0;
+    self.activityIndicatorYConstraint.constant = self.view.bounds.size.height < 568 ? 55.0 : 75.0;
 }
 
 #pragma mark - Lazy Instantiation
@@ -65,10 +65,16 @@
 
 - (void)loadAllData
 {
+    [self loadCookingOilsData];
     [self loadDumpsData];
     [self loadContainersData];
-    [self loadCookingOilsData];
     [self loadEcoPointsData];
+    
+    [self performSelector:@selector(finishSetup) withObject:nil afterDelay:.3];
+}
+
+- (void)finishSetup
+{
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstRun"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
@@ -187,7 +193,6 @@
         CookingOil *cookingOil = (CookingOil *)[NSEntityDescription insertNewObjectForEntityForName:@"CookingOil" inManagedObjectContext:self.context];
         
         NSArray *fields = [dataFileLines[i] componentsSeparatedByCharactersInSet:commaSet];
-        NSLog(@"%d", (int)fields.count);
         
         NSString *name = nil;
         NSString *openHours = nil;
