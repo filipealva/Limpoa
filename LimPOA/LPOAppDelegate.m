@@ -10,6 +10,7 @@
 #import "UIColor+ColorWithHex.h"
 #import "Bugsnag.h"
 #import <CoreLocation/CoreLocation.h>
+#import "LPOLocationManager.h"
 
 @implementation LPOAppDelegate
 
@@ -22,6 +23,7 @@
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setAppearanceToAllElements];
     [Bugsnag startBugsnagWithApiKey:@"6237fad08e11744c5b5055f10b93ee06"];
+    [[LPOLocationManager sharedManager].manager requestWhenInUseAuthorization];
     
     return YES;
 }

@@ -34,5 +34,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Precisamos usar sua localização para trazer os pontos de coleta mais próximos de você</string>
 </dict>
 </plist>
