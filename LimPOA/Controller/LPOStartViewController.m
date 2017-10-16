@@ -70,7 +70,7 @@
     [self loadContainersData];
     [self loadEcoPointsData];
     
-    [self performSelector:@selector(finishSetup) withObject:nil afterDelay:.3];
+    [self performSelector:@selector(finishSetup) withObject:nil afterDelay:.1];
 }
 
 - (void)finishSetup
