@@ -65,10 +65,16 @@
 
 - (void)loadAllData
 {
+    [self loadCookingOilsData];
     [self loadDumpsData];
     [self loadContainersData];
-    [self loadCookingOilsData];
     [self loadEcoPointsData];
+    
+    [self performSelector:@selector(finishSetup) withObject:nil afterDelay:.3];
+}
+
+- (void)finishSetup
+{
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstRun"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
@@ -187,7 +193,6 @@
         CookingOil *cookingOil = (CookingOil *)[NSEntityDescription insertNewObjectForEntityForName:@"CookingOil" inManagedObjectContext:self.context];
         
         NSArray *fields = [dataFileLines[i] componentsSeparatedByCharactersInSet:commaSet];
-        NSLog(@"%d", (int)fields.count);
         
         NSString *name = nil;
         NSString *openHours = nil;
