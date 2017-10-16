@@ -26,6 +26,8 @@
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Precisamos usar sua localização para trazer os pontos de coleta mais próximos de você</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>iPhone</string>
 	<key>UIRequiredDeviceCapabilities</key>

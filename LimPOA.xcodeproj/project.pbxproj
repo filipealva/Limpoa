@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		031091111923B08700EACF4D /* LPOIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031091101923B08700EACF4D /* LPOIntroViewController.m */; };
 		031091141923B09900EACF4D /* LPOPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 031091131923B09900EACF4D /* LPOPageContentViewController.m */; };
+		03257E6A1F951808009E25B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03257E681F951808009E25B8 /* LaunchScreen.storyboard */; };
 		0335B6351954CA1B0029E235 /* LPOContainerMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0335B6341954CA1B0029E235 /* LPOContainerMapViewController.m */; };
 		0335B6381954CA620029E235 /* LPOContainerPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0335B6371954CA620029E235 /* LPOContainerPointAnnotation.m */; };
 		0335B63E1954D6C90029E235 /* LPOContainerDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0335B63D1954D6C90029E235 /* LPOContainerDetailTableViewController.m */; };
@@ -80,6 +81,7 @@
 		031091101923B08700EACF4D /* LPOIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOIntroViewController.m; path = Controller/LPOIntroViewController.m; sourceTree = "<group>"; };
 		031091121923B09900EACF4D /* LPOPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOPageContentViewController.h; path = Controller/LPOPageContentViewController.h; sourceTree = "<group>"; };
 		031091131923B09900EACF4D /* LPOPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOPageContentViewController.m; path = Controller/LPOPageContentViewController.m; sourceTree = "<group>"; };
+		03257E691F951808009E25B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = View/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0335B6331954CA1B0029E235 /* LPOContainerMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOContainerMapViewController.h; path = Controller/LPOContainerMapViewController.h; sourceTree = "<group>"; };
 		0335B6341954CA1B0029E235 /* LPOContainerMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOContainerMapViewController.m; path = Controller/LPOContainerMapViewController.m; sourceTree = "<group>"; };
 		0335B6361954CA620029E235 /* LPOContainerPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOContainerPointAnnotation.h; path = Controller/LPOContainerPointAnnotation.h; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				03429FF719642D7B00999B27 /* iPhone.storyboard */,
+				03257E681F951808009E25B8 /* LaunchScreen.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03257E6A1F951808009E25B8 /* LaunchScreen.storyboard in Resources */,
 				037156731922E9F50030BEA2 /* InfoPlist.strings in Resources */,
 				03429FF519642D7B00999B27 /* iPhone.storyboard in Resources */,
 				037156A71922F1290030BEA2 /* CookingOil.txt in Resources */,
@@ -667,6 +671,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		03257E681F951808009E25B8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03257E691F951808009E25B8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		03429FF719642D7B00999B27 /* iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -808,7 +820,6 @@
 			baseConfigurationReference = A5491B66E814F75011918CE2 /* Pods-LimPOA.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = D4U5RD45Q4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LimPOA/LimPOA-Prefix.pch";
@@ -825,7 +836,6 @@
 			baseConfigurationReference = 12296471BB3995182CD85C5D /* Pods-LimPOA.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = D4U5RD45Q4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LimPOA/LimPOA-Prefix.pch";

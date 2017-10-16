@@ -126,19 +126,20 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat offset = scrollView.contentOffset.x - scrollView.frame.size.width;
-
+    CGFloat halfScreen = [[UIScreen mainScreen] bounds].size.width / 2;
+    
     if (offset > 0) {
-        if (offset > 160) {
+        if (offset > halfScreen) {
             [self.pageIndicator setCurrentPage:self.currentPage + 1];
-        } else if (offset < 160) {
+        } else if (offset < halfScreen) {
             [self.pageIndicator setCurrentPage:self.currentPage];
         }
     }
 
     if (offset < 0) {
-        if (- offset > 160) {
+        if (- offset > halfScreen) {
             [self.pageIndicator setCurrentPage:self.currentPage - 1];
-        } else if (- offset < 160) {
+        } else if (- offset < halfScreen) {
             [self.pageIndicator setCurrentPage:self.currentPage];
         }
     }
