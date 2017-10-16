@@ -124,8 +124,8 @@
 		037156AB1922F2420030BEA2 /* LPODumpsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPODumpsTableViewController.m; path = Controller/LPODumpsTableViewController.m; sourceTree = "<group>"; };
 		037156AD1922F7E10030BEA2 /* UIColor+ColorWithHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorWithHex.h"; sourceTree = "<group>"; };
 		037156AE1922F7E10030BEA2 /* UIColor+ColorWithHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorWithHex.m"; sourceTree = "<group>"; };
-		037156B11922FB120030BEA2 /* LPOCustomTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOCustomTabViewController.h; path = Controller/LPOCustomTabViewController.h; sourceTree = "<group>"; };
-		037156B21922FB120030BEA2 /* LPOCustomTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOCustomTabViewController.m; path = Controller/LPOCustomTabViewController.m; sourceTree = "<group>"; };
+		037156B11922FB120030BEA2 /* LPOCustomTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPOCustomTabViewController.h; sourceTree = "<group>"; };
+		037156B21922FB120030BEA2 /* LPOCustomTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPOCustomTabViewController.m; sourceTree = "<group>"; };
 		037156CF192440FE0030BEA2 /* LPOContainersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOContainersTableViewController.h; path = Controller/LPOContainersTableViewController.h; sourceTree = "<group>"; };
 		037156D0192440FE0030BEA2 /* LPOContainersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPOContainersTableViewController.m; path = Controller/LPOContainersTableViewController.m; sourceTree = "<group>"; };
 		037156D21925429C0030BEA2 /* LPOEcoPointsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPOEcoPointsTableViewController.h; path = Controller/LPOEcoPointsTableViewController.h; sourceTree = "<group>"; };
@@ -278,11 +278,8 @@
 			isa = PBXGroup;
 			children = (
 				0371569D1922EB280030BEA2 /* Model */,
-				0371569C1922EB200030BEA2 /* Controller */,
-				037156B11922FB120030BEA2 /* LPOCustomTabViewController.h */,
-				037156B21922FB120030BEA2 /* LPOCustomTabViewController.m */,
 				0371569B1922EB0C0030BEA2 /* View */,
-				037156B01922F7E70030BEA2 /* Categories */,
+				0371569C1922EB200030BEA2 /* Controller */,
 				037156771922E9F50030BEA2 /* LPOAppDelegate.h */,
 				037156781922E9F50030BEA2 /* LPOAppDelegate.m */,
 				0371567D1922E9F50030BEA2 /* Images.xcassets */,
@@ -339,7 +336,6 @@
 		0371569C1922EB200030BEA2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				03429F91192B772500999B27 /* Manager */,
 				0310910E1923B06900EACF4D /* Intro */,
 				0371572F192D4E0C0030BEA2 /* Dump */,
 				03715730192D4E210030BEA2 /* Container */,
@@ -347,6 +343,8 @@
 				03715732192D4E350030BEA2 /* EcoPoint */,
 				03733EF119636B0A003CD5E4 /* LPOInfoViewController.h */,
 				03733EF219636B0A003CD5E4 /* LPOInfoViewController.m */,
+				037156B11922FB120030BEA2 /* LPOCustomTabViewController.h */,
+				037156B21922FB120030BEA2 /* LPOCustomTabViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -354,6 +352,8 @@
 		0371569D1922EB280030BEA2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				037156B01922F7E70030BEA2 /* Categories */,
+				03429F91192B772500999B27 /* Manager */,
 				03715720192D4DE10030BEA2 /* BaseEntity.h */,
 				03715721192D4DE10030BEA2 /* BaseEntity.m */,
 				03715722192D4DE10030BEA2 /* Container.h */,
