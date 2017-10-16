@@ -10,9 +10,6 @@
 #import "LPOContainerMapViewController.h"
 #import "LPOContainerDetailTableViewController.h"
 #import "LPOInfoViewController.h"
-#import "GAI.h"
-#import "GAIFields.h"
-#import "GAIDictionaryBuilder.h"
 
 @interface LPOContainersTableViewController ()
 
@@ -32,16 +29,6 @@
     self.title = NSLocalizedString(@"container_list_title", nil);
     
     [self startLocationManager];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    id tracker = [[GAI sharedInstance] defaultTracker];
-    
-    [tracker set:kGAIScreenName
-           value:@"Lista de Containers"];
-    
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
